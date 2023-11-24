@@ -16,7 +16,7 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
+  font-family: $ff-chakra;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -29,6 +29,7 @@ html {
 
 body {
   width: 100%;
+  min-width: 430px;
   height: 100%;
 
   background-color: $color-default-white;
