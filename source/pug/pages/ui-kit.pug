@@ -18,7 +18,7 @@ block main
         div
           ul
             li
-              a(href="#modals") Модальные окна
+              a(href="#logo") Логотип
             li
               a(href="#buttons") Кнопки
             li
@@ -27,7 +27,7 @@ block main
       //----------------------------------------------
       .container
         a.uikit__header-link(href="sitemap.html")
-          img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+          img(src="favicon/android-chrome-512x512.png", width="50", alt="Логотип проекта")
         h1.uikit__h1 Компоненты, используемые на проекте
 
         section.uikit__section
@@ -40,23 +40,24 @@ block main
               code(class="language-pug").
                 p Пример кода
 
-        //- Модальные окна
-        section.uikit__section(id="modals")
-          h2.uikit__h2 Модальные окна
-          .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--feedback
-            +btn({text: "modal-feedback"})(data-open-modal="feedback")
+        //- Логотип
+        section.uikit__section(id="logo")
+          h2.uikit__h2 Логотип
+          style.
+            .uikit__component .component-logo {
+              padding: 4px;
+              background-color: #18181b;
+            }
+
+          .uikit__component.component-logo
+            p.uikit__text.uikit__text--class .logo
+            .component-logo
+              +logo()
             pre
               |
               code(class="language-pug").
-                +btn({text: "modal-feedback"})(data-open-modal="feedback")
-          .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--success
-            +btn({text: "modal-success"})(data-open-modal="success")
-            pre
-              |
-              code(class="language-pug").
-                +btn({text: "modal-success"})(data-open-modal="success")
+                +logo()
+
 
         //- Кнопки
         section.uikit__section(id="buttons")
@@ -161,22 +162,22 @@ block main
                 }).custom-toggle--checkbox
 
 
-          .uikit__component
-            p.uikit__text Базовый селект c placeholder
-            p.uikit__text.uikit__text--class +custom-select \ default
-            +custom-select({
-              placeholder: "Выберите одну из опций",
-              error: "Выберите тему обращения",
-              optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
-            })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
-            pre
-              |
-              code(class="language-pug").
-                +custom-select({
-                  placeholder: "Выберите одну из опций",
-                  error: "Выберите тему обращения",
-                  optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
-                })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
+          //- .uikit__component
+          //-   p.uikit__text Базовый селект c placeholder
+          //-   p.uikit__text.uikit__text--class +custom-select \ default
+          //-   +custom-select({
+          //-     placeholder: "Выберите одну из опций",
+          //-     error: "Выберите тему обращения",
+          //-     optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
+          //-   })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
+          //-   pre
+          //-     |
+          //-     code(class="language-pug").
+          //-       +custom-select({
+          //-         placeholder: "Выберите одну из опций",
+          //-         error: "Выберите тему обращения",
+          //-         optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
+          //-       })(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1").custom-select
 
 
   script

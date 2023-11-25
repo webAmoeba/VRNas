@@ -3,34 +3,42 @@ mixin header(headerMods, currentUrl)
     const headerLinks = [
       {
         href: "index.html",
-        text: "Главная"
+        text: "Home"
+      },
+      {
+        href: "about-us.html",
+        text: "About us"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Service"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Pricing Plan"
+      },
+      {
+        href: "#",
+        text: "Blog"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
+      .header__grid
+        if(currentUrl === "index.html")
+          //- lighthouse снимает 10 баллов SEO за <a> без href
+          +logo()
+        else
+          +logo()
+        nav.header__nav
+          ul.header__nav-list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.main-nav__item
+              li.header__around-link
                 if(activeState)
-                  span.main-nav__link.is-active= link.text
+                  span.header__link.is-active= link.text
                 else
-                  a.main-nav__link(href=link.href)= link.text
+                  a.header__link(href=link.href)= link.text
+        .header__around-link.header__around-link--btn
+          a.header__link(href="#") Contact us

@@ -17,7 +17,7 @@ html {
   font-size: $fz-default;
   line-height: 24px;
   font-family: $ff-chakra;
-  color: $color-default-black;
+  color: $color-default-white;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,11 +32,11 @@ body {
   min-width: 430px;
   height: 100%;
 
-  background-color: $color-default-white;
+  background-color: $color-default-black;
 }
 
 a {
-  color: $color-default-black;
+  color: inherit;
   text-decoration: none;
 }
 
