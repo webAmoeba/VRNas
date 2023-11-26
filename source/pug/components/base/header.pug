@@ -25,20 +25,24 @@ mixin header(headerMods, currentUrl)
 
   header.header(class=headerMods)
     .container
-      .header__grid
+      .header__grid.header__grid--without-js#nav-grid
         if(currentUrl === "index.html")
           //- lighthouse снимает 10 баллов SEO за <a> без href
-          +logo()
+          +logo(true)
         else
           +logo()
-        nav.header__nav
-          ul.header__nav-list
+        nav.header__nav#menu
+          ul.header__nav-list#nav-list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.header__around-link
+              li.header__around-link#menu-item
                 if(activeState)
                   span.header__link.is-active= link.text
                 else
                   a.header__link(href=link.href)= link.text
-        .header__around-link.header__around-link--btn
-          a.header__link(href="#") Contact us
+          .header__around-link.header__around-link--btn#menu-item
+            a.header__link(href="#") Contact us
+        button.header__menu-toggle(type="button")#menu-toggle
+          span.visually-hidden меню
+          .header__menu-toggle-back
+            +icon("menu-toggle-closed", "16", "16")
