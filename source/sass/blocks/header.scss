@@ -6,80 +6,27 @@
   line-height: 28px;
 
   &__grid {
-    display: grid;
-    grid-template-columns: 106px 1fr;
-    gap: 60px;
+    display: flex;
+    justify-content: space-between;
     align-items: start;
-    width: 100%;
-
-    @include vp-767 {
-      display: flex;
-      justify-content: space-between;
-
-      &--without-js {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
 
     .logo {
       flex-shrink: 0;
-
-      @include vp-767 {
-        margin-top: 3px;
-      }
     }
   }
 
   &__nav {
-    display: flex;
-    justify-content: end;
-    align-items: start;
-    gap: 20px;
-
-    @include vp-767 {
-      flex-direction: column;
-      align-items: stretch;
-
-      &--hidden {
-        display: none;
-      }
-
-      &--with-js {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        /* stylelint-disable-next-line */
-        height: 100dvh;
-        background-color: rgba(0, 0, 0, 0.7);
-      }
-    }
+    margin-left: 40px;
   }
 
   &__nav-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    flex-grow: 1;
     margin: 0;
     padding: 0;
     gap: 4px 16px;
+
     list-style: none;
-
-    @include vp-767 {
-      flex-direction: column;
-      justify-content: start;
-
-
-      &--with-js {
-        flex-wrap: nowrap;
-        width: 100%;
-        overflow-y: scroll;
-      }
-    }
   }
 
   &__around-link {
@@ -99,71 +46,5 @@
     &.is-active {
       font-weight: 500;
     }
-  }
-
-  &__menu-toggle {
-    display: none;
-
-    @include vp-767 {
-      margin-top: 12px;
-      width: 32px;
-      height: 32px;
-      padding: 1px;
-      background-image: $color-gradient;
-      border: none;
-
-      &--with-js {
-        display: block;
-      }
-
-      &--to-close {
-        z-index: 1;
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 6px;
-        right: 6px;
-        margin: 0;
-
-        .header__menu-toggle-back {
-          svg {
-            display: none;
-          }
-
-          position: relative;
-
-          &::before {
-            position: absolute;
-            content: "";
-            width: 18px;
-            height: 2px;
-            background-color: $color-default-white;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-          }
-
-          &::after {
-            position: absolute;
-            content: "";
-            width: 18px;
-            height: 2px;
-            background-color: $color-default-white;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-          }
-        }
-      }
-    }
-  }
-
-  &__menu-toggle-back {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: $color-default-black;
   }
 }

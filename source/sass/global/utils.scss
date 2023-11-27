@@ -7,22 +7,6 @@
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 
-  &__wave {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(736/1440*100%);
-    height: 354px;
-    background: url("../img/svg/electro-waves.svg") no-repeat top right;
-    background-size: 100% 100%;
-    pointer-events: none;
-
-    @include vp-767 {
-      width: 99%;
-      height: 206px;
-    }
-  }
-
   .header,
   .footer {
     flex-shrink: 0;
