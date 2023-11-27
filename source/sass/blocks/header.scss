@@ -1,50 +1,13 @@
 .header {
-  padding: 30px 0 32px;
+  padding: 28px 0;
 
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 28px;
+  background-color: $color-blue;
 
-  &__grid {
+  .container {
     display: flex;
-    justify-content: space-between;
-    align-items: start;
-
-    .logo {
-      flex-shrink: 0;
-    }
   }
 
-  &__nav {
-    margin-left: 40px;
-  }
-
-  &__nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    gap: 4px 16px;
-
-    list-style: none;
-  }
-
-  &__around-link {
-    padding: 1px;
-
-    &--btn {
-      background-image: $color-gradient;
-      flex-shrink: 0;
-    }
-  }
-
-  &__link {
-    display: block;
-    padding: 11px 23px;
-    background-color: $color-default-black;
-
-    &.is-active {
-      font-weight: 500;
-    }
+  &__logo {
+    color: $color-default-white;
   }
 }
