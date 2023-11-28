@@ -1,0 +1,22 @@
+.menu-item {
+  padding: 1px;
+  flex-shrink: 0;
+
+  &--btn {
+    background-image: $color-gradient;
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 24px;
+    background-color: $color-default-black;
+
+    &.is-active {
+      font-weight: 500;
+    }
+  }
+
+  &--title {
+    font-weight: 600;
+  }
+}
