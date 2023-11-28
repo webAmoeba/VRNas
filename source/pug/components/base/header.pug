@@ -24,6 +24,7 @@ mixin header(headerMods, currentUrl)
     ]
   //- data-scroll-lock-scrollable
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
+    .header__wave
     .container
       .header__grid
         if(currentUrl === "index.html")
