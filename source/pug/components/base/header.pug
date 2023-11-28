@@ -3,34 +3,46 @@ mixin header(headerMods, currentUrl)
     const headerLinks = [
       {
         href: "index.html",
-        text: "Главная"
+        text: "Home"
+      },
+      {
+        href: "about-us.html",
+        text: "About us"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Service"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Pricing Plan"
+      },
+      {
+        href: "detail-blog.html",
+        text: "Blog"
       },
     ]
-
-  header.header(class=headerMods)
+  //- data-scroll-lock-scrollable
+  header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
+      .header__grid
+        if(currentUrl === "index.html")
+          //- lighthouse снимает 10 баллов SEO за <a> без href
+          +logo(true)
+        else
+          +logo()
+        nav.header__nav
+          ul.header__list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.main-nav__item
+              li.menu-item
                 if(activeState)
-                  span.main-nav__link.is-active= link.text
+                  span.menu-item__link.is-active= link.text
                 else
-                  a.main-nav__link(href=link.href)= link.text
+                  a.menu-item__link(href=link.href)= link.text
+          .menu-item.menu-item--btn
+            a.menu-item__link(href="#") Contact us
+        button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
+          span.visually-hidden меню
+          .header__toggle-back
+            +icon("menu-toggle-closed", "16", "16")
