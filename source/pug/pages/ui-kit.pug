@@ -10,6 +10,16 @@ block main
 
   main
     .uikit
+      style.
+        .uikit__component__wrapper {
+          background-color: rgba(255, 255, 255, 0.166);
+          padding: 4px;
+        }
+        .uikit__component {
+          .menu-item:not(:first-child) {
+            margin-top: 10px;
+          }
+        }
       //----------------------- Разделы с компонентами
       .uikit__sections(data-scroll-lock-fill-gap)
         label(for="section-burger")
@@ -17,6 +27,10 @@ block main
         input.visually-hidden(type="checkbox", checked, id="section-burger")
         div
           ul
+            li
+              a(href="#logo") Логотип
+            li
+              a(href="#menu-item") Элемент меню в шапке и подвале
             li
               a(href="#modals") Модальные окна
             li
@@ -39,6 +53,41 @@ block main
               |
               code(class="language-pug").
                 p Пример кода
+
+        //- Логотип
+        section.uikit__section(id="logo")
+          h2.uikit__h2 Логотип
+          p.uikit__text На главной странице нужно передать true
+          .uikit__component.uikit__component--ligth
+            p.uikit__text.uikit__text--class .logo
+            +logo()
+            pre
+              |
+              code(class="language-pug").
+                +logo(true)
+
+        //- Логотип
+        section.uikit__section(id="menu-item")
+          h2.uikit__h2 Элемент меню в шапке и подвале
+          //- p.uikit__text
+          .uikit__component
+            p.uikit__text.uikit__text--class .menu-item \ .menu-item--btn\ .menu-item--title
+            .uikit__component__wrapper
+              .menu-item
+                a.menu-item__link(href="#") Usual item
+              .menu-item.menu-item--btn
+                a.menu-item__link(href="#") Contact us
+              .menu-item.menu-item--title
+                span.menu-item__link Title
+            pre
+              |
+              code(class="language-pug").
+                .menu-item
+                  a.menu-item__link(href="#") Usual item
+                .menu-item.menu-item--btn
+                  a.menu-item__link(href="#") Contact us
+                .menu-item.menu-item--title
+                  span.menu-item__link Title
 
         //- Модальные окна
         section.uikit__section(id="modals")
