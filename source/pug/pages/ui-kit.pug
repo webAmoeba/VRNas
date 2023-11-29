@@ -32,6 +32,8 @@ block main
             li
               a(href="#menu-item") Элемент меню в шапке и подвале
             li
+              a(href="#title") Заголовки
+            li
               a(href="#modals") Модальные окна
             li
               a(href="#buttons") Кнопки
@@ -66,12 +68,12 @@ block main
               code(class="language-pug").
                 +logo(true)
 
-        //- Логотип
+        //- Элемент меню
         section.uikit__section(id="menu-item")
           h2.uikit__h2 Элемент меню в шапке и подвале
           //- p.uikit__text
           .uikit__component
-            p.uikit__text.uikit__text--class .menu-item \ .menu-item--btn\ .menu-item--title
+            p.uikit__text.uikit__text--class .menu-item \ .menu-item--btn \ .menu-item--title
             .uikit__component__wrapper
               .menu-item
                 a.menu-item__link(href="#") Usual item
@@ -88,6 +90,20 @@ block main
                   a.menu-item__link(href="#") Contact us
                 .menu-item.menu-item--title
                   span.menu-item__link Title
+
+        //- Заголовки
+        section.uikit__section(id="title")
+          h2.uikit__h2 Заголовки
+          //- p.uikit__text
+          .uikit__component
+            p.uikit__text.uikit__text--class .title \ .title--h1
+            .title Обычный заголовок
+            .title.title--h1 Заголовок первого уровня
+            pre
+              |
+              code(class="language-pug").
+                .title Обычный заголовок
+                .title.title--h1 Заголовок первого уровня
 
         //- Модальные окна
         section.uikit__section(id="modals")
