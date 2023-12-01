@@ -13,11 +13,11 @@ body {
 
 html {
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: $fz-default;
-  line-height: 24px;
+  line-height: 28px;
   font-family: $ff-chakra;
-  color: $color-default-white;
+  color: $color-default-gray;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

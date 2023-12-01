@@ -28,6 +28,7 @@
   font-weight: 300;
   line-height: 28px;
   transition: height $trans-default;
+  color: $color-default-white;
   background-color: $color-default-black;
 
   @include vp-767 {
