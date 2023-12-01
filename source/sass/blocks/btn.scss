@@ -1,18 +1,20 @@
 .btn {
   display: inline-flex;
-  padding: 10px 20px;
+  padding: 18px 38px;
 
+  font-family: $ff-chakra;
   color: $color-default-white;
-
-  background-color: $color-blue;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-image: $color-gradient;
   border: none;
   cursor: pointer;
 
   transition: opacity $trans-default;
-
-  &--red {
-    background-color: $color-red;
-  }
 
   &:disabled {
     opacity: 0.5;
