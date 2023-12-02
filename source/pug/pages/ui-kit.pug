@@ -28,9 +28,9 @@ block main
         div
           ul
             li
-              a(href="#logo") Логотип
+              a(href="#page-section") Обвязка/микс секции
             li
-              a(href="#menu-item") Элемент меню в шапке и подвале
+              a(href="#logo") Логотип
             li
               a(href="#title") Заголовки
             li
@@ -57,6 +57,20 @@ block main
                 p Пример кода
 
         //- Логотип
+        section.uikit__section(id="page-section")
+          h2.uikit__h2 Обвязка/микс секции
+          p.uikit__text Устанавливает унифицированный паддинг сверху
+          .uikit__component.uikit__component--ligth
+            p.uikit__text.uikit__text--class .page-section
+            //- .page-section
+            pre
+              |
+              code(class="language-pug").
+                .page-section
+                +some-block().page-section
+
+
+        //- Логотип
         section.uikit__section(id="logo")
           h2.uikit__h2 Логотип
           p.uikit__text На главной странице нужно передать true
@@ -67,29 +81,6 @@ block main
               |
               code(class="language-pug").
                 +logo(true)
-
-        //- Элемент меню
-        section.uikit__section(id="menu-item")
-          h2.uikit__h2 Элемент меню в шапке и подвале
-          //- p.uikit__text
-          .uikit__component
-            p.uikit__text.uikit__text--class .menu-item \ .menu-item--btn \ .menu-item--title
-            .uikit__component__wrapper
-              .menu-item
-                a.menu-item__link(href="#") Usual item
-              .menu-item.menu-item--btn
-                a.menu-item__link(href="#") Contact us
-              .menu-item.menu-item--title
-                span.menu-item__link Title
-            pre
-              |
-              code(class="language-pug").
-                .menu-item
-                  a.menu-item__link(href="#") Usual item
-                .menu-item.menu-item--btn
-                  a.menu-item__link(href="#") Contact us
-                .menu-item.menu-item--title
-                  span.menu-item__link Title
 
         //- Заголовки
         section.uikit__section(id="title")
