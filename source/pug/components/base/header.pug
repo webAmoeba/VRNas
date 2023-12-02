@@ -24,7 +24,6 @@ mixin header(headerMods, currentUrl)
     ]
   //- data-scroll-lock-scrollable
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
-    .header__wave
     .container
       .header__grid
         if(currentUrl === "index.html")
@@ -36,13 +35,13 @@ mixin header(headerMods, currentUrl)
           ul.header__list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.menu-item
+              li.header__item
                 if(activeState)
-                  span.menu-item__link.is-active= link.text
+                  span.header__link.is-active= link.text
                 else
-                  a.menu-item__link(href=link.href)= link.text
-          .menu-item.menu-item--btn
-            a.menu-item__link(href="#") Contact us
+                  a.header__link(href=link.href)= link.text
+          .header__item.header__item--btn
+            a.header__link(href="#") Contact us
         button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
           span.visually-hidden меню
           .header__toggle-back
