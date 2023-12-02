@@ -38,6 +38,8 @@ html(lang="ru")
     link(rel="stylesheet", href="css/style.min.css")
 
   body
+    .visually-hidden
+      include ../../../../build/img/sprite-gradient.svg
     .wrapper(class=wrapperMods)
       if (hasHeader)
         +header(headerMods, currentUrl)
