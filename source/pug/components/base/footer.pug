@@ -1,3 +1,85 @@
 mixin footer(footerMods)
+  -
+    const socials = [
+      {href: "#", name: "Твиттер", icon: "twitter"},
+      {href: "#", name: "Фейсбук", icon: "facebook"},
+      {href: "#", name: "Инстаграм", icon: "inst"},
+      {href: "#", name: "Гитхаб", icon: "github"},
+    ]
+  -
+    const quickLinks = [
+      {href: "#", text: "Home"},
+      {href: "#", text: "Pricing Plan"},
+      {href: "#", text: "Service"},
+      {href: "#", text: "Blog"},
+      {href: "#", text: "Our Team"},
+    ]
+  -
+    const supportLinks = [
+      {href: "#", text: "About us"},
+      {href: "#", text: "Contact us"},
+      {href: "#", text: "FAQ"},
+      {href: "#", text: "Tems & Conditions"},
+      {href: "#", text: "Privacy Policy"},
+    ]
+  -
+    const helps = [
+      {
+        href: "https://www.google.com/maps/search/Tanjung+Sari+Street+no.48,+Pontianak+City/@-0.0353948,109.2903509,13z/data=!3m1!4b1?entry=ttu",
+        text: "Tanjung Sari Street no.48, Pontianak City",
+        isExternal: "true",
+        icon: "location",
+      },
+      {
+        href: "mailto:support@vrnas.com",
+        text: "Support@VRNas.com",
+        icon: "message",
+      },
+      {
+        href: "tel:+1234567890",
+        text: "+123 456 7890",
+        icon: "calling",
+      },
+    ]
+
   footer.footer(class=footerMods)
+    .footer__waves
+      +icon("footer-waves", "100%", "100%", true)
     .container
+      .footer__grid
+        .footer__first-column
+          +logo()
+          .footer__socials
+            each link in socials
+              a.footer__social-link.link(href=link.href)
+                span.visually-hidden!= link.name
+                +icon(link.icon, "46", "46", true)
+
+        section.footer__column.footer__column--second
+          h2.footer__section-title Quicklinks
+          ul.footer__links-list
+            each link in quickLinks
+              li.footer__item
+                a.footer__link(href=link.href)!=  link.text
+
+        section.footer__column.footer__column--third
+          h2.footer__section-title Support
+          ul.footer__links-list
+            each link in supportLinks
+              li.footer__item
+                a.footer__link(href=link.href)!=  link.text
+
+        section.footer__column.footer__column--fourth
+          h2.footer__section-title Need Help?
+          ul.footer__links-list
+            each link in helps
+              if link.isExternal
+                li.footer__item
+                  a.footer__link(href=link.href target="_blank" rel="nofollow noopener noreferrer")!= link.text
+                    +icon(link.icon, "20", "20")
+              else
+                li.footer__item
+                  a.footer__link(href=link.href)!= link.text
+                    +icon(link.icon, "20", "20")
+
+      .footer__copy © Copyright 2023, All Rights Reserved

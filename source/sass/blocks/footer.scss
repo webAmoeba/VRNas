@@ -1,5 +1,176 @@
 .footer {
-  padding: 40px 0;
+  position: relative;
+  padding-top: 115px;
 
-  background-color: $color-blue;
+  @include vp-1023 {
+    padding-top: 50px;
+  }
+
+  @include vp-767 {
+    padding-top: 25px;
+  }
+
+  .logo {
+    padding-top: 0;
+
+    @include vp-1023 {
+      padding: 6px 0;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 33px;
+
+    @include vp-1023 {
+      display: grid;
+      grid-template-columns: 2fr 2fr 3fr;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 4fr 5fr;
+      padding-bottom: 8px;
+    }
+  }
+
+  &__first-column {
+    flex-basis: 402px;
+    flex-shrink: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+    padding-bottom: 35px;
+
+    @include vp-1023 {
+      grid-column: 1/-1;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include vp-1023 {
+      justify-content: end;
+    }
+  }
+
+  &__social-link {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    line-height: 0;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 2px;
+
+    @include vp-767 {
+      padding-bottom: 40px;
+    }
+
+
+    &--second {
+      flex-basis: 214px;
+    }
+
+    &--third {
+      flex-basis: 198px;
+    }
+
+    &--fourth {
+      @include vp-767 {
+        grid-column: 1/-1;
+      }
+    }
+  }
+
+  &__section-title {
+    margin: 0;
+    font-size: $fz-default;
+    line-height: 28px;
+    font-weight: 600;
+    color: $color-default-white;
+  }
+
+  &__links-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    svg {
+      order: -1;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+
+    @include hover-focus {
+      opacity: 0.8;
+    }
+  }
+
+  &__copy {
+    position: relative;
+    padding: 32px 0 40px;
+    text-align: center;
+
+    @include vp-767 {
+      padding-bottom: 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 0;
+      left: 0;
+      background-image: $color-gradient;
+      opacity: 0.5;
+    }
+  }
+
+  &__waves {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 70.2%;
+    overflow: hidden;
+
+    @include vp-1023 {
+      width: 86%;
+    }
+
+    @include vp-767 {
+      height: 314px;
+      width: 100%;
+
+      svg {
+        min-width: 637px;
+      }
+    }
+  }
 }
