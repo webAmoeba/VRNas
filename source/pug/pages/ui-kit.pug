@@ -10,16 +10,6 @@ block main
 
   main
     .uikit
-      style.
-        .uikit__component__wrapper {
-          background-color: rgba(255, 255, 255, 0.166);
-          padding: 4px;
-        }
-        .uikit__component {
-          .menu-item:not(:first-child) {
-            margin-top: 10px;
-          }
-        }
       //----------------------- Разделы с компонентами
       .uikit__sections(data-scroll-lock-fill-gap)
         label(for="section-burger")
@@ -28,7 +18,7 @@ block main
         div
           ul
             li
-              a(href="#page-section") Обвязка/микс секции
+              a(href="#page-section") Обвязка секции
             li
               a(href="#logo") Логотип
             li
@@ -56,25 +46,25 @@ block main
               code(class="language-pug").
                 p Пример кода
 
-        //- Логотип
+        //- Обвязка секции
         section.uikit__section(id="page-section")
-          h2.uikit__h2 Обвязка/микс секции
-          p.uikit__text Устанавливает унифицированный паддинг сверху
-          .uikit__component.uikit__component--ligth
-            p.uikit__text.uikit__text--class .page-section
-            //- .page-section
+          h2.uikit__h2 Обвязка секции
+          p.uikit__text Устанавливает унифицированные падддинги вокруг блоков
+          .uikit__component
+            p.uikit__text.uikit__text--class .page-section \ .page-section--bottom \ .page-section--only-bottom
             pre
               |
               code(class="language-pug").
                 .page-section
-                +some-block().page-section
+                .page-section.page-section--bottom
+                .page-section.page-section--only-bottom
 
 
         //- Логотип
         section.uikit__section(id="logo")
           h2.uikit__h2 Логотип
           p.uikit__text На главной странице нужно передать true
-          .uikit__component.uikit__component--ligth
+          .uikit__component
             p.uikit__text.uikit__text--class .logo
             +logo()
             pre
