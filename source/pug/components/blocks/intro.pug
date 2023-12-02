@@ -5,10 +5,15 @@ mixin intro()
       href: "#",
       isExternal: true,
     }
-  section.intro
+  -
+    const clients = [
+      {name: "1"},
+      {name: "2"},
+      {name: "3"},
+    ]
+
+  section.intro&attributes(attributes)
     h1.visually-hidden vrnas
-    //- вставлять блоки во внешний контейнер неверно
-    //- все блоки содержат в себе container без доп класса tutorial__wrapper
     .container
       .intro__grid
         .intro__text-part
@@ -17,41 +22,28 @@ mixin intro()
           +btn(btn).intro__btn
           .intro__clients
             .intro__photos
-              +picture(
-                "content/happy-client",
-                "1",
-                "jpg",
-                "50",
-                "50",
-                "Фото счастливого клиента."
-              )
-              +picture(
-                "content/happy-client",
-                "2",
-                "jpg",
-                "50",
-                "50",
-                "Фото счастливого клиента."
-              )
-              +picture(
-                "content/happy-client",
-                "3",
-                "jpg",
-                "50",
-                "50",
-                "Фото счастливого клиента."
-              )
+              each client in clients
+                +picture(
+                  "content/intro/happy-client",
+                  client.name,
+                  "jpg",
+                  "50",
+                  "50",
+                  "Фото счастливого клиента."
+                )
+
             .intro__photos-description
               .intro__how-many 32k+
               .intro__who-how-many Happy Client
         .intro__picture-part
           .intro__picture-wrapper
             +picture(
-              "content",
+              "content/intro",
               "intro",
               "png",
               "526",
               "626",
               "Чувак с надетыми черными виар-очками.",
             )
+
     +personalisation()

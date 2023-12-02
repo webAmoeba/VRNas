@@ -4,6 +4,10 @@
   background-position-y: 170px;
   overflow-x: hidden;
 
+  @include vp-767 {
+    background-position-y: 190px;
+  }
+
   &__grid {
     position: relative;
     display: grid;
@@ -138,6 +142,7 @@
 
   &__btn {
     margin-top: 32px;
+    user-select: none;
 
     @include vp-1023 {
       max-width: 48%;
