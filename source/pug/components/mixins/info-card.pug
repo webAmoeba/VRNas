@@ -1,0 +1,13 @@
+mixin info-card(card)
+  .info-card(tabindex="0")
+    .info-card__wrapper
+      .info-card__icon
+        +icon(card.icon, "100%", "100%", true)
+      p.info-card__title!= card.title
+      p.info-card__text!= card.text
+      .info-card__btn-wrapper
+        +btn({
+            href: "#",
+            isExternal: true,
+            text: "learn more"
+          })
