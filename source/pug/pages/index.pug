@@ -14,9 +14,11 @@ block main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
     +intro()
-    .page-section.page-section--120
+    .page-section
       +info-block()
     .page-section
       +our-service()
+    .page-section
+      +info-block()
 
 block modals

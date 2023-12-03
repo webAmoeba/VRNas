@@ -3,11 +3,24 @@
 
   .our-service__light {
     position: absolute;
-    right: -20px;
+    right: 0;
     top: 0;
     width: 454px;
     height: 199px;
     filter: blur(105px);
+    overflow: hidden;
+
+    svg {
+      transform: translateX(60px);
+    }
+
+    @include vp-1023 {
+      opacity: 0.5;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
   }
 
   &__grid {

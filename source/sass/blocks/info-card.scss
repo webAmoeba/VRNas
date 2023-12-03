@@ -83,4 +83,12 @@
       }
     }
   }
+
+  &:focus {
+    .btn {
+      span {
+        background-color: $color-greyscale-black-80;
+      }
+    }
+  }
 }
