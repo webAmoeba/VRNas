@@ -5,6 +5,7 @@
   line-height: 58px;
   letter-spacing: -0.24px;
   color: $color-default-white;
+  text-wrap: balance;
 
   @include vp-1023 {
     font-size: 40px;

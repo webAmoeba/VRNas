@@ -1,0 +1,35 @@
+mixin info-block()
+  section.info-block&attributes(attributes)
+    .container
+      .info-block__grid
+        .info-block__picture-part
+          .info-block__light
+            +icon("light", "100%", "100%", true)
+          .info-block__picture-wrapper
+            +picture(
+              "content/info-block/about-us",
+              "Image",
+              "png",
+              "518",
+              "622",
+              "Чувак из клипа нулевых тычет пальцем в воздух.",
+            )
+        .info-block__title-part
+          .info-block__mini-title about us
+          h2.info-block__title.title Bring your events to&nbsp;life like never before with our&nbsp;VR services.
+        .info-block__text-part
+          p VRNas is&nbsp;a&nbsp;leading provider of&nbsp;VR services for education, entertainment, architecture, and events. Our mission is&nbsp;to&nbsp;bring the power of&nbsp;virtual reality to everyone, allowing them to&nbsp;explore new worlds, learn in new ways, and experience events in&nbsp;a&nbsp;whole new light.
+          ul.info-block__list
+            li.info-block__item
+              .info-block__item-icon
+                +icon("checkbox-checked", "16", "16", true)
+              span.info-block__item-text Cutting-Edge Technology
+            li.info-block__item
+              .info-block__item-icon
+                +icon("checkbox-checked", "16", "16", true)
+              span.info-block__item-text Versatile Applications
+            li.info-block__item
+              .info-block__item-icon
+                +icon("checkbox-checked", "16", "16", true)
+              span.info-block__item-text Affordable and Accessible
+          +btn({text: "read more", href: "#", isExternal: true}).info-block__btn
