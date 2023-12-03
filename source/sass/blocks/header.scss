@@ -111,7 +111,7 @@
     flex-shrink: 0;
 
     &--btn {
-      background-image: $color-gradient;
+      background-image: $gradient;
     }
   }
 
@@ -136,7 +136,7 @@
       width: 32px;
       height: 32px;
       padding: 1px;
-      background-image: $color-gradient;
+      background-image: $gradient;
       border: none;
     }
   }

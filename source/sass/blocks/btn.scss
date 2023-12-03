@@ -10,9 +10,10 @@
   line-height: 1;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background-image: $color-gradient;
+  background-image: $gradient;
   border: none;
   cursor: pointer;
+  user-select: none;
 
   transition: opacity $trans-default;
 
