@@ -1,0 +1,38 @@
+mixin info-choose-us()
+  -
+    const accordion = [
+      {
+        button: "Passionate and Experienced Team",
+        text: "We&nbsp;are proud of&nbsp;our team of&nbsp;VR experts who are passionate about&nbsp;VR and dedicated to&nbsp;delivering the highest quality work. Our team consists of&nbsp;experienced&nbsp;VR developers, designers, and technicians who have a&nbsp;proven track record of&nbsp;creating immersive and engaging&nbsp;VR experiences.",
+      },
+      {
+        button: "Customized Solutions",
+        text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, quae commodi. Velit sed possimus atque hic reiciendis facilis quam totam, quos perspiciatis eos architecto obcaecati ipsum, magni fugit dolorum repellendus.",
+      },
+      {
+        button: "Exceptional Customer Service",
+        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores suscipit totam maiores minus unde provident velit facere, voluptatem amet consequatur magni, quisquam quae! Neque, deleniti magnam dolorem nesciunt voluptate assumenda.Aliquid, dolorum alias! Excepturi, cupiditate! Adipisci fugit debitis expedita esse. Consectetur, voluptates omnis beatae qui, doloribus rem, molestias quos id sint excepturi cupiditate! Maxime, quos doloribus soluta qui alias ratione.Eius omnis neque sunt illum dolore saepe delectus reiciendis sed quibusdam. Vel ducimus excepturi libero eum culpa quisquam quia adipisci nostrum, doloribus sapiente quam deleniti iusto quod tempora, sed quos.Ratione earum natus impedit, quaerat eius maxime laborum error harum, quis debitis maiores totam ad, repellat et quos? Accusamus nulla et nobis vero eius debitis consequatur eaque sint quisquam delectus?Ullam temporibus laboriosam dignissimos ipsa. Quaerat commodi error ab, earum, explicabo officia placeat repellat eius, aspernatur amet perspiciatis tenetur? In dolores ipsam laudantium eaque odit, libero quis non illum vitae.",
+      },
+    ]
+  section.info-choose-us&attributes(attributes)
+    .container
+      .info-choose-us__grid
+
+        .info-choose-us__title-part
+          h3.title-colorful why choose us
+          h2.info-choose-us__title.title Why Choose Us&nbsp;for Your VR&nbsp;Needs
+        .info-choose-us__accordion-wrapper
+          +accordion(accordion)
+
+        .info-choose-us__picture-part
+          .info-choose-us__light
+            +icon("light", "100%", "100%", true)
+          .info-choose-us__picture-wrapper
+            +picture(
+              "content/info-choose-us",
+              "Image",
+              "png",
+              "563",
+              "662",
+              "Чувак из клипа нулевых тычет пальцем в воздух.",
+            )
