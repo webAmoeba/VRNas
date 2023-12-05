@@ -83,7 +83,7 @@ block main
         //- Логотип
         section.uikit__section(id="logo")
           h2.uikit__h2 Логотип
-          p.uikit__text На главной странице нужно передать true
+          p.uikit__text На главной странице в шапке нужно передать true
           .uikit__component
             p.uikit__text.uikit__text--class .logo
             +logo()
@@ -100,13 +100,22 @@ block main
             p.uikit__text.uikit__text--class .title \ .title--h1
             .title Обычный заголовок
             .title.title--h1 Заголовок первого уровня
-            .title-colorful цветной
             pre
               |
               code(class="language-pug").
                 .title Обычный заголовок
                 .title.title--h1 Заголовок первого уровня
+
+
+          h2.uikit__h2 Цветной заголовок
+          .uikit__component
+            p.uikit__text.uikit__text--class .title-colorful
+            .title-colorful цветной
+            pre
+              |
+              code(class="language-pug").
                 .title-colorful цветной
+
           h2.uikit__h2 Сет заголовков
           p.uikit__text Сет из цветного заголовка и обычного, цветной заголовок - обычный параграф, обычный заголовок по умолчанию h2, или можно задать другой, передав его в свойстве tag
           .uikit__component
@@ -196,7 +205,7 @@ block main
                 +btn({text: "Текст", href: "#"})
           .uikit__component
             p.uikit__text.uikit__text--class .btn
-            +btn({text: "Текст", href: "#", isExternal: true}).btn--red(aria-label="Просто ссылка")
+            +btn({text: "Ссылка", href: "#", isExternal: true})
             pre
               |
               code(class="language-pug").
