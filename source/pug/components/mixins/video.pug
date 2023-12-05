@@ -1,0 +1,11 @@
+mixin video(video)
+  .video#video-wrapper
+    video.video__video(width="1200", height="522",  controls, poster=video.poster)#video
+      source(src=video.src, type="video/mp4")
+    .video__description#video-description
+      .video__tag!= video.tag
+      .video__description-text!= video.description
+    .video__btn-wrapper
+      button.video__play-btn(type="button")#play-video
+        span.visually-hidden push to play video
+        +icon("play-btn", "100%", "100%")

@@ -5,6 +5,7 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeader} from './modules/header/init-header.js';
 import {initAccordions} from './modules/accordion/init-accordion.js';
+import {watePlayVideo} from './modules/video.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
   initHeader();
   initAccordions();
+  watePlayVideo();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана

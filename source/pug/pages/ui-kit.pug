@@ -26,6 +26,8 @@ block main
             li
               a(href="#accordion") Аккордион
             li
+              a(href="#video") Видео
+            li
               a(href="#modals") Модальные окна
             li
               a(href="#buttons") Кнопки
@@ -113,6 +115,30 @@ block main
               |
               code(class="language-pug").
                 +accordion([{button: "btn", text: "txt"}])
+
+
+        //- Видео
+        section.uikit__section(id="video")
+          h2.uikit__h2 Видео
+          //- p.uikit__text
+          p.uikit__text.uikit__text--class .video
+          -
+            const video = {
+              src: "img/video/ee.mp4",
+              poster: "img/video/poster@2x.webp",
+            }
+          style.
+            .asdfkjasdfhooaiudfhuh {
+              width: 60%;
+            }
+
+
+          .asdfkjasdfhooaiudfhuh
+            +video(video)
+          pre
+            |
+            code(class="language-pug").
+              +video({src: "img/video/ee.mp4", poster: "img/video/poster@2x.webp"})
 
 
         //- Модальные окна
