@@ -5,6 +5,10 @@
   clip-path: inset(1px 1px);
   overflow: hidden;
 
+  @include vp-767 {
+    border-radius: 12px;
+  }
+
   &__video {
     position: absolute;
     top: 0;
@@ -13,7 +17,6 @@
     height: 100%;
     object-fit: cover;
     border: none;
-    border-radius: 12px 12px 0 0;
   }
 
   &::before {
