@@ -1,0 +1,25 @@
+.video-block {
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+
+    @include vp-767 {
+      gap: 30px;
+    }
+  }
+
+  .titles-set {
+    max-width: 800px;
+    text-align: center;
+
+    .title {
+      text-wrap: unset;
+    }
+  }
+
+  .video {
+    width: 100%;
+  }
+}
