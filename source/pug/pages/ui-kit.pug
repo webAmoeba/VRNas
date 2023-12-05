@@ -91,6 +91,15 @@ block main
                 .title Обычный заголовок
                 .title.title--h1 Заголовок первого уровня
                 .title-colorful цветной
+          h2.uikit__h2 Сет заголовков
+          p.uikit__text Сет из цветного заголовка и обычного, цветной заголовок - обычный параграф, обычный заголовок по умолчанию h2, или можно задать другой, передав его в свойстве tag
+          .uikit__component
+            p.uikit__text.uikit__text--class .titles-set
+            +titles-set({colorful: "colorful", title: "title", tag: "h3"})
+            pre
+              |
+              code(class="language-pug").
+                +titles-set({colorful: "colorful", title: "title", tag: "h3"})
 
         //- Аккордион
         section.uikit__section(id="accordion")

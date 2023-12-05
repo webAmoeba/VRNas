@@ -62,11 +62,15 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-within {
     background-image: $gradient;
 
     .info-card__btn-wrapper {
       display: flex;
+
+      &:focus-within {
+        display: flex;
+      }
     }
 
     .info-card__wrapper {
