@@ -20,6 +20,8 @@ block main
             li
               a(href="#page-section") Обвязка секции
             li
+              a(href="#canvas-grey") Блок с градиентным бордером
+            li
               a(href="#logo") Логотип
             li
               a(href="#title") Заголовки
@@ -63,6 +65,20 @@ block main
                 .page-section.page-section--bottom
                 .page-section.page-section--only-bottom
 
+        //- Блок с градиентным бордером
+        section.uikit__section(id="canvas-grey")
+          h2.uikit__h2 Блок с градиентным бордером
+          p.uikit__text Блок с градиентным бордером и отличающимся фоном
+          .uikit__component
+            p.uikit__text.uikit__text--class .canvas-grey
+            +canvas-grey()
+              p any
+              p  content
+            pre
+              |
+              code(class="language-pug").
+                +canvas-grey()
+                  p any content
 
         //- Логотип
         section.uikit__section(id="logo")

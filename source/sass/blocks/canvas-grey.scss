@@ -1,0 +1,11 @@
+.canvas-grey {
+  border-width: 1px;
+  border-style: solid;
+  border-image: $gradient-card;
+  border-image-slice: 1;
+
+  &__inner {
+    padding: 1px;
+    background-color: $color-greyscale-black-80;
+  }
+}
