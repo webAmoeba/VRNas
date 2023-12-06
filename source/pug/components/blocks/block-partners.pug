@@ -1,0 +1,12 @@
+mixin block-partners()
+  -
+    const titles = {
+      colorful: "Our Trusted Partners",
+      title: "Discover the Companies We&nbsp;Work With",
+    }
+
+  section.block-partners
+    .container
+      .block-partners__grid
+        +titles-set(titles)
+        +partners()

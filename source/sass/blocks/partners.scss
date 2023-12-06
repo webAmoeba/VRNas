@@ -1,0 +1,46 @@
+.partners {
+  position: relative;
+  min-height: 740px;//
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+
+  &__round {
+    position: relative;
+    width: calc(454/1056*100%);
+    border: 1px solid $color-border-gray;
+    border-radius: 50%;
+    background: $color-greyscale-black-80;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  $for-partners-mask: 70.4%;
+
+  &__mask {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: 30%;
+    background-image: radial-gradient(circle at 50% -67%,
+      transparent 0 $for-partners-mask,
+      $color-border-gray $for-partners-mask calc($for-partners-mask + 1px),
+      $color-default-black calc($for-partners-mask + 1px) 100%
+    );
+  }
+}
