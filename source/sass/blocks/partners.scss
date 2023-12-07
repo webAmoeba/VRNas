@@ -122,7 +122,6 @@
     top: 15px;
     left: 15px;
     right: 15px;
-    background-color: rgba(255, 0, 0, 0.1);
 
     &::before {
       content: "";
@@ -147,34 +146,16 @@
     display: flex;
     justify-content: start;
     align-items: stretch;
-
-    background-color: rgba(255, 0, 0, 0.3);
     transform-origin: 100% 50%;
-    transform: rotate(5deg);
     translate: 0 -50%;
 
-    &:first-child {
-      transform: rotate(5deg);
-
-      svg {
-        transform: rotate(180deg);
-      }
-    }
-
-    &:last-child {
-      transform: rotate(175deg);
-
-      svg {
-        transform: rotate(180deg);
-      }
-    }
+    transform: rotate(40deg);
   }
 
   &__icon-wrapper {
     position: relative;
     width: calc(102/1026*200%);
-    background-color: rgba(172, 255, 47, 0.5);
-
+    transform: rotate(-40deg);
 
     &::before {
       content: "";
