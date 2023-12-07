@@ -10,10 +10,24 @@ mixin partners()
       "logoipsum7",
     ]
   .partners
+    .partners__rainbow
+      +icon("circle", "100%", "100%", true)
+    .partners__gradient-dark
     .partners__round
-      .partners__mask
-    +picture(
-      "content/block-partners",
-      "image",
-      "png",
-    )
+    .partners__mask
+    .partners__picture-wrapper
+      +picture(
+        "content/block-partners",
+        "image",
+        "png",
+        "708",
+        "555",
+        "Симметричный чувак думает."
+      )
+    .partners__mask
+    .partners__elements
+      each icon in icons
+        .partners__element-wrapper
+          .partners__icon-wrapper
+            +icon(icon, "100%", "100%", true)
+
