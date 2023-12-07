@@ -1,8 +1,26 @@
 .block-partners {
+  @include vp-767 {
+    .container {
+      padding: 0;
+    }
+
+    .titles-set {
+      padding: 0 16px;
+    }
+  }
+
   &__grid {
     display: flex;
     flex-direction: column;
     gap: 58px;
+
+    @include vp-1023 {
+      gap: 40px;
+    }
+
+    @include vp-767 {
+      gap: 24px;
+    }
   }
 
   .titles-set {

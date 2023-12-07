@@ -11,11 +11,12 @@ mixin partners()
     ]
 
   .partners
-    .partners__rainbow
-      +icon("circle", "100%", "100%", true)
+    .partners__rainbow-wrapper
+      .partners__rainbow
+        +icon("circle", "100%", "100%", true)
     .partners__gradient-dark
     .partners__round
-    .partners__mask
+    +icon("light-partners", "100%", "100%", true).partners__light
     .partners__picture-wrapper
       +picture(
         "content/block-partners",
@@ -25,7 +26,6 @@ mixin partners()
         "555",
         "Симметричный чувак думает."
       )
-    .partners__mask
     .partners__elements
       each icon in icons
         .partners__element-wrapper#partner-icon-wrapper
