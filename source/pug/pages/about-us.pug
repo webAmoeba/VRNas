@@ -8,11 +8,24 @@ block variables
   - const hasFooter = true
   - const footerMods = ""
   - const currentUrl = "about-us.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  -
+    const breadcrumbs = [
+      {
+        href: "index.html",
+        title: "Home",
+      },
+      {
+        href: "about-us.html",
+        title: "About us",
+        current: true,
+      },
+    ]
 
 block main
   main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
+    +intro-about-us(breadcrumbs)
     .container
       p about us
 
