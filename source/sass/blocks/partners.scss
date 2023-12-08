@@ -146,6 +146,7 @@
     top: $vertical-distance;
     left: $horisontal-distance;
     right: $horisontal-distance;
+    pointer-events: none;
 
     &::before {
       content: "";
