@@ -1,0 +1,35 @@
+mixin about-us-index()
+  section.about-us-index&attributes(attributes)
+    .container
+      .about-us-index__grid
+        .about-us-index__picture-part
+          .about-us-index__light
+            +icon("light", "100%", "100%", true)
+          .about-us-index__picture-wrapper
+            +picture(
+              "content/about-us-index",
+              "Image",
+              "png",
+              "518",
+              "622",
+              "Чувак из клипа нулевых тычет пальцем в воздух.",
+            )
+        .about-us-index__title-part
+          h3.title-colorful about us
+          h2.about-us-index__title.title Bring your events to&nbsp;life like never before with our&nbsp;VR services.
+        .about-us-index__text-part
+          p VRNas is&nbsp;a&nbsp;leading provider of&nbsp;VR services for education, entertainment, architecture, and events. Our mission is&nbsp;to&nbsp;bring the power of&nbsp;virtual reality to everyone, allowing them to&nbsp;explore new worlds, learn in new ways, and experience events in&nbsp;a&nbsp;whole new light.
+          ul.about-us-index__list
+            li.about-us-index__item
+              .about-us-index__item-icon
+                +icon("checkbox-checked", "16", "16", true)
+              span.about-us-index__item-text Cutting-Edge Technology
+            li.about-us-index__item
+              .about-us-index__item-icon
+                +icon("checkbox-checked", "16", "16", true)
+              span.about-us-index__item-text Versatile Applications
+            li.about-us-index__item
+              .about-us-index__item-icon
+                +icon("checkbox-checked", "16", "16", true)
+              span.about-us-index__item-text Affordable and Accessible
+          +btn({text: "read more", href: "#", isExternal: true}).about-us-index__btn
