@@ -40,9 +40,8 @@ mixin header(headerMods, currentUrl)
                   span.header__link.is-active= link.text
                 else
                   a.header__link(href=link.href)= link.text
-          .header__item.header__item--btn
-            a.header__link(href="#") Contact us
+          .header__item
+            a.header__link.header__link--gradient-border(href="#") Contact us
         button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
           span.visually-hidden меню
-          .header__toggle-back
-            +icon("menu-toggle-closed", "16", "16")
+          +icon("menu-toggle-closed", "16", "16")
