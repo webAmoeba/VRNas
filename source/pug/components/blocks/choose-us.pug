@@ -1,4 +1,9 @@
-mixin info-choose-us()
+mixin choose-us()
+  -
+    const titles = {
+      colorful: "why choose us",
+      title: "Why Choose Us&nbsp;for Your VR&nbsp;Needs",
+    }
   -
     const accordion = [
       {
@@ -14,25 +19,22 @@ mixin info-choose-us()
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores suscipit totam maiores minus unde provident velit facere, voluptatem amet consequatur magni, quisquam quae! Neque, deleniti magnam dolorem nesciunt voluptate assumenda.Aliquid, dolorum alias! Excepturi, cupiditate! Adipisci fugit debitis expedita esse. Consectetur, voluptates omnis beatae qui, doloribus rem, molestias quos id sint excepturi cupiditate! Maxime, quos doloribus soluta qui alias ratione.Eius omnis neque sunt illum dolore saepe delectus reiciendis sed quibusdam. Vel ducimus excepturi libero eum culpa quisquam quia adipisci nostrum, doloribus sapiente quam deleniti iusto quod tempora, sed quos.Ratione earum natus impedit, quaerat eius maxime laborum error harum, quis debitis maiores totam ad, repellat et quos? Accusamus nulla et nobis vero eius debitis consequatur eaque sint quisquam delectus?Ullam temporibus laboriosam dignissimos ipsa. Quaerat commodi error ab, earum, explicabo officia placeat repellat eius, aspernatur amet perspiciatis tenetur? In dolores ipsam laudantium eaque odit, libero quis non illum vitae.",
       },
     ]
-  section.info-choose-us&attributes(attributes)
+  -
+    const pic = {
+      path: "content/choose-us",
+      name: "image",
+      format: "png",
+      width: "563",
+      height: "662",
+      alt: "Чувак в виар-очках и типа бежит.",
+    }
+  section.choose-us.section
     .container
-      .info-choose-us__grid
-
-        .info-choose-us__title-part
-          h3.title-colorful why choose us
-          h2.info-choose-us__title.title Why Choose Us&nbsp;for Your VR&nbsp;Needs
-        .info-choose-us__accordion-wrapper
+      .section__grid
+        +titles-set(titles)
+        .text-content
           +accordion(accordion)
-
-        .info-choose-us__picture-part
-          .info-choose-us__light
-            +icon("light", "100%", "100%", true)
-          .info-choose-us__picture-wrapper
-            +picture(
-              "content/info-choose-us",
-              "Image",
-              "png",
-              "563",
-              "662",
-              "Чувак из клипа нулевых тычет пальцем в воздух.",
-            )
+        .section__picture-wrapper
+          .section__light
+            +icon("light-section", "610", "366", true)
+          +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)

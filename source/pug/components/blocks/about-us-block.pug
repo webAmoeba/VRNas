@@ -4,15 +4,17 @@ mixin about-us-block()
       colorful: "about us",
       title: "Bringing Your Vision to&nbsp;Life: Learn About VRNas",
     }
-  .about-us-block
+  section.about-us-block.section
     .container
-      .section-grid
+      .section__grid
         +titles-set(titles)
         .text-content
           p VRNas is&nbsp;a&nbsp;leading provider of&nbsp;VR services for education, entertainment, architecture, and events. Our mission is&nbsp;to&nbsp;bring the power of&nbsp;virtual reality to&nbsp;everyone, allowing them to&nbsp;explore new worlds, learn in&nbsp;new ways, and experience events in&nbsp;a&nbsp;whole new light.
           p Our team consists of&nbsp;experienced&nbsp;VR developers, designers, and technicians who are passionate about&nbsp;VR and dedicated to&nbsp;delivering the highest quality work. We&nbsp;use the latest&nbsp;VR hardware and software to&nbsp;create immersive, interactive experiences that are tailored to&nbsp;your specific needs.
           p From initial consultation to&nbsp;final delivery, we&nbsp;are committed to&nbsp;providing exceptional customer service. Our goal is&nbsp;to&nbsp;ensure that you are completely satisfied with every aspect of&nbsp;your&nbsp;VR experience.
-        .section-grid__picture-wrapper
+        .section__picture-wrapper
+          .section__light
+            +icon("light-section", "610", "366", true)
           +picture(
             "content/about-us-block",
             "image",

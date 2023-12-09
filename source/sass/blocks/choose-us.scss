@@ -1,0 +1,17 @@
+.choose-us {
+  .container {
+    padding-right: 16px;
+  }
+
+  .section__grid {
+    grid-template-columns: 4fr 5fr;
+  }
+
+  .section__picture-wrapper {
+    order: -1;
+
+    @include vp-767 {
+      margin: 0 -10px 46px;
+    }
+  }
+}
