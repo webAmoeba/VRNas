@@ -1,4 +1,9 @@
-mixin titles-set({colorful, title, tag = "h2"})
-  .titles-set
-    p.title-colorful!= colorful
-    #{tag}.title!= title
+mixin titles-set({colorful, title, tag = "h2", center = false})
+  if !center
+    .titles-set
+      p.title-colorful!= colorful
+      #{tag}.title!= title
+  else
+    .titles-set.titles-set--center
+      p.title-colorful!= colorful
+      #{tag}.title!= title
