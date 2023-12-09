@@ -24,17 +24,10 @@ mixin choose-us()
       path: "content/choose-us",
       name: "image",
       format: "png",
-      width: "563",
-      height: "662",
+      width: "399",
+      height: "574",
       alt: "Чувак в виар-очках и типа бежит.",
     }
-  section.choose-us.section
-    .container
-      .section__grid
-        +titles-set(titles)
-        .text-content
-          +accordion(accordion)
-        .section__picture-wrapper
-          .section__light
-            +icon("light-section", "610", "366", true)
-          +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)
+
+  +section(titles, pic).choose-us
+    +accordion(accordion)

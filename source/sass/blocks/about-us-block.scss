@@ -1,13 +1,15 @@
 .about-us-block {
   .section__picture-wrapper {
-    &::before {
-      translate: -40% 0;
-    }
+    @include vp-767 {
+      &::before {
+        translate: -40% 0;
+      }
 
-    img {
-      width: 80%;
-      margin-left: auto;
-      margin-right: 20px;
+      img {
+        width: 80%;
+        margin-left: auto;
+        margin-right: 20px;
+      }
     }
   }
 }

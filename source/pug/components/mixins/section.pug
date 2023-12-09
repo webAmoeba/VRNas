@@ -1,0 +1,11 @@
+mixin section(titles, pic)
+  section.section&attributes(attributes)
+    .container
+      .section__grid
+        +titles-set(titles)
+        .text-content
+          block
+        .section__picture-wrapper
+          .section__light
+            +icon("light-section", "610", "366", true)
+          +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)
