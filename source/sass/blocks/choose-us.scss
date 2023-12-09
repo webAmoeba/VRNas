@@ -1,17 +1,29 @@
 .choose-us {
-  .container {
-    padding-right: 16px;
-  }
-
   .section__grid {
-    grid-template-columns: 4fr 5fr;
+    grid-template-columns: 5fr 5.3fr;
   }
 
   .section__picture-wrapper {
-    order: -1;
-
     @include vp-767 {
-      margin: 0 -10px 46px;
+      order: -1;
+      margin: 0 -11px 46px;
+      width: calc(100% + 22px);
+    }
+
+    img {
+      translate: 100px 0;
+
+      @include vp-1279 {
+        translate: unset;
+      }
+    }
+
+    &::before {
+      translate: -32% 0;
+
+      @include vp-1279 {
+        translate: -50% 0;
+      }
     }
   }
 }
