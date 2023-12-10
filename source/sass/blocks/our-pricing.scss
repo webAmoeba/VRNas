@@ -4,19 +4,6 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-  }
-
-  &__paragraphs {
-    max-width: 625px;
-
-    p {
-      margin: 0;
-      margin-top: 20px;
-    }
-  }
-
-  &__canvas-wrapper {
-    position: relative;
     padding-bottom: 46px;
 
     @include vp-1023 {
@@ -28,40 +15,19 @@
     }
   }
 
-  &__light {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-
-    svg {
-      width: calc(826/1200*100%);
-      transform: translate(50px, 1%);
-      filter: blur(105px);
-
-      @include vp-1279 {
-        transform: none;
-      }
-    }
+  .text-content p {
+    max-width: 625px;
   }
 
-  .canvas-grey {
-    position: relative;
-
-    &__inner {
-      opacity: 0.8;
-    }
-  }
-
-  &__canvas-grid {
+  &__wrapper {
     position: relative;
     display: grid;
     grid-template-columns: 61% 31%;
     gap: 8%;
+    border-width: 1px;
+    border-style: solid;
+    border-image: $gradient-card;
+    border-image-slice: 1;
 
     &::before {
       content: "";
@@ -90,12 +56,51 @@
       display: flex;
       flex-direction: column;
     }
+
+    &::after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $color-greyscale-black-80;
+      opacity: 0.8;
+    }
+  }
+
+  &__light {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    svg {
+      width: calc(826/1200*100%);
+      transform: translate(50px, 6%);
+      filter: blur(105px);
+
+      @include vp-1279 {
+        transform: none;
+      }
+
+      @include vp-767 {
+        width: 100%;
+        filter: blur(85px);
+      }
+    }
   }
 
   &__list {
     position: relative;
     margin: 0;
-    padding: 52px 42px;
+    padding: 54px 42px;
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -158,7 +163,6 @@
   }
 
   &__picture-wrapper {
-    position: relative;
     display: flex;
     justify-content: end;
     align-items: end;
@@ -168,6 +172,7 @@
     }
 
     @include vp-767 {
+      position: relative;
       padding-top: 40px;
     }
 
