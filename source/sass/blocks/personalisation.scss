@@ -6,8 +6,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: calc(50/1200*100%);
-    border: 1px solid $color-border-gray;
     background-color: $color-greyscale-black-80;
+    border-width: 1px;
+    border-style: solid;
+    border-image: $gradient-card;
+    border-image-slice: 1;
 
     @include vp-1023 {
       grid-template-columns: 1fr 1fr;

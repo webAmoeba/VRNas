@@ -51,7 +51,7 @@ mixin footer(footerMods)
           +logo()
           .footer__socials
             each link in socials
-              a.footer__social-link.link(href=link.href)
+              a.footer__social-link.link(href=link.href target="_blank" rel="nofollow noopener noreferrer")
                 span.visually-hidden!= link.name
                 +icon(link.icon, "46", "46", true)
 
