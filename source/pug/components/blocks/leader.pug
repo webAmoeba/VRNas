@@ -1,0 +1,28 @@
+mixin leader()
+  -
+    const titles = {
+      colorful: "about us",
+      title: "Bring your events to&nbsp;life like never before with our&nbsp;VR services.",
+    }
+  -
+    const pic = {
+      path: "content/leader",
+      name: "image",
+      format: "png",
+      width: "518",
+      height: "622",
+      alt: "Чувак из клипа нулевых тычет пальцем в воздух.",
+    }
+  -
+    const list = [
+      "Cutting-Edge Technology",
+      "Versatile Applications",
+      "Affordable and Accessible",
+    ]
+
+  +section(titles, pic).section--reverce.passion
+    p VRNas is&nbsp;a&nbsp;leading provider of&nbsp;VR services for education, entertainment, architecture, and events. Our mission is&nbsp;to&nbsp;bring the power of&nbsp;virtual reality to everyone, allowing them to&nbsp;explore new worlds, learn in new ways, and experience events in&nbsp;a&nbsp;whole new light.
+    ul
+      each item in list
+        li!= item
+    +btn({text: "read more", href: "#", isExternal: true})
