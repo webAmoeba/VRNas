@@ -37,17 +37,13 @@
     }
 
     .title {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       text-wrap: pretty;
     }
   }
 
   .text-content {
     grid-area: txt;
-
-    & > p {
-      margin: 0;
-    }
   }
 
   &__picture-wrapper {
@@ -84,7 +80,6 @@
       background-color: $color-greyscale-black-80;
 
       @include vp-767 {
-        right: 8px;
         bottom: 28px;
       }
     }
@@ -128,7 +123,7 @@
       grid-template-areas:
         "pic title"
         "pic txt";
-      grid-template-columns: 5.5fr 6fr;
+      grid-template-columns: 5.6fr 6fr;
     }
 
     .section__light svg {
@@ -143,6 +138,10 @@
         order: -1;
         margin: 0;
         margin-bottom: 48px;
+      }
+
+      &::before {
+        left: 40%;
       }
     }
   }
