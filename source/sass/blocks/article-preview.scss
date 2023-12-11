@@ -28,8 +28,9 @@
   &__text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     align-items: start;
+    justify-content: start;
   }
 
   &__title {
