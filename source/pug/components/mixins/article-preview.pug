@@ -3,5 +3,5 @@ mixin article-preview(preview)
     .article-preview__pic
       +picture(preview.path, preview.name, preview.format, preview.width, preview.height, preview.alt)
     .article-preview__text
-      .property.property--preview!= preview.property
+      .property.property--little!= preview.property
       .article-preview__title!= preview.title
