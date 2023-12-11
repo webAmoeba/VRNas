@@ -8,12 +8,28 @@ block variables
   - const hasFooter = true
   - const footerMods = ""
   - const currentUrl = "detail-blog.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  -
+    const breadcrumbs = [
+      {
+        href: "index.html",
+        title: "Home",
+      },
+      {
+        href: "#",
+        title: "Blog",
+      },
+      {
+        href: "about-us.html",
+        title: "Bringing Designs to Life: How VR is Changing Architecture",
+        current: true,
+      },
+    ]
 
 block main
   main
-    //- на странице запрещен "голый" код
-    //- все блоки вставляются из папки pug/components/blocks
-    .container
-      p detail-blog
+    +breadcrumbs-block(breadcrumbs)
+    +article()
+    .page-section.page-section--bottom
+      +subscribe()
 
 block modals
