@@ -1,4 +1,26 @@
 .article {
+  position: relative;
+
+  &__light {
+    display: none;
+
+    @include vp-767 {
+      z-index: -1;
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+
+      svg {
+        filter: blur(55px);
+      }
+    }
+  }
+
   &__titles {
     display: flex;
     flex-direction: column;
@@ -11,6 +33,18 @@
     grid-template-columns: 66% 28%;
     gap: 50px;
     justify-content: space-between;
+
+    @include vp-1023 {
+      grid-template-columns: 68% 30%;
+      gap: 10px;
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 100px;
+    }
   }
 
   .text-content {
@@ -23,6 +57,10 @@
     max-height: 528px;
     object-fit: contain;
     margin-bottom: 6px;
+
+    @include vp-1023 {
+      margin: 0;
+    }
   }
 
   &__mini-pics {
@@ -30,6 +68,16 @@
     grid-template-columns: 1fr 1fr;
     gap: 34px;
     padding: 56px 0 52px;
+
+    @include vp-1023 {
+      gap: 24px;
+      padding: 26px 0;
+    }
+
+    @include vp-767 {
+      gap: 16px;
+      padding: 8px 0;
+    }
 
     img {
       max-height: 252px;
@@ -42,6 +90,10 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    @include vp-767 {
+      gap: 24px;
+    }
   }
 
   .title.title--h3 {

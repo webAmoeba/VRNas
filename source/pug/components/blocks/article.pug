@@ -42,9 +42,15 @@ mixin article()
         title: "Exploring New Worlds: The Benefits of VR Travel",
       },
     ]
+  -
+    const hashtags = [
+      "#VRDesign", "#ArchitectureInnovation", "#DesignThinking", "#VirtualRealityArchitecture", "#BringingDesignsToLife", "#DesignVisualization", "#ArchitecturalVisualization", "#RevolutionizingArchitecture", "#BuildingInVR"
+    ]
 
 
   article.article
+    .article__light
+      +icon("light-article", "299", "98", true)
     .container
       .article__grid
         .text-content
@@ -107,7 +113,15 @@ mixin article()
                   span.visually-hidden x
                   +icon("instagram", "23", "23")
 
-        +aside("Recent Article")
-          each preview in previews
-            li
-              +article-preview(preview)
+        aside.aside
+          .aside__unit
+            .aside__title Recent Article
+            ul
+              each preview in previews
+                li
+                  +article-preview(preview)
+          .aside__unit
+            .aside__title Popular Hashtag
+            .aside__hashtags
+              each hastag in hashtags
+               .property.property--little!= hastag

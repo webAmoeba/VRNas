@@ -4,6 +4,10 @@
   align-items: start;
   gap: 15px;
 
+  @include vp-767 {
+    grid-template-columns: calc(102/398*100%) calc(214/398*100%);
+  }
+
   &__pic {
     position: relative;
     background-color: $color-purple;
