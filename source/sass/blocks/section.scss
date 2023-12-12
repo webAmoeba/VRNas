@@ -49,22 +49,10 @@
   &__picture-wrapper {
     position: relative;
     grid-area: pic;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-
-    padding-bottom: 34px;
+    height: 100%;
 
     @include vp-767 {
-      margin-top: 40px;
-      padding-bottom: 28px;
-      width: 100%;
-    }
-
-    img {
-      width: 100%;
-      object-fit: contain;
-      max-height: 700px;
+      margin-top: 48px;
     }
 
     &::before {
@@ -85,6 +73,29 @@
     }
   }
 
+  &__picture {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+    width: 100%;
+    min-height: 200px;
+    padding-bottom: 34px;
+
+    @include vp-767 {
+      overflow-x: hidden;
+      padding-bottom: 28px;
+      width: 100%;
+    }
+
+    img {
+      margin-top: auto;
+      width: 100%;
+      object-fit: contain;
+      max-height: 700px;
+    }
+  }
+
   &__light {
     z-index: -1;
     position: absolute;
@@ -92,10 +103,13 @@
     right: 0;
     bottom: 0;
     left: 0;
+    filter: blur(105px);
+
+    @include vp-767 {
+      overflow-x: hidden;
+    }
 
     svg {
-      filter: blur(105px);
-
       position: absolute;
       top: 50%;
       right: -120px;
@@ -104,7 +118,7 @@
 
       @include vp-1279 {
         right: -50px;
-        width: 100%;
+        width: 100%;//
       }
 
       @include vp-1023 {
@@ -114,6 +128,8 @@
       @include vp-767 {
         right: 50%;
         translate: 50% -50%;
+        width: 120%;
+        height: auto;
       }
     }
   }
@@ -124,13 +140,30 @@
         "pic title"
         "pic txt";
       grid-template-columns: 5.6fr 6fr;
+
+      @include vp-1023 {
+        grid-template-areas:
+          "title title"
+          "pic txt";
+      }
     }
 
     .section__light svg {
-      position: absolute;
-      top: 50%;
-      right: 50%;
-      translate: 50% -50%;
+      right: unset;
+      left: -120px;
+
+      @include vp-1279 {
+        left: -50px;
+      }
+
+      @include vp-1023 {
+        left: -24px;
+      }
+
+      @include vp-767 {
+        left: 50%;
+        translate: -50% -50%;
+      }
     }
 
     .section__picture-wrapper {
