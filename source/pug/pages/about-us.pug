@@ -20,9 +20,17 @@ block variables
         current: true,
       },
     ]
+  -
+    const sharp = {
+      file: "sharp-about-us",
+      width: "990",
+      height: "721",
+    }
+
 
 block main
   main
+    +sharp(sharp).sharp--about-us
     +intro-about-us(breadcrumbs)
     .page-section
       +about-us-block()

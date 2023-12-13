@@ -2,24 +2,6 @@
   position: relative;
   padding-top: 13px;
 
-  &__sharp {
-    z-index: -2;
-    position: absolute;
-    top: 170px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-
-    svg {
-      overflow: hidden;
-    }
-
-    @include vp-767 {
-      top: 190px;
-    }
-  }
-
   &__grid {
     display: grid;
     justify-content: space-between;
