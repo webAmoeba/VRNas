@@ -2,6 +2,7 @@
   position: relative;
 
   .our-service__light {
+    z-index: -1;
     position: absolute;
     right: 0;
     top: 0;
@@ -11,11 +12,11 @@
     overflow: hidden;
 
     svg {
-      transform: translateX(60px);
-    }
+      transform: translateX(26px);
 
-    @include vp-1023 {
-      opacity: 0.5;
+      @include vp-1023 {
+        transform: unset;
+      }
     }
 
     @include vp-767 {

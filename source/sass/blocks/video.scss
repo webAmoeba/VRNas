@@ -102,6 +102,9 @@
     left: 0;
     bottom: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 
     padding: 52px 34px;
 

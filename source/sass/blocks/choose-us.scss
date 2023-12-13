@@ -4,6 +4,8 @@
   }
 
   .section__picture-wrapper {
+    height: unset;
+
     @include vp-767 {
       order: -1;
       margin: 0 -11px 46px;

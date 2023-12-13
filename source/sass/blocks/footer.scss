@@ -116,12 +116,12 @@
 
     svg {
       order: -1;
+      margin-top: 6px;
     }
   }
 
   &__link {
     display: flex;
-    align-items: center;
     gap: 8px;
     color: inherit;
 

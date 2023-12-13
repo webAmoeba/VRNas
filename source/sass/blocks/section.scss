@@ -1,6 +1,4 @@
 .section {
-  position: relative;
-
   &__grid {
     display: grid;
     justify-content: space-between;
@@ -118,7 +116,7 @@
 
       @include vp-1279 {
         right: -50px;
-        width: 100%;//
+        width: 100%;
       }
 
       @include vp-1023 {
