@@ -22,26 +22,26 @@ mixin header(headerMods, currentUrl)
         text: "Blog"
       },
     ]
-  //- data-scroll-lock-scrollable
+
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
-    .container
-      .header__grid
-        if(currentUrl === "index.html")
-          //- lighthouse снимает 10 баллов SEO за <a> без href
-          +logo(true)
-        else
-          +logo()
-        nav.header__nav
-          ul.header__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.header__item
-                if(activeState)
-                  span.header__link.is-active= link.text
-                else
-                  a.header__link(href=link.href)= link.text
-          .header__item
-            a.header__link.header__link--gradient-border(href="#") Contact us
-        button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
-          span.visually-hidden меню
-          +icon("menu-toggle-closed", "16", "16")
+    .for-blur#for-blur
+      .container
+        .header__grid
+          if(currentUrl === "index.html")
+            +logo(true)
+          else
+            +logo()
+          nav.header__nav
+            ul.header__list
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.header__item
+                  if(activeState)
+                    span.header__link.is-active= link.text
+                  else
+                    a.header__link(href=link.href)= link.text
+            .header__item
+              a.header__link.header__link--gradient-border(href="#") Contact us
+          button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
+            span.visually-hidden меню
+            +icon("menu-toggle-closed", "16", "16")
