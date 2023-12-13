@@ -58,15 +58,8 @@
     }
   }
 
-  &__paragraph {
-    p {
-      margin-top: 12px;
-      max-width: 625px;
-
-      &:first-child {
-        margin: 0;
-      }
-    }
+  .text-content p {
+    max-width: 625px;
   }
 
   &__cards {

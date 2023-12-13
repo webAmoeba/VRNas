@@ -6,19 +6,19 @@ function blurHeader() {
     const scrollPosition = window.scrollY;
     let isScrolling;
 
-    container.classList.add('blured');
+    container.classList.add('header__for-blur--blured');
 
     clearTimeout(isScrolling);
 
     isScrolling = setTimeout(function () {
-      container.classList.remove('blured');
-    }, 1000);
+      container.classList.remove('header__for-blur--blured');
+    }, 300);
 
     // Задает и снимает стилевый класс непрозрачного фона
     if (scrollPosition > 10) {
-      header.classList.add('opaque');
+      header.classList.add('header--opaque');
     } else {
-      header.classList.remove('opaque');
+      header.classList.remove('header--opaque');
     }
   });
 }
