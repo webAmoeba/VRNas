@@ -8,6 +8,7 @@ import {initAccordions} from './modules/accordion/init-accordion.js';
 import {watePlayVideo} from './modules/video.js';
 import {arrangeIconsCircle} from './modules/partners.js';
 import {blurHeader} from './modules/header.js';
+import {animatePartners} from './modules/partners.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -24,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
   watePlayVideo();
   arrangeIconsCircle();
   blurHeader();
+  animatePartners();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана

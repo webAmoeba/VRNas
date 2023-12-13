@@ -1,5 +1,6 @@
 const elements = document.querySelectorAll('#partner-icon-wrapper');
 const icons = document.querySelectorAll('#partner-icon');
+const svgs = document.querySelectorAll('#partner-svg');
 const howMany = elements.length;
 const other = howMany - 2;
 const lastIndex = elements.length - 1;
@@ -16,6 +17,24 @@ if (howMany === 2) {
   maxDegree = 140;
 }
 
+// анимация иконок
+function animatePartners() {
+  function animateCollection() {
+    svgs.forEach((element) => {
+      const randomSize = Math.floor(Math.random() * 50) + 50;
+      element.style.width = `${randomSize}%`;
+      element.style.height = `${randomSize}%`;
+    });
+
+    const randomDelay = Math.random() * 2000 + 1000;
+    setTimeout(animateCollection, randomDelay);
+  }
+
+  animateCollection();
+}
+
+
+// Функция распределения иконок по полукругу
 function arrangeIconsCircle() {
   if (howMany === 7) {
     elements[0].style = `transform: rotate(${minDegree}deg);`;
@@ -59,4 +78,4 @@ function arrangeIconsCircle() {
   }
 }
 
-export {arrangeIconsCircle};
+export {arrangeIconsCircle, animatePartners};
