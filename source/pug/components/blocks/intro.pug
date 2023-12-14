@@ -7,6 +7,15 @@ mixin intro()
     }
   -
     const clients = ["1", "2", "3"]
+  -
+    const movable = {
+      path: "content/movable",
+      name: "1",
+      format: "jpg",
+      width: "196",
+      height: "128",
+      alt: "just movable picture.",
+    }
 
   section.intro&attributes(attributes)
     +sharp()
@@ -31,6 +40,10 @@ mixin intro()
             .intro__photos-description
               .intro__how-many 32k+
               .intro__who-how-many Happy Client
+
+          .intro__movable
+            +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='10')
+
         .intro__picture-wrapper
           .intro__light
             +icon("light-intro", "567", "340", true)

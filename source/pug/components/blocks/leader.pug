@@ -14,13 +14,22 @@ mixin leader()
       alt: "Чувак из клипа нулевых тычет пальцем в воздух.",
     }
   -
+    const movable = {
+      path: "content/movable",
+      name: "2",
+      format: "jpg",
+      width: "196",
+      height: "128",
+      alt: "just movable picture.",
+    }
+  -
     const list = [
       "Cutting-Edge Technology",
       "Versatile Applications",
       "Affordable and Accessible",
     ]
 
-  +section(titles, pic).section--reverce.leader&attributes(attributes)
+  +section(titles, pic, movable).section--reverce.leader&attributes(attributes)
     p VRNas is&nbsp;a&nbsp;leading provider of&nbsp;VR services for education, entertainment, architecture, and events. Our mission is&nbsp;to&nbsp;bring the power of&nbsp;virtual reality to everyone, allowing them to&nbsp;explore new worlds, learn in new ways, and experience events in&nbsp;a&nbsp;whole new light.
     ul
       each item in list

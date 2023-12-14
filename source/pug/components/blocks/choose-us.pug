@@ -28,6 +28,15 @@ mixin choose-us()
       height: "574",
       alt: "Чувак в виар-очках и типа бежит.",
     }
+  -
+    const movable = {
+      path: "content/movable",
+      name: "3",
+      format: "jpg",
+      width: "196",
+      height: "128",
+      alt: "just movable picture.",
+    }
 
-  +section(titles, pic).choose-us
+  +section(titles, pic, movable).choose-us
     +accordion(accordion)

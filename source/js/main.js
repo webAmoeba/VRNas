@@ -9,6 +9,7 @@ import {watePlayVideo} from './modules/video.js';
 import {arrangeIconsCircle} from './modules/partners.js';
 import {blurHeader} from './modules/header.js';
 import {animatePartners} from './modules/partners.js';
+import './modules/parallax.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {

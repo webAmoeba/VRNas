@@ -28,6 +28,15 @@ mixin passion()
       height: "574",
       alt: "Чувак в виар-очках и уже реально бежит.",
     }
+  -
+    const movable = {
+      path: "content/movable",
+      name: "2",
+      format: "jpg",
+      width: "196",
+      height: "128",
+      alt: "just movable picture.",
+    }
 
-  +section(titles, pic).section--reverce.passion
+  +section(titles, pic, movable).section--reverce.passion
     +accordion(accordion)

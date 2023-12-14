@@ -9,7 +9,6 @@ blocks.forEach((block, index) => {
   if (index !== 0) {
     gsap.from(block, {
       opacity: 0,
-      innerHeight: 0,
       y: 150,
       duration: 1,
       scrollTrigger: {
