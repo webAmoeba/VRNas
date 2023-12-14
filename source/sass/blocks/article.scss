@@ -100,7 +100,8 @@
     margin-bottom: 12px;
   }
 
-  &__hashtags {
+  &__hashtags,
+  &__hashtags > p {
     margin: 0;
     display: inline-block;
     font-size: 16px;
