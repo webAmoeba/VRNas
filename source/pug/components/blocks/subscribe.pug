@@ -1,11 +1,12 @@
 mixin subscribe()
-  section.subscribe
-    .container
-      .subscribe__grid
-        label.subscribe__label(for="input-email") Subscribe to&nbsp;our newsletter for latest updates
-        .subscribe__input-wrapper
-          +icon("letter", "24", "24").subscribe__icon
-          input(type="email" id="input-email" placeholder="Enter your email address")
-          button.subscribe__submit(type="submit")
-            span.visually-hidden send your email
-            +icon("plane", "16", "16")
+  section.subscribe(data-form-validate="data-form-validate", data-callback="base")
+    form(method="post" action="https://echo.htmlacademy.ru/")#subscribe
+      .container
+        .custom-input(data-validate-type="email" data-message-base="The field must be filled in" data-required="data-required" data-message-extra="Check that the field is filled in correctly")
+          label.subscribe__label(for="input-email") Subscribe to&nbsp;our newsletter for latest updates
+          .subscribe__input-wrapper#input-email
+            +icon("letter", "24", "24").subscribe__icon
+            input(type="email", name="user-email", placeholder="Enter your email address", autocomplete="off", required)
+            button(type="submit")
+              span.visually-hidden send your email
+              +icon("plane", "16", "16")

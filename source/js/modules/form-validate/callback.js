@@ -1,5 +1,18 @@
+function successNotification() {
+  const element = document.createElement('p');
+  element.textContent = 'Your message has sent';
+
+  const input = document.getElementById('input-email');
+  input.parentNode.replaceChild(element, input);
+
+  setTimeout(function () {
+    element.parentNode.replaceChild(input, element);
+  }, 3000);
+}
+
 
 const baseSuccessCallback = (event) => {
+  successNotification();
   event.preventDefault();
   // В данном колбеке бэкендер, либо разработчик при необходимости будет писать запрос на отправку формы на сервер и обрабатывать возможные ошибки или успешную отправку формы на сервер
 };
