@@ -18,24 +18,43 @@ block main
         div
           ul
             li
+              a(href="#sharp") Векторная декоративная подложка
+            li
               a(href="#page-section") Обвязка секции
+            li
+              a(href="#section") Сетка секции
             li
               a(href="#logo") Логотип
             li
               a(href="#title") Заголовки
             li
+              a(href="#text-content") Обвязка текста и не только
+            li
+              a(href="#breadcrumbs") Хлебные крошки
+            li
               a(href="#accordion") Аккордион
-            li
-              a(href="#video") Видео
-            li
-              a(href="#modals") Модальные окна
             li
               a(href="#buttons") Кнопки
             li
-              a(href="#forms") Элементы форм
+              a(href="#property") Свойство
+            li
+              a(href="#video") Видео
+            li
+              a(href="#article-preview") Превью статьи
+            li
+              a(href="#aside") Сетка бокового меню
+            li
+              a(href="#info-card") Инфокарточка
+
+
+            li
+              a(href="#card-price") Карточка цены
+            //- li
+            //-   a(href="#forms") Элементы форм
 
       //----------------------------------------------
       .container
+        +sharp()
         a.uikit__header-link(href="sitemap.html")
           img(src="favicon/android-chrome-512x512.png", width="50", alt="Логотип проекта")
         h1.uikit__h1 Компоненты, используемые на проекте
@@ -50,10 +69,27 @@ block main
               code(class="language-pug").
                 p Пример кода
 
+        //- Векторная декоративная подложка
+        section.uikit__section(id="sharp")
+          h2.uikit__h2 Векторная декоративная подложка
+          .uikit__component
+            p.uikit__text.uikit__text--class .sharp \ .sharp--about-us
+            pre
+              |
+              code(class="language-pug").
+                +sharp()
+                +sharp({
+                  file: "sharp-about-us",
+                  width: "990",
+                  height: "721",
+                }).sharp--about-us
+
         //- Обвязка секции
         section.uikit__section(id="page-section")
           h2.uikit__h2 Обвязка секции
           p.uikit__text Устанавливает унифицированные падддинги вокруг блоков
+          p.uikit__text .page-section--bottom добавляет отступ снизу
+          p.uikit__text .page-section--only-bottom устанавливает только отступ снизу
           .uikit__component
             p.uikit__text.uikit__text--class .page-section \ .page-section--bottom \ .page-section--only-bottom
             pre
@@ -62,6 +98,54 @@ block main
                 .page-section
                 .page-section.page-section--bottom
                 .page-section.page-section--only-bottom
+
+        //- Сетка секции
+        section.uikit__section(id="section")
+          h2.uikit__h2 Сетка секции
+          p.uikit__text Остальной контент расположится на следующей строке с отступом после вызова компонента
+          .uikit__component
+            p.uikit__text.uikit__text--class .section \ .section--reverce
+            +section({
+              colorful: "цветной",
+              title: "заголовок",
+            },{
+              path: "content/about-us-block",
+              name: "image",
+              format: "png",
+              width: "563",
+              height: "662",
+              alt: "Чувак в виар-очках в профиль.",
+            },{
+              path: "content/movable",
+              name: "1",
+              format: "jpg",
+              width: "196",
+              height: "128",
+              alt: "just movable picture.",
+            })
+              p здесь уже любой контент
+            pre
+              |
+              code(class="language-pug").
+                +section({
+                  colorful: "цветной",
+                  title: "заголовок",
+                },{
+                  path: "content/about-us-block",
+                  name: "image",
+                  format: "png",
+                  width: "563",
+                  height: "662",
+                  alt: "Чувак в виар-очках в профиль.",
+                },{
+                  path: "content/movable",
+                  name: "1",
+                  format: "jpg",
+                  width: "196",
+                  height: "128",
+                  alt: "just movable picture.",
+                })
+                  p здесь уже любой контент
 
         //- Логотип
         section.uikit__section(id="logo")
@@ -80,16 +164,19 @@ block main
           h2.uikit__h2 Заголовки
           //- p.uikit__text
           .uikit__component
-            p.uikit__text.uikit__text--class .title \ .title--h1
+            +sharp()
+            p.uikit__text.uikit__text--class .title \ .title--h1 \ .title--h3 \ .title--article
             .title Обычный заголовок
             .title.title--h1 Заголовок первого уровня
+            .title.title--h3 Заголовок третьего уровня
+            .title.title--article Используется в блоке .article
             pre
               |
               code(class="language-pug").
                 .title Обычный заголовок
                 .title.title--h1 Заголовок первого уровня
-
-
+                .title.title--h3 Заголовок третьего уровня
+                .title.title--article Используется в блоке .article
           h2.uikit__h2 Цветной заголовок
           .uikit__component
             p.uikit__text.uikit__text--class .title-colorful
@@ -98,7 +185,6 @@ block main
               |
               code(class="language-pug").
                 .title-colorful цветной
-
           h2.uikit__h2 Сет заголовков
           p.uikit__text Сет из цветного заголовка и обычного, цветной заголовок - обычный параграф, обычный заголовок по умолчанию h2, или можно задать другой, передав его в свойстве tag
           .uikit__component
@@ -108,6 +194,50 @@ block main
               |
               code(class="language-pug").
                 +titles-set({colorful: "colorful", title: "title", tag: "h3"})
+
+        //- Обвязка текста и не только
+        section.uikit__section(id="text-content")
+          h2.uikit__h2 Обвязка текста и не только
+          p.uikit__text Задает общие стили для текста и других элементов, которые могут смешиваться с текстом – кнопки, картинки т.д.
+          .uikit__component
+            p.uikit__text.uikit__text--class .text-content
+            pre
+              |
+              code(class="language-pug").
+                .text-content
+
+        //- Хлебные крошки
+        section.uikit__section(id="breadcrumbs")
+          h2.uikit__h2 Хлебные крошки
+          p.uikit__text свойство current для последней крошки
+          .uikit__component
+            p.uikit__text.uikit__text--class .accordion
+            +breadcrumbs([
+              {
+                href: "index.html",
+                title: "Home",
+              },
+              {
+                href: "about-us.html",
+                title: "About us",
+                current: true,
+              },
+            ])
+
+            pre
+              |
+              code(class="language-pug").
+                +breadcrumbs([
+                  {
+                    href: "index.html",
+                    title: "Home",
+                  },
+                  {
+                    href: "about-us.html",
+                    title: "About us",
+                    current: true,
+                  },
+                ])
 
         //- Аккордион
         section.uikit__section(id="accordion")
@@ -131,8 +261,45 @@ block main
             pre
               |
               code(class="language-pug").
-                +accordion([{button: "btn", text: "txt"}])
+                +accordion([{button: "btn text", text: "txt"}])
 
+        //- Кнопки
+        section.uikit__section(id="buttons")
+          h2.uikit__h2 Кнопки
+          .uikit__component
+            p.uikit__text.uikit__text--class .btn \ .btn--transparent
+            +btn({text: "Кнопка"})
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Текст", href: "#"})
+          .uikit__component
+            p.uikit__text.uikit__text--class .btn
+            +btn({text: "Полупрозрачная", href: "#", isExternal: true}).btn--transparent
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Полупрозрачная", href: "#", isExternal: true}).btn--transparent(aria-label="Просто ссылка")
+          .uikit__component
+            p.uikit__text.uikit__text--class .btn \ disabled
+            +btn({text: "Текст"})(disabled)
+            pre
+              |
+              code(class="language-pug").
+                +btn({text: "Текст"})(disabled)
+
+        //- Свойство
+        section.uikit__section(id="property")
+          h2.uikit__h2 Свойство
+          //- p.uikit__text
+          p.uikit__text.uikit__text--class .property
+          .property property
+          .property.property--little  property little
+          pre
+            |
+            code(class="language-pug").
+              .property property
+              .property.property--little  property little
 
         //- Видео
         section.uikit__section(id="video")
@@ -143,63 +310,90 @@ block main
             const video = {
               src: "img/video/ee.mp4",
               poster: "img/video/poster@2x.webp",
+              tag: "VR Service",
+              description: "How to get started",
             }
-          style.
-            .asdfkjasdfhooaiudfhuh {
-              width: 60%;
-            }
-
-
-          .asdfkjasdfhooaiudfhuh
-            +video(video)
+          +video(video)
           pre
             |
             code(class="language-pug").
-              +video({src: "img/video/ee.mp4", poster: "img/video/poster@2x.webp"})
+              +video({
+                src: "img/video/ee.mp4",
+                poster: "img/video/poster@2x.webp",
+                tag: "VR Service",
+                description: "How to get started",
+              })
 
+        //- Превью статьи
+        section.uikit__section(id="article-preview")
+          h2.uikit__h2 Превью статьи
+          //- p.uikit__text
+          p.uikit__text.uikit__text--class .article-preview
+          +article-preview({
+            path: "content/previews",
+            name: "14",
+            format: "jpg",
+            width: "102",
+            height: "66",
+            alt: "preview.",
+            property: "VR Education",
+            title: "The Future of&nbsp;Education: How VR&nbsp;is&nbsp;Revolutionizing the Classroom",
+            link: "#",
+          })
+          pre
+            |
+            code(class="language-pug").
+              +article-preview({
+                path: "content/previews",
+                name: "14",
+                format: "jpg",
+                width: "102",
+                height: "66",
+                alt: "preview.",
+                property: "VR Education",
+                title: "The Future of&nbsp;Education: How VR&nbsp;is&nbsp;Revolutionizing the Classroom",
+                link: "#",
+              })
 
-        //- Модальные окна
-        section.uikit__section(id="modals")
-          h2.uikit__h2 Модальные окна
-          .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--feedback
-            +btn({text: "modal-feedback"})(data-open-modal="feedback")
-            pre
-              |
-              code(class="language-pug").
-                +btn({text: "modal-feedback"})(data-open-modal="feedback")
-          .uikit__component
-            p.uikit__text.uikit__text--class .modal \ .modal--success
-            +btn({text: "modal-success"})(data-open-modal="success")
-            pre
-              |
-              code(class="language-pug").
-                +btn({text: "modal-success"})(data-open-modal="success")
+        //- Сетка бокового меню
+        section.uikit__section(id="aside")
+          h2.uikit__h2 Сетка бокового меню
+          p.uikit__text Задана сетка и стили для элементов списка (паддинги и бордер)
+          p.uikit__text.uikit__text--class .aside
+          pre
+            |
+            code(class="language-pug").
+              .aside
 
-        //- Кнопки
-        section.uikit__section(id="buttons")
-          h2.uikit__h2 Кнопки
-          .uikit__component
-            p.uikit__text.uikit__text--class .btn
-            +btn({text: "Кнопка"})
-            pre
-              |
-              code(class="language-pug").
-                +btn({text: "Текст", href: "#"})
-          .uikit__component
-            p.uikit__text.uikit__text--class .btn
-            +btn({text: "Ссылка", href: "#", isExternal: true})
-            pre
-              |
-              code(class="language-pug").
-                +btn({text: "Текст", href: "#", isExternal: true})(aria-label="Просто ссылка")
-          .uikit__component
-            p.uikit__text.uikit__text--class .btn \ disabled
-            +btn({text: "Текст"})(disabled)
-            pre
-              |
-              code(class="language-pug").
-                +btn({text: "Текст"})(disabled)
+        //- Инфокарточка
+        section.uikit__section(id="info-card")
+          h2.uikit__h2 Инфокарточка
+          //- p.uikit__text
+          p.uikit__text.uikit__text--class .info-card
+          +info-card({
+            icon: "card-software",
+            title: "VR Development",
+            text: "From concept to&nbsp;creation, our team of&nbsp;VR developers will bring your vision to&nbsp;life."
+          })
+          pre
+            |
+            code(class="language-pug").
+              +info-card({
+                icon: "card-software",
+                title: "VR Development",
+                text: "From concept to&nbsp;creation, our team of&nbsp;VR developers will bring your vision to&nbsp;life."
+              })
+
+        //- Карточка цены
+        section.uikit__section(id="card-price")
+          h2.uikit__h2 Карточка цены
+          //- p.uikit__text
+          p.uikit__text.uikit__text--class .card-price
+          +card-price()
+          pre
+            |
+            code(class="language-pug").
+              +card-price()
 
         //- Элементы форм
         section.uikit__section(id="forms")
