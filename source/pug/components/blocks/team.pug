@@ -51,16 +51,16 @@ mixin team()
 
   .team
     .container
-      .team__header
+      .team__grid
         +titles-set(titles)
         +btn({href: "#", text: "see all", isExternal: true}).btn--transparent
-      .team__swiper
-        ul.team__list
-          each person in persons
-            li.team__slide
-              .team__card
-                +picture(person.path, person.name, person.format, person.width, person.height, person.alt)
-                .team__person
-                  .team__name!= person.person
-                  .team__post!= person.post
+        .team__swiper
+          ul.team__list
+            each person in persons
+              li.team__slide
+                .team__card
+                  +picture(person.path, person.name, person.format, person.width, person.height, person.alt)
+                  .team__person
+                    .team__name!= person.person
+                    .team__post!= person.post
 
