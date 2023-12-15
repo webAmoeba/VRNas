@@ -35,7 +35,7 @@ function animatePartners() {
 
 
 // Функция распределения иконок по полукругу
-function arrangeIconsCircle() {
+function arrangePartners() {
   if (howMany === 7) {
     elements[0].style = `transform: rotate(${minDegree}deg);`;
     icons[0].style = `transform: rotate(${minDegree * -1}deg);`;
@@ -78,4 +78,4 @@ function arrangeIconsCircle() {
   }
 }
 
-export {arrangeIconsCircle, animatePartners};
+export {arrangePartners, animatePartners};

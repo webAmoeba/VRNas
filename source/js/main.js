@@ -5,10 +5,9 @@ import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initHeader} from './modules/header/init-header.js';
 import {initAccordions} from './modules/accordion/init-accordion.js';
-import {watePlayVideo} from './modules/video.js';
-import {arrangeIconsCircle} from './modules/partners.js';
+import {playVideo} from './modules/video.js';
+import {arrangePartners, animatePartners} from './modules/partners.js';
 import {blurHeader} from './modules/header.js';
-import {animatePartners} from './modules/partners.js';
 import './modules/parallax.js';
 // ---------------------------------
 
@@ -23,8 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
   initHeader();
   initAccordions();
-  watePlayVideo();
-  arrangeIconsCircle();
+  playVideo();
+  arrangePartners();
   blurHeader();
   animatePartners();
 

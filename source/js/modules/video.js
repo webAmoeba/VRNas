@@ -3,7 +3,7 @@ const video = document.getElementById('video');
 const btn = document.getElementById('play-video');
 
 
-function watePlayVideo() {
+function playVideo() {
   if (video && btn) {
     btn.addEventListener('click', () => {
       video.play();
@@ -12,4 +12,4 @@ function watePlayVideo() {
   }
 }
 
-export {watePlayVideo};
+export {playVideo};
