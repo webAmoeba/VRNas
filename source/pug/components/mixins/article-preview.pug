@@ -1,5 +1,5 @@
 mixin article-preview(preview)
-  .article-preview
+  a.article-preview(href=preview.link)
     .article-preview__pic
       +picture(preview.path, preview.name, preview.format, preview.width, preview.height, preview.alt)
     .article-preview__text

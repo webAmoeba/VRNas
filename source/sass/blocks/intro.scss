@@ -130,7 +130,6 @@
     display: flex;
     justify-content: end;
     align-items: end;
-    background-color: rgba(255, 0, 0, 0.2);
     pointer-events: none;
 
     @include vp-1023 {
