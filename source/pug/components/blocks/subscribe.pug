@@ -1,7 +1,7 @@
 mixin subscribe()
   section.subscribe(data-form-validate="data-form-validate", data-callback="base")
-    form(method="post" action="https://echo.htmlacademy.ru/")#subscribe
-      .container
+    .container
+      form(method="post" action="https://echo.htmlacademy.ru/")#subscribe
         .custom-input(data-validate-type="email" data-message-base="The field must be filled in" data-required="data-required" data-message-extra="Check that the field is filled in correctly")
           label.subscribe__label(for="input-email") Subscribe to&nbsp;our newsletter for latest updates
           .subscribe__input-wrapper#input-email

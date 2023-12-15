@@ -2,11 +2,13 @@ function successNotification() {
   const element = document.createElement('p');
   element.textContent = 'Your message has sent';
 
-  const input = document.getElementById('input-email');
-  input.parentNode.replaceChild(element, input);
+  const inputWrapper = document.getElementById('input-email');
+  const input = inputWrapper.querySelector('input');
+  inputWrapper.parentNode.replaceChild(element, inputWrapper);
 
   setTimeout(function () {
-    element.parentNode.replaceChild(input, element);
+    element.parentNode.replaceChild(inputWrapper, element);
+    input.value = '';
   }, 3000);
 }
 
