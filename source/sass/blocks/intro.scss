@@ -14,6 +14,7 @@
     align-items: start;
 
     @include vp-1023 {
+      position: relative;
       grid-template-areas:
         "title title"
         "txt pic";
@@ -45,6 +46,10 @@
     position: relative;
     grid-area: txt;
     padding-bottom: 40px;
+
+    @include vp-1023 {
+      position: static;
+    }
 
     @include vp-767 {
       margin-top: 12px;
@@ -115,15 +120,31 @@
   }
 
   &__movable {
+    z-index: 1;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 96%;
     height: 66%;
-
     display: flex;
     justify-content: end;
     align-items: end;
+    background-color: rgba(255, 0, 0, 0.2);
+
+    @include vp-1023 {
+      margin: 0;
+      justify-content: end;
+      align-items: end;
+      width: 80%;
+      height: 500px;
+    }
+
+    @include vp-767 {
+      height: 400px;
+      width: 100%;
+      justify-content: start;
+      align-items: center;
+    }
 
     img {
       width: 196px;
