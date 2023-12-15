@@ -4,7 +4,7 @@ include ../components
 
 block variables
 
-html(lang="ru")
+html(lang="en")
   head
     title= title
     meta(charset="utf-8")
@@ -38,8 +38,8 @@ html(lang="ru")
     link(rel="stylesheet", href="css/style.min.css")
 
   body
-    .visually-hidden
-      include ../../../../build/img/sprite-gradient.svg
+    //- .visually-hidden
+    //-   include ../../../../build/img/sprite-gradient.svg
     .wrapper(class=wrapperMods)
       if (hasHeader)
         +header(headerMods, currentUrl)

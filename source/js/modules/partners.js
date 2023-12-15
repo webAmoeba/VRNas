@@ -1,6 +1,6 @@
-const elements = document.querySelectorAll('#partner-icon-wrapper');
-const icons = document.querySelectorAll('#partner-icon');
-const svgs = document.querySelectorAll('#partner-svg');
+const elements = document.querySelectorAll('.partners__element-wrapper');
+const icons = document.querySelectorAll('.partners__icon-wrapper');
+const svgs = document.querySelectorAll('.partners__icon-wrapper svg');
 const howMany = elements.length;
 const other = howMany - 2;
 const lastIndex = elements.length - 1;
