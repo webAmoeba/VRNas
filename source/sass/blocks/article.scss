@@ -57,6 +57,7 @@
     max-height: 528px;
     object-fit: contain;
     margin-bottom: 6px;
+    user-select: none;
 
     @include vp-1023 {
       margin: 0;
@@ -124,6 +125,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include hover-focus {
+      opacity: 0.8;
+      outline-offset: 4px;
+    }
 
     svg {
       max-height: 23px;

@@ -46,8 +46,17 @@
     display: block;
     padding: 4px 0;
 
+    @include hover-focus {
+      opacity: 0.8;
+    }
+
     &--span {
       font-weight: 400;
+
+      @include hover-focus {
+        opacity: 1;
+        cursor: default;
+      }
     }
   }
 }

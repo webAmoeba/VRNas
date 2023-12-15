@@ -8,4 +8,14 @@
     width: 101px;
     height: 30px;
   }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  &--is-active {
+    @include hover-focus {
+      opacity: 1;
+    }
+  }
 }

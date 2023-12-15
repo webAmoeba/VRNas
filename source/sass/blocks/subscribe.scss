@@ -79,6 +79,10 @@
       justify-content: center;
       cursor: pointer;
 
+      @include hover-focus {
+        opacity: 0.8;
+      }
+
       border: none;
       background: rgba(255, 255, 255, 0.21);
     }

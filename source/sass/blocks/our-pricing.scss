@@ -197,6 +197,7 @@
       width: auto;
       max-height: 580px;
       object-fit: contain;
+      user-select: none;
 
       @include vp-767 {
         max-height: 370px;

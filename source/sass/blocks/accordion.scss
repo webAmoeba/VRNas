@@ -26,6 +26,10 @@
     border: none;
     background-color: transparent;
 
+    @include hover-focus {
+      opacity: 0.8;
+    }
+
     &::before {
       content: "";
       position: absolute;

@@ -92,6 +92,7 @@
       width: 100%;
       object-fit: contain;
       max-height: 700px;
+      user-select: none;
     }
   }
 
@@ -119,6 +120,7 @@
       width: 196px;
       height: 128px;
       object-fit: cover;
+      user-select: none;
 
       @include vp-1023 {
         width: 170px;

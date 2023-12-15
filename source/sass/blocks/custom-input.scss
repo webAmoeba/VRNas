@@ -1,14 +1,20 @@
 .custom-input,
 .custom-textarea {
+  input {
+    &::placeholder {
+      user-select: none;
+    }
+
+    @include hover {
+      opacity: 0.8;
+    }
+  }
+
   &.is-invalid {
     input,
     textarea {
       outline: 2px solid #d9ff00;
       outline-offset: 0;
-
-      &:hover {
-        opacity: 0.8;
-      }
     }
   }
 
