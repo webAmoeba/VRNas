@@ -51,6 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
   }
 
   &__play-btn {
@@ -63,8 +64,9 @@
     background-color: transparent;
     backdrop-filter: blur(8px);
     cursor: pointer;
-    transition: width $trans-default, height  $trans-default;
+    transition: width $trans-default, height  $trans-default, transform $trans-default;
     margin: 0 auto;
+    pointer-events: all;
 
     svg {
       opacity: 0.3;
@@ -96,6 +98,13 @@
     }
   }
 
+  &--ended {
+    &::before {
+      display: block;
+      opacity: 0.9;
+    }
+  }
+
   &__description {
     z-index: 2;
     position: absolute;
@@ -106,9 +115,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-
     padding: 52px 34px;
-
     color: $color-default-white;
 
     @include vp-767 {

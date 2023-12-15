@@ -1,6 +1,6 @@
 mixin video(video)
   .video#video-wrapper
-    video.video__video(width="1200", height="522",  controls, poster=video.poster)#video
+    video.video__video(width="1200", height="522", poster=video.poster)#video
       source(src=video.src, type="video/mp4")
     .video__description#video-description
       .property!= video.tag

@@ -8,7 +8,25 @@ function playVideo() {
     btn.addEventListener('click', () => {
       video.play();
       videoWrapper.classList.add('video--played');
+      videoWrapper.classList.remove('video--ended');
     });
+
+    video.addEventListener('ended', () => {
+      videoWrapper.classList.remove('video--played');
+      videoWrapper.classList.add('video--ended');
+    });
+
+    video.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        videoWrapper.classList.add('video--played');
+        videoWrapper.classList.remove('video--ended');
+      } else {
+        video.pause();
+      }
+    });
+
+
   }
 }
 
