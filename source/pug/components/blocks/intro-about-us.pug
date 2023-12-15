@@ -1,4 +1,16 @@
 mixin intro-about-us()
+  -
+    const breadcrumbs = [
+      {
+        href: "index.html",
+        title: "Home",
+      },
+      {
+        href: "about-us.html",
+        title: "About us",
+        current: true,
+      },
+    ]
   section.intro-about-us&attributes(attributes)
     .intro-about-us__light
       +icon("light-intro-about-us", "449", "147", true)

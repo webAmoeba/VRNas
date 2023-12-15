@@ -9,18 +9,6 @@ block variables
   - const footerMods = ""
   - const currentUrl = "about-us.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
   -
-    const breadcrumbs = [
-      {
-        href: "index.html",
-        title: "Home",
-      },
-      {
-        href: "about-us.html",
-        title: "About us",
-        current: true,
-      },
-    ]
-  -
     const sharp = {
       file: "sharp-about-us",
       width: "990",
@@ -31,7 +19,7 @@ block variables
 block main
   main
     +sharp(sharp).sharp--about-us
-    +intro-about-us(breadcrumbs)
+    +intro-about-us()
     .page-section
       +about-us-block()
     .page-section
