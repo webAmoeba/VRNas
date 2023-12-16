@@ -10,7 +10,7 @@ mixin header(headerMods, currentUrl)
         text: "About us"
       },
       {
-        href: "#",
+        href: "#our-service",
         text: "Service"
       },
       {
@@ -26,7 +26,7 @@ mixin header(headerMods, currentUrl)
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
     .header__for-blur#for-blur
       .header__wave
-        +icon("ewave", "100%", "100%", true)
+        +icon("wave", "736", "354", true)
       .container
         .header__grid
           if(currentUrl === "index.html")
