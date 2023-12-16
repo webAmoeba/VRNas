@@ -39,10 +39,9 @@
     right: 0;
     width: calc(736/1440*100%);
     height: 354px;
-    background: url("../img/svg/electro-waves.svg") no-repeat top right;
-    background-size: 100% 100%;
     pointer-events: none;
     transition: height $trans-default, width $trans-default;
+    overflow: hidden;
 
     @include vp-1023 {
       width: 75%;
@@ -51,6 +50,14 @@
     @include vp-767 {
       width: 99%;
       height: 206px;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 
@@ -128,7 +135,7 @@
       flex-direction: column;
       justify-content: start;
       flex-wrap: nowrap;
-      overflow: scroll;
+      overflow: auto;
     }
   }
 
