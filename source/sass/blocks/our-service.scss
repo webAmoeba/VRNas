@@ -1,6 +1,4 @@
 .our-service {
-  position: relative;
-
   .container {
     position: relative;
   }
@@ -8,14 +6,35 @@
   .our-service__light {
     z-index: -1;
     position: absolute;
+    top: 6px;
     right: 0;
-    top: 0;
-    width: 403px;
-    height: 199px;
+    width: calc(403/1440*100%);
     filter: blur(105px);
 
     @include vp-767 {
       display: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: calc(199/403*100%);
+    }
+  }
+
+  &__light-overflow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -32,7 +51,7 @@
 
   &__text-grid {
     display: grid;
-    grid-template-columns: 44% 56%;
+    grid-template-columns: 44.5% 54.5%;
 
     @include vp-1023 {
       grid-template-columns: 40% 60%;
@@ -54,7 +73,12 @@
   }
 
   .text-content p {
+    padding-top: 6px;
     max-width: 625px;
+
+    @include vp-1023 {
+      padding-top: 0;
+    }
   }
 
   &__cards {
