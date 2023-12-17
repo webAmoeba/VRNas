@@ -12,6 +12,6 @@ mixin section(titles, pic, movable)
               +icon("light-section", "610", "366", true)
           .section__picture
             +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)
-          if movable
-            .section__movable
-              +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='10')
+            if movable
+              .section__movable
+                +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='6')
