@@ -46,7 +46,8 @@ mixin intro()
 
         .intro__picture-wrapper
           .intro__light
-            +icon("light-intro", "567", "340", true)
+            .intro__light-overflow
+              +icon("light-intro", "567", "340", true)
           .intro__picture
             +picture(
               "content/intro",

@@ -193,27 +193,45 @@
   &__light {
     z-index: -1;
     position: absolute;
-    top: 0;
-    right: 0;
     bottom: 0;
-    left: 0;
-    overflow-x: hidden;
+    right: 0;
+    width: calc(567/576*100%);
+    max-width: 100%;
     filter: blur(105px);
+
+    @include vp-767 {
+      margin-right: -16px;
+      margin-left: -16px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: calc(340/567*100%);
+    }
+  }
+
+  &__light-overflow {
+    position: absolute;
+    bottom: 24%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    @include vp-767 {
+      bottom: 20%;
+      overflow: hidden;
+    }
 
     svg {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -45% -32%;
-
-      @include vp-1023 {
-        translate: -50% -50%;
-      }
+      top: 0;
+      right: -20px;
+      width: 100%;
+      height: 100%;
 
       @include vp-767 {
-        translate: -10% -32%;
-        width: 382px;
-        height: 229px;
+        right: -140px;
       }
     }
   }
