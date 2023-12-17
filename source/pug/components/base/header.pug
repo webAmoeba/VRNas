@@ -14,7 +14,7 @@ mixin header(headerMods, currentUrl)
         text: "Service"
       },
       {
-        href: "#",
+        href: "#our-pricing",
         text: "Pricing Plan"
       },
       {
@@ -26,7 +26,15 @@ mixin header(headerMods, currentUrl)
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
     .header__for-blur#for-blur
       .header__wave
-        +icon("wave", "736", "354", true)
+        +picture(
+          "content/wave",
+          "wave",
+          "png",
+          "736",
+          "354",
+          "just decore.",
+        )(aria-hidden="true")
+
       .container
         .header__grid
           if(currentUrl === "index.html")
