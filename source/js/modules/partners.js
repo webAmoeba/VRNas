@@ -22,8 +22,8 @@ function animatePartners() {
   function animateCollection() {
     svgs.forEach((element) => {
       const randomSize = Math.floor(Math.random() * 50) + 50;
-      element.style.width = `${randomSize}%`;
-      element.style.height = `${randomSize}%`;
+      element.style.width = `${randomSize + 10}%`;
+      element.style.height = `${randomSize + 10}%`;
     });
 
     const randomDelay = Math.random() * 2000 + 1000;
