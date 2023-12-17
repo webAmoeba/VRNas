@@ -1,12 +1,86 @@
 .custom-input,
 .custom-textarea {
-  input {
+  position: relative;
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+
+    button {
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      bottom: 3px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity $trans-default;
+
+      @include hover-focus {
+        opacity: 0.8;
+      }
+
+      border: none;
+      background: rgba(255, 255, 255, 0.21);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    translate: 0 -50%;
+    width: 24px;
+    height: 24px;
+  }
+
+  input,
+  textarea {
+    margin: 0;
+    display: block;
+    padding: 14px;
+    width: 100%;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: $color-default-white;
+
+    border: none;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.07);
+
+    transition: opacity $trans-default;
+
     &::placeholder {
-      user-select: none;
+      color: $color-default-white;
     }
 
     @include hover {
       opacity: 0.8;
+    }
+  }
+
+  input[type="email"] {
+    padding: 14px 56px 14px 46px;
+  }
+
+  &__error {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+
+    color: #ff1553;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    @media screen and (max-width: 767px) {
+      bottom: 20px;
     }
   }
 

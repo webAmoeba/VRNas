@@ -8,7 +8,7 @@
     }
   }
 
-  .custom-input {
+  .custom-input label {
     position: relative;
     padding: 38px 74px 30px;
     display: flex;
@@ -35,14 +35,15 @@
       padding: 32px 16px;
     }
 
-    input,
     & > p {
       margin: 0;
       display: block;
       padding: 14px 56px 14px 46px;
       width: 100%;
 
-      font-size: 16px;
+      flex-basis: 365px;
+      font-size: 20px;
+      text-align: center;
       font-style: normal;
       font-weight: 400;
       line-height: 28px;
@@ -52,43 +53,13 @@
       border-radius: 2px;
       background: rgba(255, 255, 255, 0.07);
 
-      &::placeholder {
-        color: $color-default-white;
-      }
-    }
-
-    & > p {
-      font-size: 20px;
-      text-align: center;
-
-      flex-basis: 365px;
-
       @include vp-1023 {
         flex-basis: unset;
       }
     }
-
-    button {
-      position: absolute;
-      top: 3px;
-      right: 3px;
-      bottom: 3px;
-      width: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-
-      @include hover-focus {
-        opacity: 0.8;
-      }
-
-      border: none;
-      background: rgba(255, 255, 255, 0.21);
-    }
   }
 
-  &__label {
+  .custom-input__label {
     margin: 0;
     flex-basis: 520px;
     font-size: 40px;
@@ -114,22 +85,11 @@
     }
   }
 
-  &__input-wrapper {
-    position: relative;
+  .custom-input__input-wrapper {
     flex-basis: 365px;
-    display: flex;
 
     @include vp-1023 {
       flex-basis: unset;
     }
-  }
-
-  &__icon {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    translate: 0 -50%;
-    width: 24px;
-    height: 24px;
   }
 }

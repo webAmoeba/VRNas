@@ -10,7 +10,18 @@ mixin custom-input(options = {})
   - const inputAccept = options.inputAccept ? options.inputAccept : false
 
   .custom-input&attributes(attributes)
-    label
-      if inputLabel
-        span.custom-input__label!= inputLabel
-      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
+    if inputType === "email"
+      label
+        if inputLabel
+          span.custom-input__label!= inputLabel
+        .custom-input__input-wrapper#input-email
+          +icon("letter", "24", "24").custom-input__icon
+          input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept, autocomplete="off", required)
+          button(type="submit")
+            span.visually-hidden send your email
+            +icon("plane", "16", "16")
+    else
+      label
+        if inputLabel
+          span.custom-input__label!= inputLabel
+        input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
