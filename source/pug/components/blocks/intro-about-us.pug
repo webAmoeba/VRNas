@@ -13,7 +13,8 @@ mixin intro-about-us()
     ]
   section.intro-about-us&attributes(attributes)
     .intro-about-us__light
-      +icon("light-intro-about-us", "449", "147", true)
+      .intro-about-us__light-overflow
+        +icon("light-intro-about-us", "449", "147", true)
     .container
       .intro-about-us__grid
         h1.title.title--h1 About Us
