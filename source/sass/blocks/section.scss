@@ -1,4 +1,8 @@
 .section {
+  .container {
+    position: relative;
+  }
+
   &__grid {
     display: grid;
     justify-content: space-between;
@@ -45,29 +49,14 @@
   }
 
   &__picture-wrapper {
-    position: relative;
     grid-area: pic;
     height: 100%;
 
     @include vp-767 {
+      position: relative;
       margin-top: 48px;
-    }
-
-    &::before {
-      z-index: -2;
-      content: "";
-      position: absolute;
-      bottom: 34px;
-      left: 50%;
-      translate: -50% 0;
-      height: 80%;
-      width: 80%;
-      max-width: 400px;
-      background-color: $color-greyscale-black-80;
-
-      @include vp-767 {
-        bottom: 28px;
-      }
+      margin-left: -16px;
+      margin-right: -16px;
     }
   }
 
@@ -81,10 +70,25 @@
     min-height: 200px;
     padding-bottom: 34px;
 
+
+    &::before {
+      z-index: -2;
+      content: "";
+      position: absolute;
+      bottom: 34px;
+      right: 25px;
+      height: 80%;
+      width: 80%;
+      max-width: 400px;
+      background-color: $color-greyscale-black-80;
+
+      @include vp-767 {
+        bottom: 28px;
+      }
+    }
+
     @include vp-767 {
-      overflow-x: hidden;
       padding-bottom: 28px;
-      width: 100%;
     }
 
     img {
@@ -137,38 +141,42 @@
   &__light {
     z-index: -1;
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
-    bottom: 0;
-    left: 0;
+    translate: 0 -50%;
+    width: calc(610/1440*100%);
     filter: blur(105px);
 
-    @include vp-767 {
-      overflow-x: hidden;
+    @include vp-1279 {
+      top: 60%;
     }
+
+    @include vp-767 {
+      top: 50%;
+      width: 100%;
+      translate: 0 -40%;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: calc(366/610*100%);
+    }
+  }
+
+  &__light-overflow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 
     svg {
       position: absolute;
-      top: 50%;
-      right: -120px;
-      translate: 0 -50%;
-      width: 610px;
-
-      @include vp-1279 {
-        right: -50px;
-        width: 100%;
-      }
-
-      @include vp-1023 {
-        right: -24px;
-      }
-
-      @include vp-767 {
-        right: 50%;
-        translate: 50% -50%;
-        width: 120%;
-        height: auto;
-      }
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -186,34 +194,30 @@
       }
     }
 
-    .section__light svg {
-      right: unset;
-      left: -120px;
-
-      @include vp-1279 {
-        left: -50px;
-      }
-
-      @include vp-1023 {
-        left: -24px;
-      }
-
-      @include vp-767 {
-        left: 50%;
-        translate: -50% -50%;
-      }
-    }
-
     .section__picture-wrapper {
       @include vp-767 {
         order: -1;
-        margin: 0;
+        margin-top: 0;
         margin-bottom: 48px;
       }
 
       &::before {
         left: 40%;
       }
+    }
+
+    .section__light {
+      right: unset;
+      left: 90px;
+
+      @include vp-1279 {
+        left: 0;
+      }
+    }
+
+    .section__picture::before {
+      right: unset;
+      left: 25px;
     }
   }
 }
