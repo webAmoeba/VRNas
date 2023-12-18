@@ -1,10 +1,26 @@
 const header = document.getElementById('main-header');
 const container = document.getElementById('for-blur');
+let isFunctionExecuted = false;
+
+// Задает и снимает стилевый класс непрозрачного фона
+function checkPosition(scrollPosition) {
+  if (scrollPosition > 10) {
+    header.classList.add('header--opaque');
+  } else {
+    header.classList.remove('header--opaque');
+  }
+}
+
+if (!isFunctionExecuted) {
+  const scrollPosition = window.scrollY;
+  isFunctionExecuted = true;
+  checkPosition(scrollPosition);
+}
 
 function blurHeader() {
   window.addEventListener('scroll', function () {
-    const scrollPosition = window.scrollY;
     let isScrolling;
+    const scrollPositionLive = window.scrollY;
 
     container.classList.add('header__for-blur--blured');
 
@@ -13,13 +29,7 @@ function blurHeader() {
     isScrolling = setTimeout(function () {
       container.classList.remove('header__for-blur--blured');
     }, 300);
-
-    // Задает и снимает стилевый класс непрозрачного фона
-    if (scrollPosition > 10) {
-      header.classList.add('header--opaque');
-    } else {
-      header.classList.remove('header--opaque');
-    }
+    checkPosition(scrollPositionLive);
   });
 }
 
