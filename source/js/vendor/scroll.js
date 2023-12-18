@@ -66,7 +66,6 @@ const generateTimeline = () => {
       return aIndex - bIndex;
     });
 
-    console.log(section.dataset.scrub)
     const tl = window.gsap.timeline({
       scrollTrigger: {
         trigger: section,

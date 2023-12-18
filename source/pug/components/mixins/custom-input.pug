@@ -11,9 +11,9 @@ mixin custom-input(options = {})
 
   .custom-input&attributes(attributes)
     if inputType === "email"
-      label
+      .custom-input__grid
         if inputLabel
-          span.custom-input__label!= inputLabel
+          label.custom-input__label(for=inputId)!= inputLabel
         .custom-input__input-wrapper#input-email
           +icon("letter", "24", "24").custom-input__icon
           input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept, autocomplete="off", required)
