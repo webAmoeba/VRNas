@@ -66,6 +66,7 @@
     width: 46px;
     height: 46px;
     line-height: 0;
+    transition: opacity $trans-default;
 
     @include hover-focus {
       opacity: 0.8;
@@ -129,6 +130,7 @@
     display: flex;
     gap: 8px;
     color: inherit;
+    transition: opacity $trans-default;
 
     @include hover-focus {
       opacity: 0.8;

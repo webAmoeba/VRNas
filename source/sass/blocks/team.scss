@@ -65,6 +65,7 @@
     border-image: $gradient-card;
     border-image-slice: 1;
     background-color: rgba(37, 37, 50, 0.6);
+    transition: border $trans-default;
 
     &::before {
       content: "";

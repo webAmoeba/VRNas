@@ -70,6 +70,7 @@
 
     svg {
       opacity: 0.3;
+      transition: opacity $trans-default;
     }
 
     @include vp-1023 {
