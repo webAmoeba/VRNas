@@ -1,17 +1,21 @@
 .header {
-  color: $color-default-white;
-  transition: height $trans-default;
   z-index: 2;
+
+  color: $color-default-white;
+
+  transition: height $trans-default;
 
   &--sticky {
     position: sticky;
     top: 0;
     left: 0;
+
     width: 100%;
   }
 
   .header__for-blur {
     padding: 30px 0 32px;
+
     transition: height $trans-default, filter $trans-default;
 
     @include vp-1023 {
@@ -19,8 +23,8 @@
     }
 
     @include vp-767 {
-      padding: 30px 0 10px;
       height: 93px;
+      padding: 30px 0 10px;
 
       .container {
         height: 100%;
@@ -37,11 +41,14 @@
     position: absolute;
     top: 0;
     right: 0;
+
     width: calc(736/1440*100%);
     height: 354px;
-    pointer-events: none;
-    transition: height $trans-default, width $trans-default;
     overflow: hidden;
+
+    transition: height $trans-default, width $trans-default;
+
+    pointer-events: none;
 
     @include vp-1023 {
       width: 75%;
@@ -52,13 +59,13 @@
       height: 206px;
     }
 
-    img {
+    svg {
       position: absolute;
-      right: 0;
       top: 0;
+      right: 0;
+
       width: 100%;
       height: 100%;
-      object-fit: fill;
     }
   }
 
@@ -78,8 +85,8 @@
     flex-shrink: 0;
 
     @include vp-767 {
-      margin-top: 3px;
       align-self: start;
+      margin-top: 3px;
     }
   }
 
@@ -87,14 +94,17 @@
     display: grid;
     grid-template-columns: 106px 1fr;
     gap: 60px;
+
     align-items: start;
 
     @include vp-767 {
       position: relative;
+
       display: flex;
       flex-direction: column;
       align-items: stretch;
       gap: 20px;
+
       height: 100%;
     }
   }
@@ -111,31 +121,33 @@
       flex-grow: 1;
       flex-direction: column;
       align-items: stretch;
-      gap: 10px;
-      opacity: 0;
-      visibility: hidden;
       overflow: hidden;
+
+      visibility: hidden;
+      opacity: 0;
 
       transition:
         visibility $trans-default,
         opacity $trans-default;
+      gap: 10px;
     }
   }
 
   &__list {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0;
     padding: 0;
-    gap: 4px 18px;
+
     list-style: none;
+    gap: 4px 18px;
 
     @include vp-767 {
       flex-direction: column;
-      justify-content: start;
       flex-wrap: nowrap;
+      justify-content: start;
       overflow: auto;
     }
   }
@@ -147,6 +159,7 @@
   &__link {
     display: block;
     padding: 11px 23px;
+
     transition: opacity $trans-default;
 
     &--gradient-border {
@@ -164,8 +177,8 @@
       font-weight: 500;
 
       @include hover-focus {
-        opacity: 1;
         cursor: default;
+        opacity: 1;
       }
     }
   }
@@ -177,11 +190,13 @@
       position: absolute;
       top: 12px;
       right: 0;
-      width: 32px;
-      height: 32px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 32px;
+      height: 32px;
+
       background: transparent;
       border-width: 1px;
       border-style: solid;
@@ -196,14 +211,15 @@
     .header__for-blur {
       height: 100vh;
       /* stylelint-disable-next-line */
-      height: 100dvh;
+      height: 100svh;
+
       background-color: $color-default-black;
     }
 
     .header__nav {
-      opacity: 1;
-      visibility: visible;
       background-color: $color-default-black;
+      visibility: visible;
+      opacity: 1;
     }
 
     .header__toggle {
@@ -212,24 +228,28 @@
       }
 
       &::before {
-        position: absolute;
         content: "";
-        width: 18px;
-        height: 2px;
-        background-color: $color-default-white;
+        position: absolute;
         top: 50%;
         left: 50%;
+
+        width: 18px;
+        height: 2px;
+
+        background-color: $color-default-white;
         transform: translate(-50%, -50%) rotate(45deg);
       }
 
       &::after {
-        position: absolute;
         content: "";
-        width: 18px;
-        height: 2px;
-        background-color: $color-default-white;
+        position: absolute;
         top: 50%;
         left: 50%;
+
+        width: 18px;
+        height: 2px;
+
+        background-color: $color-default-white;
         transform: translate(-50%, -50%) rotate(-45deg);
       }
     }
