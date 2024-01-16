@@ -1,5 +1,6 @@
 .footer {
   position: relative;
+
   padding-top: 82px;
 
   @include vp-1023 {
@@ -11,6 +12,8 @@
   }
 
   .logo {
+    flex-shrink: 0;
+    align-self: start;
     padding-top: 0;
 
     @include vp-1023 {
@@ -21,6 +24,7 @@
   &__grid {
     display: flex;
     gap: 20px;
+
     padding-bottom: 33px;
 
     @include vp-1023 {
@@ -30,22 +34,24 @@
 
     @include vp-767 {
       grid-template-columns: 4fr 5fr;
+
       padding-bottom: 8px;
     }
   }
 
   &__first-column {
-    flex-basis: 402px;
-    flex-shrink: 2;
     display: flex;
+    flex-shrink: 2;
+    flex-basis: 402px;
     flex-direction: column;
-    gap: 40px;
     justify-content: space-between;
     align-items: start;
     padding-bottom: 35px;
+    gap: 40px;
 
     @include vp-1023 {
       grid-column: 1/-1;
+
       flex-direction: row;
       align-items: center;
     }
@@ -65,7 +71,9 @@
     flex-shrink: 0;
     width: 46px;
     height: 46px;
+
     line-height: 0;
+
     transition: opacity $trans-default;
 
     @include hover-focus {
@@ -77,6 +85,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
     padding-top: 2px;
 
     @include vp-767 {
@@ -101,6 +110,7 @@
 
   &__section-title {
     margin: 0;
+
     font-size: $fz-default;
     line-height: 28px;
     font-weight: 600;
@@ -108,11 +118,12 @@
   }
 
   &__links-list {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
     gap: 16px;
   }
 
@@ -129,7 +140,9 @@
   &__link {
     display: flex;
     gap: 8px;
+
     color: inherit;
+
     transition: opacity $trans-default;
 
     @include hover-focus {
@@ -139,7 +152,9 @@
 
   &__copy {
     position: relative;
+
     padding: 32px 0 40px;
+
     text-align: center;
 
     @include vp-767 {
@@ -149,22 +164,25 @@
     &::before {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 1px;
       top: 0;
       left: 0;
+
+      width: 100%;
+      height: 1px;
+
       background-image: $gradient;
       opacity: 0.5;
     }
   }
 
   &__waves {
-    z-index: -1;
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 100%;
+    z-index: -1;
+
     width: 70.2%;
+    height: 100%;
     overflow: hidden;
 
     @include vp-1023 {
@@ -172,8 +190,8 @@
     }
 
     @include vp-767 {
-      height: 314px;
       width: 100%;
+      height: 314px;
 
       svg {
         min-width: 637px;
