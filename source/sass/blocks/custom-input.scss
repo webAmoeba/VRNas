@@ -4,6 +4,7 @@
 
   &__input-wrapper {
     position: relative;
+
     display: flex;
 
     button {
@@ -11,47 +12,54 @@
       top: 3px;
       right: 3px;
       bottom: 3px;
-      width: 50px;
+
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      width: 50px;
+
+      background: rgba(255, 255, 255, 0.21);
+      border: none;
       cursor: pointer;
+
       transition: opacity $trans-default;
 
       @include hover-focus {
         opacity: 0.8;
       }
-
-      border: none;
-      background: rgba(255, 255, 255, 0.21);
     }
   }
 
   &__icon {
     position: absolute;
-    left: 14px;
     top: 50%;
-    translate: 0 -50%;
+    left: 14px;
+
     width: 24px;
     height: 24px;
+    translate: 0 -50%;
+
+    @media (max-width: 350px) {
+      display: none;
+    }
   }
 
   input,
   textarea {
-    margin: 0;
     display: block;
-    padding: 14px;
     width: 100%;
+    margin: 0;
+    padding: 14px;
 
-    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-size: 16px;
     line-height: 28px;
+    font-weight: 400;
     color: $color-default-white;
 
+    background: rgba(255, 255, 255, 0.07);
     border: none;
     border-radius: 2px;
-    background: rgba(255, 255, 255, 0.07);
 
     transition: opacity $trans-default;
 
@@ -66,6 +74,10 @@
 
   input[type="email"] {
     padding: 14px 56px 14px 46px;
+
+    @media (max-width: 350px) {
+      padding: 14px 56px 14px 6px;
+    }
   }
 
   &__error {
@@ -107,24 +119,27 @@
     position: absolute;
     right: 74px;
     bottom: 5px;
-    font-weight: 500;
+
     font-size: 20px;
     line-height: 28px;
+    font-weight: 500;
 
     @include vp-1279 {
       right: 50px;
     }
 
     @include vp-1023 {
-      font-size: 18px;
-      bottom: 2px;
       right: 34px;
+      bottom: 2px;
+
+      font-size: 18px;
     }
 
     @include vp-767 {
-      font-size: 16px;
       right: 16px;
       bottom: -30px;
+
+      font-size: 16px;
     }
 
     &.is-invalid {
