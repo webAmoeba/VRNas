@@ -1,12 +1,13 @@
-.intro-about-us {
+.simple-intro {
   position: relative;
 
   &__grid {
     position: relative;
-    padding: 78px 0 76px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 78px 0 76px;
     gap: 28px;
 
     @include vp-767 {
@@ -18,8 +19,10 @@
       position: absolute;
       bottom: 0;
       left: 0;
+
       width: 100%;
       height: 1px;
+
       background-image: $gradient;
       opacity: 0.5;
     }
@@ -34,16 +37,19 @@
   }
 
   &__light {
-    z-index: -1;
     position: absolute;
     top: 53%;
     left: 50%;
-    translate: -50% -50%;
+    z-index: -1;
+
     width: 449px;
+
     filter: blur(55px);
+    translate: -50% -50%;
 
     @include vp-767 {
       top: 50%;
+
       width: 299px;
     }
 
@@ -53,6 +59,7 @@
 
     &::before {
       content: "";
+
       display: block;
       padding-bottom: calc(147/449*100%);
     }
@@ -62,6 +69,7 @@
     position: absolute;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
 
@@ -69,6 +77,7 @@
       position: absolute;
       top: 0;
       left: 0;
+
       width: 100%;
       height: 100%;
     }

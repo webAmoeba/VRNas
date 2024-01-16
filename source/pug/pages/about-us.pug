@@ -14,12 +14,24 @@ block variables
       width: "990",
       height: "721",
     }
+  -
+    const breadcrumbs = [
+      {
+        href: "index.html",
+        title: "Home",
+      },
+      {
+        href: "about-us.html",
+        title: "About us",
+        current: true,
+      },
+    ]
 
 
 block main
   main
     +sharp(sharp).sharp--about-us
-    +intro-about-us()
+    +simple-intro(breadcrumbs, "About Us")
     .page-section
       +about-us-block()
     .page-section

@@ -48,6 +48,8 @@ block main
             li
               a(href="#card-price") Карточка цены
             li
+              a(href="#simple-intro") Простое интро
+            li
               a(href="#forms") Элементы форм
 
       //----------------------------------------------
@@ -392,6 +394,29 @@ block main
             |
             code(class="language-pug").
               +card-price()
+
+        //- Простое интро
+        section.uikit__section(id="simple-intro")
+          h2.uikit__h2 Простое интро
+          p.uikit__text Где breadcrumbs это массив объектов вида: { href: "index.html", title: "Home", }, { href: "about-us.html", title: "About us", current: true, }
+          p.uikit__text.uikit__text--class .simple-intro
+          -
+            const breadcrumbs = [
+              {
+                href: "index.html",
+                title: "Home",
+              },
+              {
+                href: "about-us.html",
+                title: "About us",
+                current: true,
+              },
+            ]
+          +simple-intro(breadcrumbs, "About Us")
+          pre
+            |
+            code(class="language-pug").
+              +simple-intro(breadcrumbs, "About Us")
 
         //- Элементы форм
         section.uikit__section(id="forms")
