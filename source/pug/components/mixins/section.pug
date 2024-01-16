@@ -7,7 +7,7 @@ mixin section(titles, pic, movable)
         .text-content
           block
         .section__picture-wrapper
-          .section__picture(data-parallax-mouse, data-movement='10', data-duration="1")
+          .section__picture(data-parallax-mouse, data-movement='46', data-duration="1")
             .section__background-pic
             .section__light
               .section__light-overflow
@@ -15,4 +15,4 @@ mixin section(titles, pic, movable)
             +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)(class="section__img")
             if movable
               .section__movable
-                +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='7')
+                +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='46')
