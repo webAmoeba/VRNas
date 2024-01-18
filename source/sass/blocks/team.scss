@@ -2,6 +2,7 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     align-items: end;
     gap: 42px 20px;
     grid-template-areas:
@@ -44,11 +45,12 @@
   }
 
   &__list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     display: grid;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
     grid-template-columns: repeat(auto-fit, 292px);
     gap: 10px;
 
@@ -60,15 +62,18 @@
 
   &__slide {
     position: relative;
+
+    background-color: rgba(37, 37, 50, 0.6);
     border-width: 1px;
     border-style: solid;
     border-image: $gradient-card;
     border-image-slice: 1;
-    background-color: rgba(37, 37, 50, 0.6);
+
     transition: border $trans-default;
 
     &::before {
       content: "";
+
       display: block;
       padding-top: calc(389/293*100%);
     }
@@ -85,9 +90,11 @@
     right: 8px;
     bottom: 8px;
     left: 8px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: $color-default-white;
 
     picture {
@@ -96,6 +103,7 @@
       right: 0;
       bottom: 0;
       left: 0;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -104,7 +112,9 @@
 
     img {
       object-fit: contain;
+
       max-height: 100%;
+
       user-select: none;
     }
 
@@ -115,17 +125,19 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: linear-gradient(180deg, rgba(50, 70, 188, 0.00) 0%, #192883 100%);
+
+      background: linear-gradient(180deg, rgba(50, 70, 188, 0) 0%, #192883 100%);
     }
   }
 
   &__person {
-    z-index: 1;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,14 +146,17 @@
   }
 
   &__name {
-    font-weight: 600;
-    color: $color-default-white;
     margin-top: auto;
+
+    font-weight: 600;
+    text-align: center;
+    color: $color-default-white;
   }
 
   &__post {
     font-size: 12px;
-    font-weight: 400;
     line-height: 20px;
+    font-weight: 400;
+    text-align: center;
   }
 }

@@ -1,13 +1,14 @@
 .title {
   margin: 0;
+
   font-size: 48px;
-  font-weight: 600;
   line-height: 58px;
-  letter-spacing: -0.24px;
+  font-weight: 600;
   color: $color-default-white;
+  letter-spacing: -0.24px;
   text-wrap: balance;
 
-  &--article {
+  &.title--article {
     font-size: 40px;
     line-height: 58px;
     letter-spacing: -0.2px;
@@ -24,7 +25,7 @@
     letter-spacing: -0.16px;
   }
 
-  &--h1 {
+  &.title--h1 {
     font-size: 64px;
     line-height: 130%;
     letter-spacing: -0.32px;
@@ -41,7 +42,7 @@
     }
   }
 
-  &--h3 {
+  &.title--h3 {
     font-size: 16px;
     line-height: 28px;
   }

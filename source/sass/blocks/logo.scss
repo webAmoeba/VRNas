@@ -1,7 +1,10 @@
 .logo {
   display: inline-block;
+  flex-shrink: 0;
   padding: 10px 0;
+
   line-height: 0;
+
   user-select: none;
 
   img {
