@@ -1,7 +1,7 @@
 mixin article-preview(preview)
-  a.article-preview(href=preview.link)
+  .article-preview(href=preview.link)
     .article-preview__pic
       +picture(preview.path, preview.name, preview.format, preview.width, preview.height, preview.alt)
-    .article-preview__text
+    a.article-preview__text(href=preview.link)
       .property.property--little!= preview.property
       .article-preview__title!= preview.title

@@ -108,25 +108,26 @@ mixin article()
             section.article__section
               h2.title.title--h3 Share :
               .article__socials
-                a.article__social-link(href="#")
+                a.article__social-link(href="#" target="_blank" rel="nofollow noopener noreferrer")
                   span.visually-hidden x
                   +icon("twitter", "19", "15")
-                a.article__social-link(href="#")
+                a.article__social-link(href="#" target="_blank" rel="nofollow noopener noreferrer")
                   span.visually-hidden x
                   +icon("facebook", "11", "20")
-                a.article__social-link(href="#")
+                a.article__social-link(href="#" target="_blank" rel="nofollow noopener noreferrer")
                   span.visually-hidden x
                   +icon("instagram", "23", "23")
 
-        aside.aside
-          .aside__unit
-            .aside__title Recent Article
-            ul
-              each preview in previews
-                li
-                  +article-preview(preview)
-          .aside__unit
-            .aside__title Popular Hashtag
-            .aside__hashtags
-              each hastag in hashtags
-               .property.property--little!= hastag
+        .article__aside-wrapper
+          aside.aside
+            .aside__unit
+              .aside__title Recent Article
+              ul
+                each preview in previews
+                  li
+                    +article-preview(preview)
+            .aside__unit
+              .aside__title Popular Hashtag
+              .aside__hashtags
+                each hastag in hashtags
+                  .property.property--little!= hastag
