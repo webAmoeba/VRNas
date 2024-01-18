@@ -1,9 +1,25 @@
 .header {
+  position: relative;
   z-index: 2;
+
+  padding: 30px 0 32px;
 
   color: $color-default-white;
 
   transition: height $trans-default;
+
+  @include vp-1023 {
+    padding: 30px 0 20px;
+  }
+
+  @include vp-767 {
+    height: 93px;
+    padding: 30px 0 10px;
+
+    .container {
+      height: 100%;
+    }
+  }
 
   &--sticky {
     position: sticky;
@@ -13,28 +29,24 @@
     width: 100%;
   }
 
-  .header__for-blur {
-    padding: 30px 0 32px;
-
-    transition: height $trans-default, filter $trans-default;
-
-    @include vp-1023 {
-      padding: 30px 0 20px;
-    }
-
-    @include vp-767 {
-      height: 93px;
-      padding: 30px 0 10px;
-
-      .container {
-        height: 100%;
-      }
-    }
-
-    &--blured {
-      background-color: $color-default-black;
+  &--blured {
+    .header::before,
+    .header__wave {
       filter: blur(5px);
     }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    background-color: $color-default-black;
+
+    transition: height $trans-default, filter $trans-default;
   }
 
   &__wave {
@@ -46,7 +58,7 @@
     height: 354px;
     overflow: hidden;
 
-    transition: height $trans-default, width $trans-default;
+    transition: height $trans-default, width $trans-default, filter $trans-default;
 
     pointer-events: none;
 
@@ -208,13 +220,12 @@
 
   /////////// / / /               IS OPEN
   &.is-open {
-    .header__for-blur {
-      height: 100vh;
-      /* stylelint-disable-next-line */
-      height: 100svh;
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: 100svh;
 
-      background-color: $color-default-black;
-    }
+    background-color: $color-default-black;
+
 
     .header__nav {
       background-color: $color-default-black;

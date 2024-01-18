@@ -1,5 +1,4 @@
 const header = document.getElementById('main-header');
-const container = document.getElementById('for-blur');
 let isFunctionExecuted = false;
 
 // Задает и снимает стилевый класс непрозрачного фона
@@ -22,12 +21,12 @@ function blurHeader() {
     let isScrolling;
     const scrollPositionLive = window.scrollY;
 
-    container.classList.add('header__for-blur--blured');
+    header.classList.add('header--blured');
 
     clearTimeout(isScrolling);
 
     isScrolling = setTimeout(function () {
-      container.classList.remove('header__for-blur--blured');
+      header.classList.remove('header--blured');
     }, 300);
     checkPosition(scrollPositionLive);
   });

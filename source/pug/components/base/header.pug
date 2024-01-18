@@ -25,25 +25,25 @@ mixin header(headerMods, currentUrl)
 
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
     .header__for-blur#for-blur
-      .header__wave
-        +icon("wave", "100%", "100%", true)
-      .container
-        .header__grid
-          if(currentUrl === "index.html")
-            +logo(true)
-          else
-            +logo()
-          nav.header__nav
-            ul.header__list
-              each link in headerLinks
-                - const activeState = currentUrl === link.href
-                li.header__item
-                  if(activeState)
-                    span.header__link.is-active= link.text
-                  else
-                    a.header__link(href=link.href data-close-menu)= link.text
-            .header__item
-              a.header__link.header__link--gradient-border(href="#main-footer" data-close-menu) Contact us
-          button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
-            span.visually-hidden меню
-            +icon("menu-toggle-closed", "16", "16")
+    .header__wave
+      +icon("wave", "100%", "100%", true)
+    .container
+      .header__grid
+        if(currentUrl === "index.html")
+          +logo(true)
+        else
+          +logo()
+        nav.header__nav
+          ul.header__list
+            each link in headerLinks
+              - const activeState = currentUrl === link.href
+              li.header__item
+                if(activeState)
+                  span.header__link.is-active= link.text
+                else
+                  a.header__link(href=link.href data-close-menu)= link.text
+          .header__item
+            a.header__link.header__link--gradient-border(href="#main-footer" data-close-menu) Contact us
+        button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
+          span.visually-hidden меню
+          +icon("menu-toggle-closed", "16", "16")
