@@ -5,6 +5,8 @@ import './generate-timeline.js';
 gsap.registerPlugin(ScrollTrigger);
 
 const blocks = document.querySelectorAll('.page-section');
+const footer = document.querySelector('.footer');
+
 
 blocks.forEach((content) => {
   gsap.from(content, {
@@ -18,3 +20,14 @@ blocks.forEach((content) => {
     ease: 'power1.out',
   });
 });
+
+gsap.from(footer, {
+  scrollTrigger: {
+    trigger: footer,
+    start: 'top 90%',
+  },
+  autoAlpha: 0,
+  y: 150,
+  duration: 1.5,
+  ease: 'power1.out',
+})

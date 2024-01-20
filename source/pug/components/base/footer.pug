@@ -26,7 +26,7 @@ mixin footer(footerMods)
     const helps = [
       {
         href: "#",
-        text: "Tanjung Sari Street no.48, Pontianak City Tanjung Sari Street no.48, Pontianak City Tanjung Sari Street no.48, Pontianak City ",
+        text: "Tanjung Sari Street no.48, Pontianak City",
         isExternal: "true",
         icon: "location",
       },
@@ -45,8 +45,8 @@ mixin footer(footerMods)
   footer.footer(class=footerMods)#main-footer
     .footer__waves
       +icon("wave-footer", "100%", "100%", true)
-    .container(data-section-animation, data-start="bottom bottom", data-end="bottom bottom")
-      .footer__grid(data-animation="y: 150, opacity: 0", duration="1.5", data-animation-direction='from')
+    .container
+      .footer__grid
         .footer__first-column
           +logo()
           .footer__socials
