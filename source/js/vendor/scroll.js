@@ -4,30 +4,18 @@ import './generate-timeline.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const blocks = document.querySelectorAll('.page-section');
-const footer = document.querySelector('.footer');
-
+const blocks = document.querySelectorAll('[data-scroll]');
 
 blocks.forEach((content) => {
   gsap.from(content, {
     scrollTrigger: {
       trigger: content,
       start: '150 bottom',
+      toggleActions: 'play none none reverse',
     },
     autoAlpha: 0,
     y: 150,
-    duration: 1.5,
+    duration: 1,
     ease: 'power1.out',
   });
 });
-
-gsap.from(footer, {
-  scrollTrigger: {
-    trigger: footer,
-    start: 'top 90%',
-  },
-  autoAlpha: 0,
-  y: 150,
-  duration: 1.5,
-  ease: 'power1.out',
-})

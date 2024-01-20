@@ -31,18 +31,18 @@ block variables
 block main
   main
     +sharp(sharp).sharp--about-us
-    +simple-intro(breadcrumbs, "About Us")
-    .page-section
+    +simple-intro(breadcrumbs, "About Us")(data-scroll)
+    .page-section(data-scroll)
       +about-us-block()
-    .page-section
+    .page-section(data-scroll)
       +experience()
-    .page-section
+    .page-section(data-scroll)
       +passion()
-    .page-section
+    .page-section(data-scroll)
       +team()
-    .page-section
+    .page-section(data-scroll)
       +partners-block()
-    .page-section.page-section--bottom
+    .page-section.page-section--bottom(data-scroll)
       +subscribe()
 
 block modals

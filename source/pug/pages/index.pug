@@ -13,20 +13,20 @@ block main
   main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
-    +intro()
-    .page-section
+    +intro()(data-scroll)
+    .page-section(data-scroll)
       +leader()
-    .page-section
+    .page-section(data-scroll)
       +our-service()
-    .page-section
+    .page-section(data-scroll)
       +choose-us()
-    .page-section
+    .page-section(data-scroll)
       +video-block()
-    .page-section
+    .page-section(data-scroll)
       +our-pricing()
-    .page-section
+    .page-section(data-scroll)
       +partners-block()
-    .page-section.page-section--bottom
+    .page-section.page-section--bottom(data-scroll)
       +subscribe()
 
 block modals

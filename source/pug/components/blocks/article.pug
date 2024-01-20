@@ -52,7 +52,7 @@ mixin article()
     ]
 
 
-  article.article
+  article.article(data-scroll)
     .article__light
       +icon("light-article", "299", "98", true)
     .container
@@ -78,7 +78,7 @@ mixin article()
           p Clients can also benefit from VR design by having a better understanding of the design and how it will look and feel in real life. It allows them to experience the design in a more realistic way, helping them make informed decisions and providing valuable feedback to the architects.
           p Moreover, VR design is not only limited to the design phase. It can also be used in the construction process to visualize the project's progress and identify any issues that may arise.
 
-          .article__mini-pics
+          .article__mini-pics(data-scroll)
             +picture(
               "content/detail-blog",
               "infinity",
