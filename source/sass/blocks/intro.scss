@@ -4,6 +4,8 @@
   padding-top: 13px;
 
   &__grid {
+    position: relative;
+
     display: grid;
     justify-content: space-between;
     grid-template-columns: 1fr 1fr;
@@ -53,10 +55,13 @@
 
     @include vp-1023 {
       position: static;
+
+      padding-bottom: 140px;
     }
 
     @include vp-767 {
       margin-top: 12px;
+      padding-bottom: 40px;
     }
 
     p {
@@ -133,30 +138,21 @@
 
   &__movable {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 66px;
+    left: 29.5%;
 
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    width: 96%;
-    height: 66%;
+    @include vp-1279 {
+      left: 34%;
+    }
 
-    pointer-events: none;
 
     @include vp-1023 {
-      justify-content: end;
-      align-items: end;
-      width: 80%;
-      height: 500px;
-      margin: 0;
+      bottom: 0;
+      left: 0;
     }
 
     @include vp-767 {
-      justify-content: start;
-      align-items: center;
-      width: 100%;
-      height: 400px;
+      bottom: 144px;
     }
 
     img {

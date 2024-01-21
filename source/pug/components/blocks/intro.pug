@@ -22,7 +22,7 @@ mixin intro()
     .container
       .intro__grid
         h1.title.title--h1 Immerse Yourself in Virtual Reality
-        .text-content
+        .text-content(data-scroll)
           p Experience Unforgettable Events in VR. Bring your events to life like never before with our VR services
           +btn(btn).intro__btn
           .intro__clients
@@ -41,10 +41,10 @@ mixin intro()
               .intro__how-many 32k+
               .intro__who-how-many Happy Client
 
-          .intro__movable
-            +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)
+        .intro__movable
+          +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)
 
-        .intro__picture-wrapper
+        .intro__picture-wrapper(data-scroll)
           .intro__light
             .intro__light-overflow
               +icon("light-intro", "567", "340", true)

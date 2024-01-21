@@ -15,7 +15,7 @@ blocks.forEach((content) => {
     },
     autoAlpha: 0,
     y: 150,
-    duration: 1,
+    duration: 1.5,
     ease: 'power1.out',
   });
 });
