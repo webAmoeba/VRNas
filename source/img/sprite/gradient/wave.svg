@@ -19,7 +19,7 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_7_2044" x1="1090.04" y1="20.7914" x2="0.656898" y2="20.7914" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0CBAF1"/>
+<stop offset="0" stop-color="#0CBAF1"/>
 <stop offset="1" stop-color="#E95CE9"/>
 </linearGradient>
 </defs>

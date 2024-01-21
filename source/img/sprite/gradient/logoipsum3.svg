@@ -16,7 +16,7 @@
 <path d="M84.6918 48.7328C85.3177 48.7328 85.8253 48.2253 85.8253 47.5993C85.8253 46.9733 85.3177 46.4658 84.6918 46.4658C84.0659 46.4658 83.5583 46.9733 83.5583 47.5993C83.5583 48.2253 84.0659 48.7328 84.6918 48.7328Z" fill="#D1D1D1"/>
 <defs>
 <linearGradient id="paint0_linear_43_1692" x1="-1.07003e-06" y1="-3.68497" x2="110.285" y2="5.81496" gradientUnits="userSpaceOnUse">
-<stop stop-color="white"/>
+<stop offset="0" stop-color="white"/>
 <stop offset="1" stop-color="white" stop-opacity="0"/>
 </linearGradient>
 </defs>

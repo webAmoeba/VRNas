@@ -7,7 +7,7 @@
 <circle cx="529.342" cy="527.459" r="164.322" stroke="white" stroke-opacity="0.17" stroke-width="0.845966"/>
 <defs>
 <linearGradient id="paint0_linear_43_1577" x1="69.3691" y1="527.882" x2="986.396" y2="527.882" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0CBAF1"/>
+<stop offset="0" stop-color="#0CBAF1"/>
 <stop offset="1" stop-color="#E95CE9"/>
 </linearGradient>
 </defs>
