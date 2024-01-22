@@ -13,7 +13,6 @@ blocks.forEach((content) => {
       start: '150 bottom',
       toggleActions: 'play none none reverse',
     },
-    autoAlpha: 0,
     y: 150,
     duration: 1.5,
     ease: 'power1.out',

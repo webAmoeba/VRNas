@@ -7,7 +7,7 @@ import {initAccordions} from './modules/accordion/init-accordion.js';
 import {playVideo} from './modules/video.js';
 import {arrangePartners, animatePartners} from './modules/partners.js';
 import {blurHeader} from './modules/header.js';
-import './modules/parallax.js';
+import {parallax} from './modules/parallax.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -20,11 +20,10 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
   initHeader();
-  initAccordions();
-  playVideo();
-  arrangePartners();
   blurHeader();
-  animatePartners();
+  parallax();
+  initAccordions();
+
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
@@ -36,6 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    playVideo();
+    arrangePartners();
+    animatePartners();
   });
 });
 
