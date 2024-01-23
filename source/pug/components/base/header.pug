@@ -25,8 +25,6 @@ mixin header(headerMods, currentUrl)
 
   header.header.header--sticky(class=headerMods, data-header="sticky", data-scroll-lock-scrollable)#main-header
     .header__for-blur#for-blur
-    .header__wave
-      +icon("wave", "100%", "100%", true)
     .container
       .header__grid
         if(currentUrl === "index.html")
@@ -45,5 +43,4 @@ mixin header(headerMods, currentUrl)
           .header__item
             a.header__link.header__link--gradient-border(href="#main-footer" data-close-menu) Contact us
         button.header__toggle(type="button", aria-pressed="false", data-burger)#header-toggle
-          span.visually-hidden меню
-          +icon("menu-toggle-closed", "16", "16")
+          span.visually-hidden menu

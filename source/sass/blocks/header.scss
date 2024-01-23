@@ -43,7 +43,6 @@
   }
 
   &__for-blur {
-    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -58,7 +57,8 @@
     pointer-events: none;
   }
 
-  &__wave {
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -66,6 +66,9 @@
     width: calc(736/1440*100%);
     height: 354px;
     overflow: hidden;
+
+    background: url("../img/svg/wave.svg") no-repeat top right;
+    background-size: 100% 100%;
 
     transition: height $trans-default, width $trans-default, filter $trans-default;
 
@@ -79,20 +82,11 @@
       width: 99%;
       height: 206px;
     }
-
-    svg {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      width: 100%;
-      height: 100%;
-    }
   }
 
   &--blured {
     .header__for-blur,
-    .header__wave {
+    &::after {
       filter: blur(5px);
     }
   }
@@ -100,7 +94,7 @@
   &--opaque {
     background-color: $color-default-black;
 
-    .header__wave {
+    &::after {
       height: 100%;
 
       @include vp-767 {
@@ -216,19 +210,20 @@
   &__toggle {
     display: none;
 
+    background: url("../img/svg/menu-toggle-closed.svg") no-repeat center;
+    background-color: transparent;
+    background-size: 16px 16px;
+
     @include vp-767 {
       position: absolute;
       top: 12px;
       right: 0;
       z-index: 2;
 
-      display: grid;
-      justify-content: center;
-      align-items: center;
+      display: block;
       width: 32px;
       height: 32px;
 
-      background: transparent;
       border-width: 1px;
       border-style: solid;
       border-image: $gradient;
@@ -284,7 +279,7 @@
       }
     }
 
-    .header__wave {
+    &::after {
       height: 0;
     }
   }

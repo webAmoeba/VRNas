@@ -12,10 +12,13 @@
   border-image-slice: 1;
 
   &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 48px;
     height: 48px;
 
-    svg {
+    img {
       display: block;
       width: 100%;
       height: 100%;

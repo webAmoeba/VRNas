@@ -178,15 +178,18 @@
     }
   }
 
-  &__waves {
+  &::after {
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: -1;
 
     width: 70.2%;
     height: 100%;
     overflow: hidden;
+
+    background: url("../img/svg/wave-footer.svg") no-repeat bottom left;
+    background-size: 100% 100%;
 
     @include vp-1023 {
       width: 86%;
@@ -195,10 +198,6 @@
     @include vp-767 {
       width: 100%;
       height: 314px;
-
-      svg {
-        min-width: 637px;
-      }
     }
   }
 }
