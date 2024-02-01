@@ -8,6 +8,7 @@ import {playVideo} from './modules/video.js';
 import {arrangePartners, animatePartners} from './modules/partners.js';
 import {blurHeader} from './modules/header.js';
 import {parallax} from './modules/parallax.js';
+import {openAside} from './modules/aside.js';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -38,6 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
     playVideo();
     arrangePartners();
     animatePartners();
+    openAside();
   });
 });
 
