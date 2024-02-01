@@ -20,7 +20,7 @@ mixin our-pricing()
         text: "We&nbsp;stand behind our services and are committed to&nbsp;ensuring that you are completely satisfied with the final product. If&nbsp;for any reason you are not happy with our services, we&nbsp;will work with you to&nbsp;make it&nbsp;right or&nbsp;provide a&nbsp;full refund.",
       },
     ]
-  section.our-pricing#our-pricing
+  section.our-pricing#our-pricing&attributes(attributes)
     .container
       .our-pricing__grid
         .text-content
@@ -44,4 +44,5 @@ mixin our-pricing()
               "520",
               "Опять чувак в виар-очках."
             )
-          +card-price()
+        +card-price()
+
