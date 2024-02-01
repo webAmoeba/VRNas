@@ -12,11 +12,10 @@ mixin partners()
 
   .partners
     .partners__rainbow-wrapper
-      .partners__rainbow
-        +icon("circle", "100%", "100%", true)
+      img(src="img/svg/partners/circle.svg", alt="just decorate.", aria-hidden="true", loading="lazy")
     .partners__gradient-dark
     .partners__round
-    +icon("light-partners", "100%", "100%", true).partners__light
+    .partners__light
     .partners__picture-wrapper
       +picture(
         "content/partners-block",
@@ -25,10 +24,10 @@ mixin partners()
         "708",
         "555",
         "Симметричный чувак думает."
-      )
+      )(loading="lazy")
     .partners__elements
       each icon in icons
         .partners__element-wrapper
           .partners__icon-wrapper
-            +icon(icon, "100%", "100%", true)
+            img(src=`img/svg/partners/logo/${icon}.svg`, width="102", height="102", alt="svg logo of partner.", loading="lazy")
 

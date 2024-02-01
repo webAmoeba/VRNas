@@ -6,7 +6,7 @@ mixin partners-block()
       center: true,
     }
 
-  section.partners-block
+  section.partners-block(data-scroll)&attributes(attributes)
     .container
       .partners-block__grid
         +titles-set(titles)

@@ -1,43 +1,29 @@
 .partners {
   position: relative;
-  width: 100%;
+
   display: flex;
-  align-items: end;
   justify-content: center;
+  align-items: end;
+  width: 100%;
 
   &::before {
     content: "";
+
     display: block;
     padding-top: calc(740/1055*100%);
   }
 
   &__rainbow-wrapper {
-    z-index: -1;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    overflow: hidden;
-  }
+    z-index: -1;
 
-  &__rainbow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     overflow: hidden;
 
-    &::before {
-      content: "";
-      display: block;
-      padding-top: 100%;
-    }
-
-    svg {
-      position: absolute;
-      top: 0;
-      left: 0;
+    img {
       width: 100%;
     }
   }
@@ -46,14 +32,17 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+
     width: calc(454/1056*100%);
+
+    background: $color-greyscale-black-80;
     border: 1px solid $color-border-gray;
     border-radius: 50%;
-    background: $color-greyscale-black-80;
+    transform: translateX(-50%);
 
     &::before {
       content: "";
+
       display: block;
       padding-top: 100%;
     }
@@ -62,9 +51,15 @@
   &__light {
     position: absolute;
     top: 22%;
-    left: 23%;
+    left: 24%;
+
     width: calc(618/1056*100%);
+
+    background: url("../img/svg/lights/light-partners.svg") no-repeat;
+    background-position-y: 70%;
+    background-size: 100% auto;
     filter: blur(105px);
+    aspect-ratio: 1/1;
   }
 
   $for-partners-mask: 70.4%;
@@ -73,18 +68,21 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+
     width: calc(708/1056*100%);
+    overflow: hidden;
+
+    transform: translateX(-50%);
+
     clip-path: inset(1px 1px);
     mask-image: url("../img/sprite/mask-group.svg");
     mask-repeat: no-repeat;
     mask-position: bottom;
     mask-size: contain;
 
-    overflow: hidden;
-
     &::before {
       content: "";
+
       display: block;
       padding-bottom: calc(555/708*100%);
     }
@@ -104,16 +102,19 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+
     width: calc(454/1056*100%);
+
     background-image: radial-gradient(circle at 50% -67%,
       transparent 0 $for-partners-mask,
       $color-border-gray $for-partners-mask calc($for-partners-mask + 1px),
       $color-default-black calc($for-partners-mask + 1px) 100%
     );
+    transform: translateX(-50%);
 
     &::before {
       content: "";
+
       display: block;
       padding-top: 30%;
     }
@@ -121,20 +122,24 @@
 
   &__gradient-dark {
     position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    height: calc(200/740*100%);
+
     width: 100%;
+    height: calc(200/740*100%);
+
     background: #18181b;
 
     &::before {
       content: "";
       position: absolute;
-      bottom: 100%;
       right: 0;
+      bottom: 100%;
       left: 0;
+
       height: calc(80/280*100%);
+
       background: linear-gradient(180deg, rgba(24, 24, 27, 0) 0%, rgba(24, 24, 27, 0.68) 52%, #18181b 100%);
     }
   }
@@ -145,12 +150,14 @@
 
     position: absolute;
     top: $vertical-distance;
-    left: $horisontal-distance;
     right: $horisontal-distance;
+    left: $horisontal-distance;
+
     pointer-events: none;
 
     &::before {
       content: "";
+
       display: block;
       padding-top: 100%;
     }
@@ -159,6 +166,7 @@
       position: absolute;
       bottom: 50%;
       left: 0;
+
       width: 102px;
       height: 102px;
     }
@@ -167,35 +175,44 @@
   &__element-wrapper {
     position: absolute;
     top: 50%;
-    height: calc(102/1026*100%);
-    width: 50%;
+
     display: flex;
     justify-content: start;
     align-items: stretch;
-    transform-origin: 100% 50%;
-    translate: 0 -50%;
+    width: 50%;
+    height: calc(102/1026*100%);
 
     transform: rotate(40deg);
+    transform-origin: 100% 50%;
+    translate: 0 -50%;
   }
 
   &__icon-wrapper {
     position: relative;
+
     width: calc(102/1026*200%);
+
     transform: rotate(-40deg);
+
 
     &::before {
       content: "";
+
       display: block;
       padding-top: 100%;
     }
 
-    svg {
+    img {
       position: absolute;
       top: 50%;
       left: 50%;
       translate: -50% -50%;
+
       width: 100%;
       height: 100%;
+
+      object-fit: contain;
+
       transition: width 3s ease, height 3s ease;
     }
   }
