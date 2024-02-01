@@ -1,19 +1,13 @@
 extends ../components/base/layout
 
 block variables
-  - const title = "VRNas" //- на страницах кроме главной используйте О нас — ProjectName
+  - const title = "About us – VRNas" //- на страницах кроме главной используйте О нас — ProjectName
   - const wrapperMods = ""
   - const hasHeader = true
   - const headerMods = ""
   - const hasFooter = true
   - const footerMods = ""
   - const currentUrl = "about-us.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
-  -
-    const sharp = {
-      file: "sharp-about-us",
-      width: "990",
-      height: "721",
-    }
   -
     const breadcrumbs = [
       {
@@ -29,8 +23,7 @@ block variables
 
 
 block main
-  main
-    +sharp(sharp).sharp--about-us
+  main.sharp.sharp--about-us
     +simple-intro(breadcrumbs, "About Us")
     .page-section
       +about-us-block()(data-scroll)

@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
   initHeader();
   blurHeader();
-  initAccordions();
 
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
@@ -36,6 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     parallax();
+    initAccordions();
     playVideo();
     arrangePartners();
     animatePartners();
