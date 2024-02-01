@@ -1,3 +1,5 @@
+$tablet-height: 106px;
+
 .header {
   position: relative;
   z-index: 2;
@@ -6,24 +8,8 @@
 
   color: $color-default-white;
 
-  background-color: transparent;
-
-  transition:
-    background-color $trans-default,
-    height $trans-default;
-  transition-delay: 0.1s;
-
   @include vp-1023 {
-    padding: 30px 0 20px;
-  }
-
-  @include vp-767 {
-    height: 93px;
-    padding: 30px 0 10px;
-
-    .container {
-      height: 100%;
-    }
+    height: $tablet-height;
   }
 
   &--sticky {
@@ -33,28 +19,24 @@
 
     width: 100%;
 
-    @include vp-767 {
+    @include vp-1023 {
       position: fixed;
 
       & ~ main {
-        margin-top: 93px;
+        margin-top: $tablet-height;
       }
     }
   }
 
-  &__for-blur {
+  &::before {
+    content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     z-index: -1;
 
-    overflow: hidden;
-
-    transition: height $trans-default, filter $trans-default;
-
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
   }
 
   &::after {
@@ -84,31 +66,35 @@
     }
   }
 
-  &--blured {
-    .header__for-blur,
+  &--opaque {
+    &::before {
+      background-color: rgba($color-default-black, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
     &::after {
-      filter: blur(5px);
+      height: 0;
     }
   }
 
-  &--opaque {
-    background-color: $color-default-black;
-
-    &::after {
-      height: 100%;
-
-      @include vp-767 {
-        height: 93px;
-      }
+  .container {
+    @include vp-1023 {
+      height: 0;
     }
   }
 
   .logo {
     flex-shrink: 0;
 
+    @include vp-1023 {
+      position: fixed;
+      top: 33px;
+      left: 24px;
+      z-index: 1;
+    }
+
     @include vp-767 {
-      align-self: start;
-      margin-top: 3px;
+      left: 16px;
     }
   }
 
@@ -119,15 +105,12 @@
 
     align-items: start;
 
-    @include vp-767 {
-      position: relative;
-
+    @include vp-1023 {
       display: flex;
       flex-direction: column;
       align-items: stretch;
+      height: 0;
       gap: 20px;
-
-      height: 100%;
     }
   }
 
@@ -138,20 +121,28 @@
     align-items: start;
     gap: 20px;
 
-    @include vp-767 {
+    @include vp-1023 {
       display: flex;
       flex-grow: 1;
       flex-direction: column;
       align-items: stretch;
-      overflow: hidden;
+      margin: 0 -24px;
+      padding: 0 24px 24px;
+      gap: 10px;
 
-      visibility: hidden;
-      opacity: 0;
+      background-color: $color-default-black;
+      transform: translate(0, calc(-100% - 93px));
 
       transition:
-        visibility $trans-default,
-        opacity $trans-default;
-      gap: 10px;
+        transform $trans-default,
+        height $trans-default;
+    }
+
+    @include vp-767 {
+      margin: 0 -16px;
+      padding: 0 16px 16px;
+
+      transform: translate(0, calc(-100% - 93px));
     }
   }
 
@@ -166,11 +157,21 @@
     list-style: none;
     gap: 4px 18px;
 
+    @include vp-1023 {
+      display: grid;
+      justify-content: start;
+      grid-template-columns: 1fr 1fr;
+
+      & > .header__item {
+        justify-self: start;
+      }
+    }
+
     @include vp-767 {
+      display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       justify-content: start;
-      overflow: auto;
     }
   }
 
@@ -214,10 +215,10 @@
     background-color: transparent;
     background-size: 16px 16px;
 
-    @include vp-767 {
-      position: absolute;
-      top: 12px;
-      right: 0;
+    @include vp-1023 {
+      position: fixed;
+      top: 42px;
+      right: 24px;
       z-index: 2;
 
       display: block;
@@ -229,28 +230,61 @@
       border-image: $gradient;
       border-image-slice: 1;
     }
+
+    @include vp-767 {
+      right: 16px;
+    }
   }
 
 
   /////////// / / /               IS OPEN
   &.is-open {
-    height: 100vh;
-    /* stylelint-disable-next-line */
-    height: 100svh;
+    height: auto;
+    max-height: 100dvh;
+    padding-top: $tablet-height;
+    overflow-y: auto;
 
     background-color: $color-default-black;
 
-    transition-delay: unset;
+    @include vp-1023 {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      display: none;
+
+      background-color: $color-default-black;
+
+      transition-delay: unset;
+    }
 
     .header__nav {
+      overflow-y: auto;
+
+      transform: translate(0, 0);
       visibility: visible;
       opacity: 1;
+
+      @include vp-1023 {
+        & > .header__item {
+          align-self: end;
+        }
+      }
+
+      @include vp-767 {
+        & > .header__item {
+          align-self: stretch;
+        }
+      }
+    }
+
+    .container,
+    .header__grid {
+      height: unset;
     }
 
     .header__toggle {
-      svg {
-        display: none;
-      }
+      background-image: none;
 
       &::before {
         content: "";

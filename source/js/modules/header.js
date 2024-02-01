@@ -18,16 +18,16 @@ if (!isFunctionExecuted) {
 
 function blurHeader() {
   window.addEventListener('scroll', function () {
-    let isScrolling;
+    // let isScrolling;// unlock all
     const scrollPositionLive = window.scrollY;
 
-    header.classList.add('header--blured');
+    // header.classList.add('header--blured');
 
-    clearTimeout(isScrolling);
+    // clearTimeout(isScrolling);
 
-    isScrolling = setTimeout(function () {
+    /* isScrolling = setTimeout(function () {
       header.classList.remove('header--blured');
-    }, 300);
+    }, 300); */
     checkPosition(scrollPositionLive);
   });
 }
