@@ -8,11 +8,6 @@ mixin section(titles, pic, movable)
           block
         .section__picture-wrapper
           .section__picture(data-parallax-mouse, data-movement='46', data-duration="1")
-            .section__background-pic
-            .section__light
-              .section__light-overflow
-                +icon("light-section", "610", "366", true)
             +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)(class="section__img", loading="lazy")
             if movable
-              .section__movable
-                +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='46', loading="lazy")
+              +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='46', loading="lazy", class="section__movable")
