@@ -8,7 +8,7 @@ block main
     include ../../sass/inline/uikit.css
     include ../../sass/inline/prism.css
 
-  main
+  main.sharp
     .uikit
       //----------------------- Разделы с компонентами
       .uikit__sections(data-scroll-lock-fill-gap)
@@ -54,7 +54,6 @@ block main
 
       //----------------------------------------------
       .container
-        +sharp()
         a.uikit__header-link(href="sitemap.html")
           img(src="favicon/android-chrome-512x512.png", width="50", alt="Логотип проекта")
         h1.uikit__h1 Компоненты, используемые на проекте
@@ -71,18 +70,14 @@ block main
 
         //- Векторная декоративная подложка
         section.uikit__section(id="sharp")
-          h2.uikit__h2 Векторная декоративная подложка
+          h2.uikit__h2 Декоративная подложка. Просто добавляется класс на компонент или на main
           .uikit__component
             p.uikit__text.uikit__text--class .sharp \ .sharp--about-us
             pre
               |
               code(class="language-pug").
-                +sharp()
-                +sharp({
-                  file: "sharp-about-us",
-                  width: "990",
-                  height: "721",
-                }).sharp--about-us
+                .sharp
+                .sharp.sharp--about-us
 
         //- Обвязка секции
         section.uikit__section(id="page-section")
@@ -163,8 +158,7 @@ block main
         section.uikit__section(id="title")
           h2.uikit__h2 Заголовки
           //- p.uikit__text
-          .uikit__component
-            +sharp()
+          .uikit__component.sharp
             p.uikit__text.uikit__text--class .title \ .title--h1 \ .title--h3 \ .title--article
             .title Обычный заголовок
             .title.title--h1 Заголовок первого уровня
