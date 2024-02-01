@@ -32,11 +32,8 @@ mixin our-service()
         text: "Create a&nbsp;VR escape room, or&nbsp;offer&nbsp;VR experiences at&nbsp;a&nbsp;theme park, we&nbsp;have the expertise and experience to&nbsp;make it&nbsp;happen."
       },
     ]
-  section.our-service#our-service
+  section.our-service#our-service&attributes(attributes)
     .container
-      .our-service__light
-        .our-service__light-overflow
-          +icon("light-our-service", "403", "199", true)
       .our-service__grid
         .our-service__text-grid
           .our-service__titles
