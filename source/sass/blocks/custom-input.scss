@@ -39,9 +39,10 @@
     height: 24px;
     translate: 0 -50%;
 
-    @media (max-width: 350px) {
-      display: none;
-    }
+    // unlock
+    // @media (max-width: 350px) {
+    //   display: none;
+    // }
   }
 
   input,
@@ -67,6 +68,20 @@
       color: $color-default-white;
     }
 
+    // delete start
+    @media (max-width: 350px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 340px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 13px;
+    }
+    // delete end
+
     @include hover {
       opacity: 0.8;
     }
@@ -77,11 +92,13 @@
   }
 
   input[type="email"] {
-    padding: 14px 56px 14px 46px;
+    // padding: 14px 56px 14px 46px;// unlock
+    padding: 14px 64px 14px 46px;// delete
 
-    @media (max-width: 350px) {
-      padding: 14px 56px 14px 6px;
-    }
+    // unlock
+    // @media (max-width: 350px) {
+    //   padding: 14px 56px 14px 6px;
+    // }
   }
 
   &__error {
@@ -103,14 +120,19 @@
   &.is-invalid {
     input,
     textarea {
-      outline: 2px solid #d9ff00;
+      // outline: 2px solid #d9ff00;// unlock
+      background-color: rgba(255, 0, 0, 0.2);// delete
+      outline: 2px solid #ff1553;// delete
       outline-offset: 0;
     }
   }
 
   &.is-valid {
-    input {
-      outline: 2px solid #00ff80;
+    input,
+    input[type="email"] {
+      color: #15ffe4;
+
+      outline: 2px solid #15ffe4;
       outline-offset: 0;
 
       &:hover {
@@ -123,6 +145,8 @@
     position: absolute;
     right: 74px;
     bottom: 5px;
+
+    display: none;// delete
 
     font-size: 20px;
     line-height: 28px;
@@ -151,7 +175,7 @@
     }
 
     &.is-valid {
-      color: #00ff80;
+      color: #15ff76;
     }
   }
 }

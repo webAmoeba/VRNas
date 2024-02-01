@@ -11,7 +11,7 @@ mixin custom-input(options = {})
 
   .custom-input&attributes(attributes)
     if inputType === "email"
-      .custom-input__grid
+      .custom-input__grid(data-scroll)
         if inputLabel
           label.custom-input__label(for=inputId)!= inputLabel
         .custom-input__input-wrapper#input-email
