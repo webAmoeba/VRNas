@@ -9,24 +9,22 @@
     overflow-x: visible;
   }
 
-  &__light {
-    display: none;
-
+  &::before {
     @include vp-767 {
+      content: "";
       position: absolute;
       top: -20px;
-      left: 0;
+      left: 50%;
       z-index: -1;
 
-      display: flex;
-      justify-content: center;
-      align-items: start;
-      width: 100%;
-      height: 100%;
+      width: 300px;
+      max-width: 100%;
+      aspect-ratio: 300/98;
 
-      svg {
-        filter: blur(55px);
-      }
+      background: url("../img/svg/lights/light-article.svg") no-repeat center;
+      background-size: 100% 100%;
+      transform: translate(-50%, 0);
+      filter: blur(55px);
     }
   }
 
@@ -62,25 +60,25 @@
     flex-direction: column;
     gap: 24px;
 
+    img:not(.article__social-icon) {
+      max-height: 528px;
+      object-fit: contain;
+
+      margin-bottom: 6px;
+
+      user-select: none;
+
+      @include vp-1023 {
+        margin: 0;
+      }
+    }
+
     @include vp-1023 {
       width: 90%;
     }
 
     @include vp-767 {
       width: 100%;
-    }
-  }
-
-  img {
-    max-height: 528px;
-    object-fit: contain;
-
-    margin-bottom: 6px;
-
-    user-select: none;
-
-    @include vp-1023 {
-      margin: 0;
     }
   }
 
@@ -159,9 +157,11 @@
       opacity: 0.8;
     }
 
-    svg {
+    & > svg,
+    & > img {
       max-width: 23px;
       max-height: 23px;
+      margin: 0;
     }
   }
 
@@ -179,28 +179,10 @@
       border-right: none;
 
       transition: translate $trans-default;
-
-
       translate: 80% 0;
 
-      &:hover,
-      &:focus {
-        translate: 0;
-
-        .aside::before {
-          display: none;
-        }
-
-        &::before {
-          content: "ㅤ→";
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-
-          width: 44px;
-          height: 44px;
-        }
+      &:hover::before {
+        opacity: 0.8;
       }
 
       &::before {
@@ -212,6 +194,24 @@
 
         width: 44px;
         height: 44px;
+
+        cursor: pointer;
+      }
+
+      &.is-open {
+        translate: 0;
+
+        &::before {
+          content: "ㅤ→";
+        }
+      }
+
+      &.is-closed {
+        translate: 80% 0;
+
+        &::before {
+          content: "ㅤ←";
+        }
       }
     }
 

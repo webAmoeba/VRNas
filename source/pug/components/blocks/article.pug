@@ -20,7 +20,7 @@ mixin article()
         height: "66",
         alt: "preview.",
         property: "VR Architecture",
-        title: "Bringing Designs to Life: How VR is Changing Architecture",
+        title: "Bringing Designs to&nbsp;Life: How VR&nbsp;is&nbsp;Changing Architecture",
         link: "#",
       },
       {
@@ -31,7 +31,7 @@ mixin article()
         height: "66",
         alt: "preview.",
         property: "VR Entertainment",
-        title: "Making Events Memorable: The Power of VR for Corporate and Special Occasions",
+        title: "Making Events Memorable: The Power of&nbsp;VR for Corporate and Special Occasions",
         link: "#",
       },
       {
@@ -42,7 +42,7 @@ mixin article()
         height: "66",
         alt: "preview.",
         property: "VR Event",
-        title: "Exploring New Worlds: The Benefits of VR Travel",
+        title: "Exploring New Worlds: The Benefits of&nbsp;VR&nbsp;Travel",
         link: "#",
       },
     ]
@@ -53,8 +53,6 @@ mixin article()
 
 
   article.article(data-scroll)
-    .article__light
-      +icon("light-article", "299", "98", true)
     .container
       .article__grid
         .text-content
@@ -78,7 +76,7 @@ mixin article()
           p Clients can also benefit from VR design by having a better understanding of the design and how it will look and feel in real life. It allows them to experience the design in a more realistic way, helping them make informed decisions and providing valuable feedback to the architects.
           p Moreover, VR design is not only limited to the design phase. It can also be used in the construction process to visualize the project's progress and identify any issues that may arise.
 
-          .article__mini-pics(data-scroll)
+          .article__mini-pics
             +picture(
               "content/detail-blog",
               "infinity",
@@ -109,12 +107,14 @@ mixin article()
               h2.title.title--h3 Share :
               .article__socials
                 a.article__social-link(href="#" target="_blank" rel="nofollow noopener noreferrer")
-                  span.visually-hidden x
-                  +icon("twitter", "19", "15")
+                  span.visually-hidden twitter
+                  img(class="article__social-icon", src="img/svg/social/twitter.svg", width="19", height="15", alt="just decorate.", aria-hidden="true", loading="lazy")
                 a.article__social-link(href="#" target="_blank" rel="nofollow noopener noreferrer")
-                  span.visually-hidden x
-                  +icon("facebook", "11", "20")
+                  span.visually-hidden facebook
+                  img(class="article__social-icon", src="img/svg/social/facebook.svg", width="11", height="20", alt="just decorate.", aria-hidden="true", loading="lazy")
                 a.article__social-link(href="#" target="_blank" rel="nofollow noopener noreferrer")
-                  span.visually-hidden x
-                  +icon("instagram", "23", "23")
+                  span.visually-hidden instagram
+                  img(class="article__social-icon", src="img/svg/social/instagram.svg", width="23", height="23", alt="just decorate.", aria-hidden="true", loading="lazy")
 
+        .article__aside-wrapper(data-aside)
+          +aside(previews, hashtags)
