@@ -130,7 +130,7 @@
   &.is-valid {
     input,
     input[type="email"] {
-      color: #15ffe4;
+      color: unset;
 
       outline: 2px solid #15ffe4;
       outline-offset: 0;
