@@ -118,16 +118,3 @@ mixin article()
                   span.visually-hidden x
                   +icon("instagram", "23", "23")
 
-        .article__aside-wrapper
-          aside.aside
-            .aside__unit
-              .aside__title Recent Article
-              ul
-                each preview in previews
-                  li
-                    +article-preview(preview)
-            .aside__unit
-              .aside__title Popular Hashtag
-              .aside__hashtags
-                each hastag in hashtags
-                  .property.property--little!= hastag
