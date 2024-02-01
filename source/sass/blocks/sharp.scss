@@ -1,21 +1,25 @@
 .sharp {
-  z-index: -2;
-  position: absolute;
-  top: 170px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
+  position: relative;
 
-  @include vp-767 {
-    top: 190px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 170px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+
+    background: url("../img/svg/sharp.svg") no-repeat;
   }
 
-  &--about-us {
-    top: 974px;
+  &--about-us::before {
+    top: 896px;
+
+    background-position-x: -20px;
 
     @include vp-767 {
-      top: 1100px;
+      top: 1066px;
     }
   }
 }
