@@ -1,4 +1,27 @@
 .video-block {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 112px;
+    left: 0;
+    z-index: -1;
+
+    width: calc(454/1440*100%);
+
+    background: url("../img/svg/lights/light-our-service.svg") no-repeat;
+    background-position: -50px 0;
+    background-size: 100% 100%;
+    aspect-ratio: 454/199;
+
+    filter: blur(105px);
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
   &__grid {
     display: flex;
     flex-direction: column;
@@ -14,6 +37,8 @@
     max-width: 800px;
 
     .title {
+      margin-bottom: 0;
+
       text-wrap: unset;
     }
   }
