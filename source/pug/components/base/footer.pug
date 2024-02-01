@@ -8,15 +8,15 @@ mixin footer(footerMods)
     ]
   -
     const quickLinks = [
-      {href: "#", text: "Home"},
-      {href: "#", text: "Pricing Plan"},
-      {href: "#", text: "Service"},
-      {href: "#", text: "Blog"},
-      {href: "#", text: "Our Team"},
+      {href: "index.html", text: "Home"},
+      {href: "index.html#our-pricing", text: "Pricing Plan"},
+      {href: "index.html#our-service", text: "Service"},
+      {href: "detail-blog.html", text: "Blog"},
+      {href: "about-us.html#team-block", text: "Our Team"},
     ]
   -
     const supportLinks = [
-      {href: "#", text: "About us"},
+      {href: "about-us.html", text: "About us"},
       {href: "#", text: "Contact us"},
       {href: "#", text: "FAQ"},
       {href: "#", text: "Tems & Conditions"},
@@ -42,9 +42,9 @@ mixin footer(footerMods)
       },
     ]
 
-  footer.footer(data-scroll)#main-footer
+  footer.footer#main-footer
     .container
-      .footer__grid
+      .footer__grid(data-scroll)
         .footer__first-column
           +logo()
           .footer__socials

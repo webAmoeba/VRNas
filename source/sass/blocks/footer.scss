@@ -23,7 +23,7 @@
 
   &__grid {
     display: flex;
-    gap: 20px;
+    gap: 40px;
 
     padding-bottom: 33px;
 
@@ -34,6 +34,7 @@
 
     @include vp-767 {
       grid-template-columns: 4fr 5fr;
+      gap: 20px;
 
       padding-bottom: 8px;
     }
@@ -42,8 +43,9 @@
   &__first-column {
     display: flex;
     flex-shrink: 2;
-    flex-basis: 402px;
+    flex-basis: 250px;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
     padding-bottom: 35px;
@@ -60,10 +62,11 @@
   &__socials {
     display: flex;
     flex-wrap: wrap;
+    min-width: 246px;
     gap: 20px;
 
     @include vp-1023 {
-      justify-content: end;
+      min-width: unset;
     }
   }
 
@@ -94,15 +97,20 @@
 
 
     &--second {
-      flex-basis: 214px;
+      flex-basis: 190px;
+      margin-left: auto;
+
+      @include vp-1023 {
+        margin: 0;
+      }
     }
 
     &--third {
-      flex-basis: 198px;
+      flex-basis: 180px;
     }
 
     &--fourth {
-      flex-basis: 320px;
+      flex-basis: 326px;
 
       @include vp-767 {
         grid-column: 1/-1;
@@ -183,9 +191,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: -1;
 
     width: 70.2%;
-    height: 100%;
+    height: 108%;
     overflow: hidden;
 
     background: url("../img/svg/wave-footer.svg") no-repeat bottom left;
@@ -198,6 +207,8 @@
     @include vp-767 {
       width: 100%;
       height: 314px;
+
+      background-size: 148% 100%;
     }
   }
 }
