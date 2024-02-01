@@ -1,28 +1,31 @@
 .card-price {
+  text-align: center;
+
   border-width: 1px;
   border-style: solid;
   border-image: $gradient;
   border-image-slice: 1;
 
   &__inner {
-    padding: 18px;
-    background-color: $color-greyscale-black-80;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 18px;
+
+    background-color: $color-greyscale-black-80;
   }
 
   &__top-text {
     font-size: 14px;
-    font-weight: 500;
     line-height: 20px;
+    font-weight: 500;
     color: $color-default-gray;
   }
 
   &__price {
     font-size: 60px;
-    font-weight: 600;
     line-height: 66px;
+    font-weight: 600;
     color: $color-default-white;
   }
 
@@ -32,8 +35,9 @@
 
   &__botton-text {
     margin-top: 14px;
+
     font-size: 12px;
-    font-weight: 400;
     line-height: 20px;
+    font-weight: 400;
   }
 }

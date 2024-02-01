@@ -6,13 +6,7 @@
   .section__picture-wrapper {
     height: unset;
 
-    @include vp-767 {
-      order: -1;
-      margin-top: 0;
-      margin-bottom: 46px;
-    }
-
-    img {
+    .section__img {
       translate: 100px 0;
 
       @include vp-1279 {
@@ -20,11 +14,24 @@
       }
     }
 
-    &::before {
-      translate: -32% 0;
+    @include vp-767 {
+      order: -1;
+      margin-top: 0;
+      margin-bottom: 46px;
 
-      @include vp-1279 {
-        translate: -50% 0;
+      .section__picture {
+        width: 100%;
+
+        .section__img {
+          width: 418px;
+          height: unset;
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+
+      .section__movable {
+        translate: -50px 0;
       }
     }
   }
