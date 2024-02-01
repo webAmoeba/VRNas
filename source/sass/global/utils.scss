@@ -69,3 +69,7 @@
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
+
+[data-scroll] {
+  transform: translateZ(0);
+}
