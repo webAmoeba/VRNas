@@ -28,8 +28,9 @@ block variables
 block main
   main
     +breadcrumbs-block(breadcrumbs)
+    //- article & subscribe blocks already contain the data-scroll
     +article()
-    .page-section.page-section--bottom(data-scroll)
+    .page-section.page-section--bottom
       +subscribe()
 
 block modals

@@ -14,19 +14,20 @@ block main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
     +intro()
-    .page-section(data-scroll)
-      +leader()
-    .page-section(data-scroll)
-      +our-service()
-    .page-section(data-scroll)
-      +choose-us()
-    .page-section(data-scroll)
-      +video-block()
-    .page-section(data-scroll)
-      +our-pricing()
-    .page-section(data-scroll)
+    .page-section
+      +leader()(data-scroll)
+    .page-section
+      +our-service()(data-scroll)
+    .page-section
+      +choose-us()(data-scroll)
+    .page-section
+      +video-block()(data-scroll)
+    .page-section
+      +our-pricing()(data-scroll)
+    //- partners-block & subscribe blocks already contain the data-scroll
+    .page-section
       +partners-block()
-    .page-section.page-section--bottom(data-scroll)
+    .page-section.page-section--bottom
       +subscribe()
 
 block modals

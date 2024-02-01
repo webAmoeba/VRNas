@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
   initHeader();
   blurHeader();
-  parallax();
   initAccordions();
 
 
@@ -35,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+    parallax();
     playVideo();
     arrangePartners();
     animatePartners();

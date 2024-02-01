@@ -1,6 +1,5 @@
 import {gsap} from './gsap.min';
 import {ScrollTrigger} from './scroll-trigger';
-import './generate-timeline.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,11 +9,12 @@ blocks.forEach((content) => {
   gsap.from(content, {
     scrollTrigger: {
       trigger: content,
-      start: '150 bottom',
+      start: 'top bottom',
       toggleActions: 'play none none reverse',
     },
-    y: 150,
-    duration: 1.5,
+    opacity: 0,
+    y: 100,
+    duration: 0.6,
     ease: 'power1.out',
   });
 });

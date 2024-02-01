@@ -1,3 +1,4 @@
+import {gsap} from '../vendor/gsap.min';
 const parallax = () => {
   const parallaxItems = document.querySelectorAll('[data-parallax-mouse]');
   const sections = document.querySelectorAll('.section');

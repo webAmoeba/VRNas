@@ -32,17 +32,18 @@ block main
   main
     +sharp(sharp).sharp--about-us
     +simple-intro(breadcrumbs, "About Us")
-    .page-section(data-scroll)
-      +about-us-block()
-    .page-section(data-scroll)
-      +experience()
-    .page-section(data-scroll)
-      +passion()
-    .page-section(data-scroll)
-      +team()
-    .page-section(data-scroll)
+    .page-section
+      +about-us-block()(data-scroll)
+    .page-section
+      +experience()(data-scroll)
+    .page-section
+      +passion()(data-scroll)
+    .page-section
+      +team()(data-scroll)
+    //- partners-block & subscribe blocks already contain the data-scroll
+    .page-section
       +partners-block()
-    .page-section.page-section--bottom(data-scroll)
+    .page-section.page-section--bottom
       +subscribe()
 
 block modals
