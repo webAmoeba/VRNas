@@ -18,7 +18,6 @@ mixin intro()
     }
 
   section.intro&attributes(attributes)
-    +sharp()
     .container
       .intro__grid
         h1.title.title--h1 Immerse Yourself in Virtual Reality
@@ -38,14 +37,13 @@ mixin intro()
                 )
 
             .intro__photos-description
-              .intro__how-many 32k+
-              .intro__who-how-many Happy Client
+              span.intro__how-many 32k+
+              span.intro__who-how-many Happy Client
 
-        .intro__movable
-          +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)
+            .intro__movable
+              +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)
 
         .intro__picture-wrapper(data-scroll)
-          .intro__light
           .intro__picture
             +picture(
               "content/intro",

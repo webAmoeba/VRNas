@@ -1,7 +1,7 @@
 .intro {
   position: relative;
 
-  padding-top: 13px;
+  padding-top: 14px;
 
   &__grid {
     position: relative;
@@ -9,7 +9,7 @@
     display: grid;
     justify-content: space-between;
     grid-template-columns: 1fr 1fr;
-    gap: 12px 4%;
+    gap: 0 4%;
     grid-template-areas:
       "title pic"
       "txt pic";
@@ -18,7 +18,6 @@
     align-items: start;
 
     @include vp-1023 {
-      position: relative;
       grid-template-areas:
         "title title"
         "txt pic";
@@ -39,11 +38,11 @@
     padding-top: 72px;
 
     @include vp-1023 {
-      padding-top: 60px;
+      padding-top: 50px;
     }
 
     @include vp-767 {
-      padding-top: 48px;
+      padding-top: 34px;
     }
   }
 
@@ -51,17 +50,10 @@
     position: relative;
     grid-area: txt;
 
-    padding-bottom: 40px;
+    margin-top: 12px;
 
     @include vp-1023 {
       position: static;
-
-      padding-bottom: 140px;
-    }
-
-    @include vp-767 {
-      margin-top: 12px;
-      padding-bottom: 40px;
     }
 
     p {
@@ -75,12 +67,14 @@
 
   &__clients {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 81px;
+    margin-top: 44px;
     gap: 18px;
 
     @include vp-767 {
       margin-top: 32px;
+      margin-bottom: 40px;
     }
   }
 
@@ -137,30 +131,21 @@
   }
 
   &__movable {
-    position: absolute;
-    bottom: 66px;
-    left: 29.5%;
-
-    @include vp-1279 {
-      left: 34%;
-    }
-
-
-    @include vp-1023 {
-      bottom: 0;
-      left: 0;
-    }
+    margin-right: 26px;
+    margin-left: auto;
 
     @include vp-767 {
-      bottom: 144px;
+      position: absolute;
+      bottom: -90%;
+      left: 0;
     }
 
     img {
       width: 196px;
       height: 128px;
-      object-fit: cover;
 
       user-select: none;
+      object-fit: cover;
     }
   }
 
@@ -170,6 +155,27 @@
 
     height: 100%;
     grid-area: pic;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 13%;
+      z-index: -1;
+
+      width: calc(567/576*100%);
+      max-width: 100%;
+      padding-bottom: calc(340/567*100%);
+
+      background: url("../img/svg/lights/light-intro.svg") no-repeat;
+      background-position-x: 20px;
+      background-size: 100% 100%;
+      filter: blur(105px);
+
+      @include vp-767 {
+        background-position-x: 160px;
+      }
+    }
   }
 
   &__picture {
@@ -196,53 +202,9 @@
       object-fit: contain;
 
       @include vp-767 {
-        max-height: 422px;
+        height: 422px;
         translate: 156px 0;
       }
-    }
-  }
-
-  &__light {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-
-    width: calc(567/576*100%);
-    max-width: 100%;
-
-    filter: blur(105px);
-
-    @include vp-767 {
-      margin-right: -16px;
-      margin-left: -16px;
-    }
-
-    &::before {
-      content: "";
-
-      display: block;
-      padding-bottom: calc(340/567*100%);
-    }
-  }
-
-  .intro__light::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 24%;
-
-    width: 100%;
-    height: 100%;
-
-    background: url("../img/svg/light-intro.svg") no-repeat;
-    background-position-x: 20px;
-    background-size: 100% 100%;
-
-    @include vp-767 {
-      bottom: 20%;
-
-      background-position-x: 140px;
     }
   }
 }
