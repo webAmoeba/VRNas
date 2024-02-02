@@ -96,9 +96,10 @@
     padding: 14px 64px 14px 46px;// delete
 
     // unlock
-    // @media (max-width: 350px) {
-    //   padding: 14px 56px 14px 6px;
-    // }
+    @media (max-width: 350px) {
+      // padding: 14px 56px 14px 6px;
+      padding: 14px 58px 14px 46px;// delete
+    }
   }
 
   &__error {
