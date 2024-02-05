@@ -1,5 +1,6 @@
 .partners {
   position: relative;
+  z-index: 0;
 
   display: flex;
   justify-content: center;
@@ -58,6 +59,7 @@
     background: url("../img/svg/lights/light-partners.svg") no-repeat;
     background-position-y: 70%;
     background-size: 100% auto;
+    transform: translateZ(0);
     filter: blur(105px);
     aspect-ratio: 1/1;
   }

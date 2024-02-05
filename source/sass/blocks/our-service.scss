@@ -1,5 +1,6 @@
 .our-service {
   position: relative;
+  z-index: 0;
 
   &::before {
     content: "";
@@ -83,6 +84,7 @@
     @include vp-767 {
       grid-template-columns: 1fr;
       grid-auto-rows: 1fr;
+      gap: 32px;
 
       padding: 0;
     }

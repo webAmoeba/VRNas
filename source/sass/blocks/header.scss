@@ -44,6 +44,7 @@ $tablet-height: 106px;
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 0;
 
     width: calc(736/1440*100%);
     height: 354px;
@@ -51,8 +52,13 @@ $tablet-height: 106px;
 
     background: url("../img/svg/wave.svg") no-repeat top right;
     background-size: 100% 100%;
+    transform: translateZ(0);
 
-    transition: height $trans-default, width $trans-default, filter $trans-default;
+    transition:
+      height $trans-default,
+      width $trans-default,
+      background-size $trans-default,
+      filter $trans-default;
 
     pointer-events: none;
 
@@ -67,13 +73,15 @@ $tablet-height: 106px;
   }
 
   &--opaque {
-    &::before {
+    &.header::before {
       background-color: rgba($color-default-black, 0.5);
       backdrop-filter: blur(5px);
     }
 
-    &::after {
+    &.header::after {
       height: 0;
+
+      background-size: 100% 0;
     }
   }
 

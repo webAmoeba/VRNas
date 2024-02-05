@@ -1,5 +1,6 @@
 .video-block {
   position: relative;
+  z-index: 0;
 
   &::before {
     content: "";
@@ -13,6 +14,7 @@
     background: url("../img/svg/lights/light-our-service.svg") no-repeat;
     background-position: -50px 0;
     background-size: 100% 100%;
+    transform: translateZ(0);
     aspect-ratio: 454/199;
 
     filter: blur(105px);

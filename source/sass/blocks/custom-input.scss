@@ -38,11 +38,6 @@
     width: 24px;
     height: 24px;
     translate: 0 -50%;
-
-    // unlock
-    // @media (max-width: 350px) {
-    //   display: none;
-    // }
   }
 
   input,
@@ -68,19 +63,9 @@
       color: $color-default-white;
     }
 
-    // delete start
-    @media (max-width: 350px) {
-      font-size: 15px;
-    }
-
-    @media (max-width: 340px) {
-      font-size: 14px;
-    }
-
-    @media (max-width: 330px) {
+    @include vp-374 {
       font-size: 13px;
     }
-    // delete end
 
     @include hover {
       opacity: 0.8;
@@ -92,13 +77,10 @@
   }
 
   input[type="email"] {
-    // padding: 14px 56px 14px 46px;// unlock
-    padding: 14px 64px 14px 46px;// delete
+    padding: 14px 64px 14px 46px;
 
-    // unlock
-    @media (max-width: 350px) {
-      // padding: 14px 56px 14px 6px;
-      padding: 14px 58px 14px 46px;// delete
+    @include vp-374 {
+      padding: 14px 58px 14px 46px;
     }
   }
 
@@ -121,9 +103,8 @@
   &.is-invalid {
     input,
     textarea {
-      // outline: 2px solid #d9ff00;// unlock
-      background-color: rgba(255, 0, 0, 0.2);// delete
-      outline: 2px solid #ff1553;// delete
+      background-color: rgba(255, 0, 0, 0.2);
+      outline: 2px solid #ff1553;
       outline-offset: 0;
     }
   }

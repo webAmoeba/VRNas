@@ -6,14 +6,14 @@
   &__grid {
     display: grid;
     justify-content: space-between;
+    align-items: start;
+
     grid-template-columns: 6.3fr 5fr;
     gap: 0 70px;
     grid-template-areas:
       "title pic"
       "txt pic";
     grid-template-rows: min-content 1fr;
-
-    align-items: start;
 
     @include vp-1023 {
       grid-template-areas:
@@ -53,9 +53,10 @@
 
   &__picture-wrapper {
     position: relative;
-    grid-area: pic;
 
     height: 100%;
+
+    grid-area: pic;
 
     @include vp-767 {
       position: relative;
@@ -72,9 +73,6 @@
     position: relative;
     z-index: -1;
 
-    display: flex;
-    justify-content: center;
-    align-items: end;
     padding-bottom: 34px;
 
     &::before {
@@ -90,9 +88,16 @@
       height: 80%;
 
       background-color: $color-greyscale-black-80;
+      transform: translateZ(0);
 
       @include vp-767 {
         bottom: 28px;
+      }
+
+      @include vp-429 {
+        right: 15px;
+
+        min-width: unset;
       }
     }
 
@@ -112,6 +117,7 @@
       background: url("../img/svg/lights/light-section.svg") no-repeat;
       background-position: center;
       background-size: 100% 100%;
+      transform: translateZ(0);
       filter: blur(105px);
 
       @include vp-1279 {
@@ -180,10 +186,9 @@
       right: unset;
       left: 25px;
 
-      width: 80%;
-      min-width: 310px;
-      max-width: 400px;
-      height: 80%;
+      @include vp-429 {
+        left: 15px;
+      }
     }
 
     .section__grid {

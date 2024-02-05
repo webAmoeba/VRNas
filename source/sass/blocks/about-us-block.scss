@@ -1,4 +1,8 @@
 .about-us-block {
+  .section__img {
+    max-height: 574px;
+  }
+
   .section__picture-wrapper {
     @include vp-767 {
       &::before {

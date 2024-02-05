@@ -1,5 +1,6 @@
 .footer {
   position: relative;
+  z-index: 0;
 
   padding-top: 82px;
 
@@ -71,7 +72,10 @@
   }
 
   &__social-link {
+    display: grid;
     flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     width: 46px;
     height: 46px;
 
@@ -203,6 +207,7 @@
 
     background: url("../img/svg/wave-footer.svg") no-repeat bottom left;
     background-size: 100% 100%;
+    transform: translateZ(0);
 
     @include vp-1023 {
       width: 86%;
