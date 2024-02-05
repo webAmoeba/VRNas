@@ -82,7 +82,11 @@
     pointer-events: all;
     backdrop-filter: blur(8px);
 
-    svg {
+    img {
+      object-fit: contain;
+
+      width: 100%;
+
       opacity: 0.3;
 
       transition: opacity $trans-default;
@@ -99,7 +103,7 @@
     }
 
     @include hover-focus {
-      svg {
+      img {
         opacity: 0.8;
       }
 

@@ -36,7 +36,9 @@ html(lang="en")
     link(rel="stylesheet", href="css/style.min.css")
 
   body
-    +sprite()
+    //- uncomment to use gradient sprite
+    //- +sprite()
+
     .wrapper(class=wrapperMods)
       if (hasHeader)
         +header(headerMods, currentUrl)
