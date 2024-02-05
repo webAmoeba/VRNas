@@ -8,6 +8,6 @@ mixin section(titles, pic, movable)
           block
         .section__picture-wrapper
           .section__picture(data-parallax-mouse, data-movement='46', data-duration="1")
-            +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt)(class="section__img", loading="lazy")
+            +picture(pic.path, pic.name, pic.format, pic.width, pic.height, pic.alt, pic.mobile)(class="section__img", loading="lazy")
             if movable
               +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)(data-parallax-mouse, data-movement='46', loading="lazy", class="section__movable")
