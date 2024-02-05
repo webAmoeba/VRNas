@@ -39,7 +39,7 @@ const syncServer = () => {
   gulp.watch('source/*.php', gulp.series(copy, refresh));
 };
 
-const build = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileMinStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg), criticalCss);
+const build = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileMinStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg));
 const dev = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileMinStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg), syncServer);
 const start = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileStyles, compileScripts, pug), syncServer);
 const nomin = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg));
