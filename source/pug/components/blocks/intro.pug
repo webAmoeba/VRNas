@@ -17,15 +17,15 @@ mixin intro()
       alt: "just movable picture.",
     }
 
-  section.intro&attributes(attributes)
+  section.intro(data-scroll)&attributes(attributes)
     .container
       .intro__grid
         h1.title.title--h1 Immerse Yourself in Virtual Reality
-        .text-content(data-scroll)
+        .text-content
           p Experience Unforgettable Events in VR. Bring your events to life like never before with our VR services
           +btn(btn).intro__btn
           .intro__clients
-            .intro__photos
+            span.intro__photos
               each client in clients
                 +picture(
                   "content/intro/happy-client",
@@ -36,14 +36,14 @@ mixin intro()
                   "Фото счастливого клиента."
                 )
 
-            .intro__photos-description
+            span.intro__photos-description
               span.intro__how-many 32k+
               span.intro__who-how-many Happy Client
 
             .intro__movable
               +picture(movable.path, movable.name, movable.format, movable.width, movable.height, movable.alt)
 
-        .intro__picture-wrapper(data-scroll)
+        .intro__picture-wrapper
           .intro__picture
             +picture(
               "content/intro",
