@@ -156,8 +156,9 @@
 
     @include vp-1023 {
       position: static;
+
+      margin-top: 20px;
       grid-column: 1/-1;
-      justify-self: end;
     }
 
     @include vp-767 {
@@ -170,6 +171,7 @@
 
       width: 196px;
       height: 128px;
+      margin-top: unset;
     }
 
     @include vp-374 {
