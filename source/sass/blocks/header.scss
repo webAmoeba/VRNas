@@ -8,37 +8,6 @@ $tablet-height: 106px;
 
   color: $color-default-white;
 
-  @include vp-1023 {
-    height: $tablet-height;
-  }
-
-  &--sticky {
-    position: sticky;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    @include vp-1023 {
-      position: fixed;
-
-      & ~ main {
-        margin-top: $tablet-height;
-      }
-    }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    width: 100%;
-    height: 100%;
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -72,8 +41,37 @@ $tablet-height: 106px;
     }
   }
 
+  @include vp-1023 {
+    height: $tablet-height;
+  }
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    @include vp-1023 {
+      position: fixed;
+
+      & ~ main {
+        margin-top: $tablet-height;
+      }
+    }
+  }
+
   &--opaque {
     &.header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      width: 100%;
+      height: 100%;
+
       background-color: rgba($color-default-black, 0.5);
       backdrop-filter: blur(5px);
     }
@@ -139,7 +137,7 @@ $tablet-height: 106px;
       gap: 10px;
 
       background-color: $color-default-black;
-      transform: translate(0, calc(-100% - 93px));
+      transform: translate(0, calc(-100% - $tablet-height));
 
       transition:
         transform $trans-default,
@@ -149,8 +147,6 @@ $tablet-height: 106px;
     @include vp-767 {
       margin: 0 -16px;
       padding: 0 16px 16px;
-
-      transform: translate(0, calc(-100% - 93px));
     }
   }
 
@@ -262,10 +258,6 @@ $tablet-height: 106px;
 
     &::before {
       display: none;
-
-      background-color: $color-default-black;
-
-      transition-delay: unset;
     }
 
     .header__nav {
