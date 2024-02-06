@@ -10,22 +10,40 @@
     overflow-x: visible;
   }
 
-  &::before {
+  &__light {
+    display: none;
+
     @include vp-767 {
-      content: "";
       position: absolute;
       top: -20px;
       left: 50%;
       z-index: -1;
 
+      display: block;
       width: 300px;
       max-width: 100%;
       aspect-ratio: 300/98;
 
-      background: url("../img/svg/lights/light-article.svg") no-repeat center;
-      background-size: 100% 100%;
       transform: translate(-50%, 0) translateZ(0);
       filter: blur(55px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        background: url("../img/svg/lights/light-article.svg") no-repeat center;
+        background-size: 100% 100%;
+        transform: translateZ(0);
+      }
+    }
+
+    @include vp-374 {
+      width: 80%;
     }
   }
 
@@ -186,7 +204,11 @@
       border-right: none;
 
       transition: translate $trans-default;
-      translate: 80% 0;
+      translate: calc(80% + 24px) 0;
+
+      @include vp-767 {
+        translate: unset;
+      }
 
       &:hover::before {
         opacity: 0.8;
@@ -208,7 +230,11 @@
       }
 
       &.is-open {
-        translate: 0;
+        translate: 24px 0;
+
+        @include vp-767 {
+          translate: unset;
+        }
 
         &::before {
           content: "→";
@@ -216,7 +242,11 @@
       }
 
       &.is-closed {
-        translate: 80% 0;
+        translate: calc(80% + 24px) 0;
+
+        @include vp-767 {
+          translate: unset;
+        }
 
         &::before {
           content: "←";

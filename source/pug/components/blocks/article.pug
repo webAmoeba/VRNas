@@ -8,6 +8,7 @@ mixin article()
         width: "102",
         height: "66",
         alt: "preview.",
+        mobile: true,
         property: "VR Education",
         title: "The Future of&nbsp;Education: How VR&nbsp;is&nbsp;Revolutionizing the Classroom",
         link: "#",
@@ -19,6 +20,7 @@ mixin article()
         width: "102",
         height: "66",
         alt: "preview.",
+        mobile: true,
         property: "VR Architecture",
         title: "Bringing Designs to&nbsp;Life: How VR&nbsp;is&nbsp;Changing Architecture",
         link: "#",
@@ -30,6 +32,7 @@ mixin article()
         width: "102",
         height: "66",
         alt: "preview.",
+        mobile: true,
         property: "VR Entertainment",
         title: "Making Events Memorable: The Power of&nbsp;VR for Corporate and Special Occasions",
         link: "#",
@@ -41,6 +44,7 @@ mixin article()
         width: "102",
         height: "66",
         alt: "preview.",
+        mobile: true,
         property: "VR Event",
         title: "Exploring New Worlds: The Benefits of&nbsp;VR&nbsp;Travel",
         link: "#",
@@ -52,9 +56,10 @@ mixin article()
     ]
 
 
-  article.article(data-scroll)
+  article.article
+    .article__light
     .container
-      .article__grid
+      .article__grid(data-scroll)
         .text-content
           .article__titles
             .property VR Architecture
@@ -68,6 +73,7 @@ mixin article()
             "789",
             "528",
             "Чувак в виар-очках вставл в позу телекинезера.",
+            true,
           )
 
           p Architecture is an art and science that is constantly evolving with technology. The industry has gone through various transformations over the years, from pencil and paper sketches to computer-aided design (CAD) software. However, one technology that is revolutionizing architecture is virtual reality (VR) design.
@@ -84,6 +90,7 @@ mixin article()
               "377",
               "252",
               "символ бесконечности.",
+              true,
             )
             +picture(
               "content/detail-blog",
@@ -92,6 +99,7 @@ mixin article()
               "377",
               "252",
               "виар-очки.",
+              true,
             )
 
           p The benefits of VR design in architecture are clear, and the technology is becoming increasingly accessible and affordable. More and more architects and firms are incorporating VR design into their workflows, and the industry is poised for a major transformation.
