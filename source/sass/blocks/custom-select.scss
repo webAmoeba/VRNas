@@ -2,12 +2,12 @@
   position: relative;
 
   width: 300px;
-  padding: 14px 0 28px;
   margin: 0 0 44px 0;
+  padding: 14px 0 28px;
 
   @media screen and (max-width: 767px) {
-    padding: 4px 0 14px;
     width: 100%;
+    padding: 4px 0 14px;
   }
 
   &__label {
@@ -83,8 +83,9 @@
     }
 
     &:disabled {
-      pointer-events: none;
       opacity: 0.3;
+
+      pointer-events: none;
     }
   }
 
@@ -156,12 +157,12 @@
   }
 
   &__text {
-    font-size: 20px;
-    line-height: 24px;
     flex-shrink: 0;
     width: 80%;
     overflow: hidden;
 
+    font-size: 20px;
+    line-height: 24px;
     text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -198,8 +199,9 @@
 
   &.open-up {
     .custom-select__list {
-      bottom: auto;
       top: 0;
+      bottom: auto;
+
       transform: translateY(calc(-100% + 10px));
     }
   }
@@ -248,6 +250,8 @@
     }
   }
 
+  //                                        unlock to use styles for .is-valid
+  //
   /* &.is-valid {
     .custom-select__button {
       border: 2px solid $color-eucalyptus;

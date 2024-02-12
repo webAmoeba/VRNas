@@ -1,16 +1,17 @@
 .custom-toggle {
   position: relative;
-  font-size: 18px;
-  line-height: 27px;
-  font-weight: 300;
 
   display: flex;
   width: 500px;
   padding: 14px 0 10px 36px;
 
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 300;
+
   @media screen and (max-width: 767px) {
-    padding: 14px 0 10px 0;
     width: 100%;
+    padding: 14px 0 10px 0;
   }
 
   &:last-of-type {
@@ -67,7 +68,6 @@
         height: 20px;
 
         background-color: rgba(#2c39f2, 0);
-
         transform: translate(-50%, -50%);
 
         transition: background-color 0.3s ease;

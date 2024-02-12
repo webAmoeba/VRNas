@@ -16,11 +16,9 @@
 }
 
 .rouble {
+  // font-family: $ff-rouble;    // unlock if you have this font in your project and if you want to use it
   /* stylelint-disable */
   font-weight: 400 !important;
-  /* stylelint-enable */
-  font-family: $ff-rouble;
-  /* stylelint-disable */
   text-transform: lowercase !important;
   /* stylelint-enable */
 }

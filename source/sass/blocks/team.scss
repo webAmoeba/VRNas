@@ -45,17 +45,13 @@
   }
 
   &__list {
-    // uncomment
-    // display: grid;
-    display: flex;//delete
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
     padding: 0;
 
     list-style-type: none;
-    // uncomment
-    // grid-template-columns: repeat(auto-fit, 292px);
     gap: 10px;
 
     @include vp-767 {
@@ -67,7 +63,7 @@
   &__slide {
     position: relative;
 
-    width: 292px;//delete
+    width: 292px;
 
     background-color: rgba(37, 37, 50, 0.6);
     border-width: 1px;

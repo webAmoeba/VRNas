@@ -1,7 +1,7 @@
 mixin info-card(card)
   .info-card(tabindex="0")
     .info-card__icon
-      img(src=`img/svg/service/${card.icon}.svg` width="48" height="48" alt="just decorate." aria-hidden="true" loading="lazy")
+      img(src=`img/svg/service/${card.icon}.svg`, width="48", height="48", alt="just decorate.", aria-hidden="true", loading="lazy")
     p.info-card__title!= card.title
     p.info-card__text!= card.text
     .info-card__btn-wrapper

@@ -1,8 +1,8 @@
 mixin picture(path, image, format, width, height, altText, mobile)
   if (mobile)
     picture
-      source(media="(min-width: 1024px)" type="image/webp", srcset="img/" + path + "/" + image + "-mobile.webp" + ", " + "img/" + path + "/" + image + "-mobile@2x.webp" + " 2x")
-      source(media="(max-width: 1023px)" type="image/webp", srcset="img/" + path + "/" + image + "-mobile.webp" + ", " + "img/" + path + "/" + image + "-mobile@2x.webp" + " 2x")
+      source(media="(min-width: 1024px)", type="image/webp", srcset="img/" + path + "/" + image + "-mobile.webp" + ", " + "img/" + path + "/" + image + "-mobile@2x.webp" + " 2x")
+      source(media="(max-width: 1023px)", type="image/webp", srcset="img/" + path + "/" + image + "-mobile.webp" + ", " + "img/" + path + "/" + image + "-mobile@2x.webp" + " 2x")
       img(src="img/" + path + "/" + image + "." + format, srcset= "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)&attributes(attributes)
   else
     picture

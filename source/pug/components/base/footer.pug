@@ -49,7 +49,7 @@ mixin footer(footerMods)
           +logo()
           .footer__socials
             each link in socials
-              a.footer__social-link.link(href=link.href target="_blank" rel="nofollow noopener noreferrer")
+              a.footer__social-link.link(href=link.href, target="_blank", rel="nofollow noopener noreferrer")
                 span.visually-hidden!= link.name
                 img(src=`img/svg/footer/socials/${link.icon}.svg`, width="46", height="46", alt="just decorate.", aria-hidden="true", loading="lazy")
 
@@ -73,7 +73,7 @@ mixin footer(footerMods)
             each link in helps
               if link.isExternal
                 li.footer__item
-                  a.footer__link(href=link.href target="_blank" rel="nofollow noopener noreferrer")!= link.text
+                  a.footer__link(href=link.href, target="_blank", rel="nofollow noopener noreferrer")!= link.text
                     +icon(link.icon, "20", "20")
               else
                 li.footer__item

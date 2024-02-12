@@ -2,11 +2,11 @@ mixin subscribe()
   section.subscribe(data-form-validate="data-form-validate", data-callback="base")&attributes(attributes)
     h2.visually-hidden subscribe
     .container
-      form(method="post" action="https://echo.htmlacademy.ru/")#subscribe
+      form(method="post", action="https://echo.htmlacademy.ru/")#subscribe
         +custom-input({
           inputType: "email",
           inputLabel: "Subscribe to&nbsp;our newsletter for latest updates",
           inputName: "user-mail",
           inputId: "input-email-input",
           inputPlaceholder: "Enter your email address",
-        })(data-validate-type="email" data-message-base="The field must be filled in" data-required="data-required" data-message-extra="Check that the field is filled in correctly")
+        })(data-validate-type="email", data-message-base="The field must be filled in", data-required="data-required", data-message-extra="Check that the field is filled in correctly")
