@@ -64,6 +64,10 @@
     display: flex;
     flex-wrap: wrap;
     min-width: 246px;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
     gap: 20px;
 
     @include vp-1023 {
@@ -81,9 +85,9 @@
 
     line-height: 0;
 
-    img {
-      object-fit: contain;
-    }
+    background: no-repeat center;
+    background-image: var(--bg-social-footer);
+    background-size: 46px 46px;
 
     transition: opacity $trans-default;
 
@@ -133,6 +137,10 @@
     line-height: 28px;
     font-weight: 600;
     color: $color-default-white;
+  }
+
+  address {
+    font-style: normal;
   }
 
   &__links-list {

@@ -61,5 +61,5 @@ mixin team()
                 .team__card
                   +picture(person.path, person.name, person.format, person.width, person.height, person.alt)
                   .team__person
-                    .team__name!= person.person
-                    .team__post!= person.post
+                    p.team__name!= person.person
+                    p.team__post!= person.post

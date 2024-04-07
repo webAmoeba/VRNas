@@ -37,7 +37,6 @@
   }
 
   &__text {
-    display: box;
     margin: 0;
     margin-top: 12px;
     overflow: hidden;
@@ -51,7 +50,10 @@
     box-orient: vertical;
     /* stylelint-disable-next-line */
     display: -moz-box;
+    /* stylelint-disable-next-line */
+    display: -webkit-box;
   }
+
 
   &__btn-wrapper {
     position: absolute;

@@ -153,6 +153,7 @@
   }
 
   &__name {
+    margin: 0;
     margin-top: auto;
 
     font-weight: 600;
@@ -161,6 +162,8 @@
   }
 
   &__post {
+    margin: 0;
+
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;

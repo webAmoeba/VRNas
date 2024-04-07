@@ -30,7 +30,6 @@ mixin our-pricing()
           ul.our-pricing__list
             each item in features
               li.our-pricing__item
-                img(src="img/svg/cloud.svg", width="42", height="42", alt="just decorate.", aria-hidden="true", loading="lazy")
                 .our-pricing__item-title!= item.title
                 .our-pricing__item-text!= item.text
           .our-pricing__picture-wrapper

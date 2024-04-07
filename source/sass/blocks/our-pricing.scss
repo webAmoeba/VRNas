@@ -149,15 +149,17 @@
 
     padding-left: 58px;
 
-    img {
+    &::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
 
-      object-fit: contain;
-
       width: 42px;
       height: 42px;
+
+      background: url("../img/svg/cloud.svg") no-repeat center;
+      background-size: 42px 42px;
     }
   }
 

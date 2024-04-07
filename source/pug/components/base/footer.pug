@@ -47,11 +47,11 @@ mixin footer(footerMods)
       .footer__grid(data-scroll)
         .footer__first-column
           +logo()
-          .footer__socials
+          ul.footer__socials
             each link in socials
-              a.footer__social-link.link(href=link.href, target="_blank", rel="nofollow noopener noreferrer")
-                span.visually-hidden!= link.name
-                img(src=`img/svg/footer/socials/${link.icon}.svg`, width="46", height="46", alt="just decorate.", aria-hidden="true", loading="lazy")
+              li
+                a.footer__social-link.link(href=link.href, target="_blank", rel="nofollow noopener noreferrer", style=`--bg-social-footer: url(../img/svg/footer/socials/${link.icon}.svg)`)
+                  span.visually-hidden!= link.name
 
         section.footer__column.footer__column--second
           h2.footer__section-title Quicklinks
@@ -69,15 +69,16 @@ mixin footer(footerMods)
 
         section.footer__column.footer__column--fourth
           h2.footer__section-title Need Help?
-          ul.footer__links-list
-            each link in helps
-              if link.isExternal
-                li.footer__item
-                  a.footer__link(href=link.href, target="_blank", rel="nofollow noopener noreferrer")!= link.text
-                    +icon(link.icon, "20", "20")
-              else
-                li.footer__item
-                  a.footer__link(href=link.href)!= link.text
-                    +icon(link.icon, "20", "20")
+          address
+            ul.footer__links-list
+              each link in helps
+                if link.isExternal
+                  li.footer__item
+                    a.footer__link(href=link.href, target="_blank", rel="nofollow noopener noreferrer")!= link.text
+                      +icon(link.icon, "20", "20")
+                else
+                  li.footer__item
+                    a.footer__link(href=link.href)!= link.text
+                      +icon(link.icon, "20", "20")
 
       .footer__copy © Copyright 2023, All Rights Reserved
