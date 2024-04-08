@@ -3640,14 +3640,12 @@ button,
 }
 
 .team__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  grid-template-columns: repeat(auto-fit, 292px);
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -3656,7 +3654,6 @@ button,
 
 .team__slide {
   position: relative;
-  width: 292px;
   background-color: rgba(37, 37, 50, 0.6);
   border-width: 1px;
   border-style: solid;
@@ -5253,6 +5250,16 @@ button,
   }
 
   .team__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-top: 0;
     gap: 26px;
   }
