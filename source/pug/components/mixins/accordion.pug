@@ -1,8 +1,0 @@
-mixin accordion(data)
-  .accordion(data-accordion="parent", data-single)
-    each acc, index in data
-      .accordion__element(data-accordion="element", class= index === 0 ? 'is-active' : '')
-        button.accordion__button(type="button", data-accordion="button")!= acc.button
-        .accordion__content(data-accordion="content")
-          .accordion__wrapper
-            p!= acc.text

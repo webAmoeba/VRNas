@@ -1,7 +1,0 @@
-mixin article-preview(preview)
-  .article-preview
-    .article-preview__pic
-      +picture(preview.path, preview.name, preview.format, preview.width, preview.height, preview.alt, preview.mobile)
-    a.article-preview__text(href=preview.link)
-      .property.property--little!= preview.property
-      .article-preview__title!= preview.title

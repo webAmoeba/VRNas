@@ -1,8 +1,0 @@
-mixin breadcrumbs(breadcrumbs)
-  ul.breadcrumbs
-    each item in breadcrumbs
-      li.breadcrumbs__item
-        if item.current
-          span.breadcrumbs__link.breadcrumbs__link--span!= item.title
-        else
-          a.breadcrumbs__link(href=item.href)!= item.title

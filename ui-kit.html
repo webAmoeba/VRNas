@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>UI-kit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="VRNas — Immerse Yourself in Virtual Reality"><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="preload" href="fonts/ChakraPetch-SemiBold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/ChakraPetch-Light.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <style>
+        .uikit {
+  padding: 50px 0;
+  scroll-behavior: smooth;
+}
+@media (max-width: 1023px) {
+  .uikit {
+    padding: 50px 0 100px;
+  }
+}
+.uikit__header-link {
+  display: inline-flex;
+}
+.uikit__text {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 0 10px 0;
+}
+.uikit__text--class {
+  font-family: monospace, monospace;
+  font-size: 16px;
+  line-height: 22px;
+}
+.uikit__h1 {
+  font-size: 30px;
+  line-height: 36px;
+  margin: 30px 0 30px;
+}
+@media (max-width: 767px) {
+  .uikit__h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+.uikit__h2 {
+  font-size: 20px;
+  line-height: 26px;
+  position: relative;
+  margin: 0;
+  padding: 5px 0;
+}
+.uikit__section > .uikit__h2 {
+  margin: 0 0 15px 0;
+  padding: 50px 0 0 0;
+}
+@media (max-width: 767px) {
+  .uikit__section > .uikit__h2 {
+    padding: 30px 0 0;
+  }
+}
+.uikit__component {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+}
+@media (max-width: 767px) {
+  .uikit__component {
+    padding: 20px 0;
+  }
+}
+.uikit__component::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: calc(100% - 40px);
+  content: "";
+  transform: translateY(-50%);
+  background-color: #2c39f2;
+}
+@media (max-width: 767px) {
+  .uikit__component::before {
+    left: -10px;
+  }
+}
+.uikit__component pre {
+  width: 100%;
+  margin: 15px 0 0 0;
+}
+.uikit__sections {
+  position: fixed;
+  z-index: 5000;
+  right: 0;
+  top: 0;
+  overflow-y: scroll;
+  width: min-content;
+  max-width: 30%;
+  max-height: calc(100vh - 50px);
+  padding: 15px;
+  counter-reset: sections;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  background-color: #2c39f2;
+}
+@media (max-width: 1023px) {
+  .uikit__sections {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.uikit__sections::-webkit-scrollbar {
+  display: none;
+}
+.uikit__sections label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  color: inherit;
+}
+@media (max-width: 1023px) {
+  .uikit__sections label {
+    justify-content: center;
+  }
+}
+@media (hover: hover) {
+  .uikit__sections label:hover:not(.focus-visible) {
+    opacity: 0.6;
+  }
+}
+.uikit__sections label.focus-visible:focus {
+  opacity: 0.6;
+}
+.uikit__sections label::after {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 20px;
+  content: "";
+  transform: rotate(45deg);
+  border: 1px solid #fff;
+  border-top: none;
+  border-left: none;
+}
+.uikit__sections div {
+  display: grid;
+  padding: 0;
+  transition: grid-template-rows 0.3s ease, padding 0.3s ease;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0fr;
+}
+.uikit__sections input:checked + div {
+  padding: 10px 0 0 0;
+  grid-template-rows: 1fr;
+}
+.uikit__sections ul {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.uikit__sections li::before {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 5px 0 0;
+  content: counter(sections) ". ";
+  counter-increment: sections;
+}
+.uikit__sections a {
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  color: inherit;
+}
+.uikit__sections a::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  background-color: #000;
+}
+@media (hover: hover) {
+  .uikit__sections a:hover:not(.focus-visible)::before {
+    opacity: 0.8;
+  }
+}
+.uikit__sections a.focus-visible:focus::before {
+  opacity: 0.8;
+}
+        /* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+pug */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:16px;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+      </style>
+      <main class="sharp">
+        <div class="uikit">
+          <div class="uikit__sections" data-scroll-lock-fill-gap>
+            <label for="section-burger"><span>Разделы&nbsp;компонентов</span></label>
+            <input class="visually-hidden" type="checkbox" checked id="section-burger">
+            <div>
+              <ul>
+                <li><a href="#sharp">Векторная декоративная подложка</a></li>
+                <li><a href="#page-section">Обвязка секции</a></li>
+                <li><a href="#section">Сетка секции</a></li>
+                <li><a href="#logo">Логотип</a></li>
+                <li><a href="#title">Заголовки</a></li>
+                <li><a href="#text-content">Обвязка текста и не только</a></li>
+                <li><a href="#breadcrumbs">Хлебные крошки</a></li>
+                <li><a href="#accordion">Аккордион</a></li>
+                <li><a href="#buttons">Кнопки</a></li>
+                <li><a href="#property">Свойство</a></li>
+                <li><a href="#video">Видео</a></li>
+                <li><a href="#article-preview">Превью статьи</a></li>
+                <li><a href="#aside">Сетка бокового меню</a></li>
+                <li><a href="#info-card">Инфокарточка</a></li>
+                <li><a href="#card-price">Карточка цены</a></li>
+                <li><a href="#simple-intro">Простое интро</a></li>
+                <li><a href="#forms">Элементы форм</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="container"><a class="uikit__header-link" href="sitemap.html"><img src="favicon/android-chrome-512x512.png" width="50" alt="Логотип проекта"></a>
+            <h1 class="uikit__h1">Компоненты, используемые на проекте</h1>
+            <section class="uikit__section">
+              <h2 class="uikit__h2">Название компонента или группы компонентов</h2>
+              <p class="uikit__text">Информация о компоненте (подсказки \ предупреждение \ важная информация)</p>
+              <div class="uikit__component">
+                <p class="uikit__text"> Класс компонента \ модификаторы</p>
+                <pre><code class="language-pug">p Пример кода
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="sharp">
+              <h2 class="uikit__h2">Декоративная подложка. Просто добавляется класс на компонент или на main</h2>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.sharp \ .sharp--about-us</p>
+                <pre><code class="language-pug">.sharp
+.sharp.sharp--about-us
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="page-section">
+              <h2 class="uikit__h2">Обвязка секции</h2>
+              <p class="uikit__text">Устанавливает унифицированные падддинги вокруг блоков</p>
+              <p class="uikit__text">.page-section--bottom добавляет отступ снизу</p>
+              <p class="uikit__text">.page-section--only-bottom устанавливает только отступ снизу</p>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.page-section \ .page-section--bottom \ .page-section--only-bottom</p>
+                <pre><code class="language-pug">.page-section
+.page-section.page-section--bottom
+.page-section.page-section--only-bottom
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="section">
+              <h2 class="uikit__h2">Сетка секции</h2>
+              <p class="uikit__text">Остальной контент расположится на следующей строке (в pug) с отступом после вызова компонента</p>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.section \ .section--reverce</p>
+                <section class="section">
+                  <div class="container">
+                    <div class="section__grid">
+                      <div class="titles-set">
+                        <p class="title-colorful">цветной</p>
+                        <h2 class="title">заголовок</h2>
+                      </div>
+                      <div class="text-content">
+                        <p>здесь уже любой контент</p>
+                      </div>
+                      <div class="section__picture-wrapper">
+                        <div class="section__picture" data-parallax-mouse data-movement="46" data-duration="1">
+                          <picture>
+                            <source type="image/webp" srcset="img/content/about-us-block/image.webp, img/content/about-us-block/image@2x.webp 2x"><img class="section__img" src="img/content/about-us-block/image.png" srcset="img/content/about-us-block/image@2x.png 2x" width="563" height="662" alt="Чувак в виар-очках в профиль." loading="lazy">
+                          </picture>
+                          <picture>
+                            <source type="image/webp" srcset="img/content/movable/1.webp, img/content/movable/1@2x.webp 2x"><img class="section__movable" src="img/content/movable/1.jpg" srcset="img/content/movable/1@2x.jpg 2x" width="196" height="128" alt="just movable picture." data-parallax-mouse data-movement="46" loading="lazy">
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <pre><code class="language-pug">+section({
+  colorful: "цветной",
+  title: "заголовок",
+},{
+  path: "content/about-us-block",
+  name: "image",
+  format: "png",
+  width: "563",
+  height: "662",
+  alt: "Чувак в виар-очках в профиль.",
+},{
+  path: "content/movable",
+  name: "1",
+  format: "jpg",
+  width: "196",
+  height: "128",
+  alt: "just movable picture.",
+})
+  p здесь уже любой контент
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="logo">
+              <h2 class="uikit__h2">Логотип</h2>
+              <p class="uikit__text">На главной странице в шапке нужно передать true</p>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.logo</p><a class="logo" href="index.html"><span class="visually-hidden">На главную</span>
+                  <picture>
+                    <source type="image/webp" srcset="img/logo/logo.webp, img/logo/logo@2x.webp 2x"><img src="img/logo/logo.png" srcset="img/logo/logo@2x.png 2x" width="101" height="30" alt="Логотип.">
+                  </picture></a>
+                <pre><code class="language-pug">+logo(true)
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="title">
+              <h2 class="uikit__h2">Заголовки</h2>
+              <div class="uikit__component sharp">
+                <p class="uikit__text uikit__text--class">.title \ .title--h1 \ .title--h3 \ .title--article</p>
+                <div class="title">Обычный заголовок</div>
+                <div class="title title--h1">Заголовок первого уровня</div>
+                <div class="title title--h3">Заголовок третьего уровня</div>
+                <div class="title title--article">Используется в блоке .article</div>
+                <pre><code class="language-pug">.title Обычный заголовок
+.title.title--h1 Заголовок первого уровня
+.title.title--h3 Заголовок третьего уровня
+.title.title--article Используется в блоке .article</code></pre>
+              </div>
+              <h2 class="uikit__h2">Цветной заголовок</h2>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.title-colorful</p>
+                <div class="title-colorful">цветной</div>
+                <pre><code class="language-pug">.title-colorful цветной</code></pre>
+              </div>
+              <h2 class="uikit__h2">Сет заголовков</h2>
+              <p class="uikit__text">Сет из цветного заголовка и обычного, цветной заголовок - обычный параграф, обычный заголовок по умолчанию h2, или можно задать другой, передав его в свойстве tag</p>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.titles-set</p>
+                <div class="titles-set">
+                  <p class="title-colorful">colorful</p>
+                  <h3 class="title">title</h3>
+                </div>
+                <pre><code class="language-pug">+titles-set({colorful: "colorful", title: "title", tag: "h3"})
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="text-content">
+              <h2 class="uikit__h2">Обвязка текста и не только</h2>
+              <p class="uikit__text">Задает общие стили для текста и других элементов, которые могут смешиваться с текстом – кнопки, картинки т.д.</p>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.text-content</p>
+                <pre><code class="language-pug">.text-content
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="breadcrumbs">
+              <h2 class="uikit__h2">Хлебные крошки</h2>
+              <p class="uikit__text">свойство current для последней крошки</p>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.accordion</p>
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a>
+                  </li>
+                  <li class="breadcrumbs__item"><span class="breadcrumbs__link breadcrumbs__link--span">About us</span>
+                  </li>
+                </ul>
+                <pre><code class="language-pug">+breadcrumbs([
+  {
+    href: "index.html",
+    title: "Home",
+  },
+  {
+    href: "about-us.html",
+    title: "About us",
+    current: true,
+  },
+])
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="accordion">
+              <h2 class="uikit__h2">Аккордион</h2>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.accordion</p>
+                <div class="accordion" data-accordion="parent" data-single>
+                  <div class="accordion__element is-active" data-accordion="element">
+                    <button class="accordion__button" type="button" data-accordion="button">Passionate and Experienced Team</button>
+                    <div class="accordion__content" data-accordion="content">
+                      <div class="accordion__wrapper">
+                        <p>We&nbsp;are proud of&nbsp;our team of&nbsp;VR experts who are passionate about&nbsp;VR and dedicated to&nbsp;delivering the highest quality work. Our team consists of&nbsp;experienced&nbsp;VR developers, designers, and technicians who have a&nbsp;proven track record of&nbsp;creating immersive and engaging&nbsp;VR experiences.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__element" data-accordion="element">
+                    <button class="accordion__button" type="button" data-accordion="button">Customized Solutions</button>
+                    <div class="accordion__content" data-accordion="content">
+                      <div class="accordion__wrapper">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, quae commodi. Velit sed possimus atque hic reiciendis facilis quam totam, quos perspiciatis eos architecto obcaecati ipsum, magni fugit dolorum repellendus.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__element" data-accordion="element">
+                    <button class="accordion__button" type="button" data-accordion="button">Exceptional Customer Service</button>
+                    <div class="accordion__content" data-accordion="content">
+                      <div class="accordion__wrapper">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores suscipit totam maiores minus unde provident velit facere, voluptatem amet consequatur magni, quisquam quae! Neque, deleniti magnam dolorem nesciunt voluptate assumenda.Aliquid, dolorum alias! Excepturi, cupiditate! Adipisci fugit debitis expedita esse. Consectetur, voluptates omnis beatae qui, doloribus rem, molestias quos id sint excepturi cupiditate! Maxime, quos doloribus soluta qui alias ratione.Eius omnis neque sunt illum dolore saepe delectus reiciendis sed quibusdam. Vel ducimus excepturi libero eum culpa quisquam quia adipisci nostrum, doloribus sapiente quam deleniti iusto quod tempora, sed quos.Ratione earum natus impedit, quaerat eius maxime laborum error harum, quis debitis maiores totam ad, repellat et quos? Accusamus nulla et nobis vero eius debitis consequatur eaque sint quisquam delectus?Ullam temporibus laboriosam dignissimos ipsa. Quaerat commodi error ab, earum, explicabo officia placeat repellat eius, aspernatur amet perspiciatis tenetur? In dolores ipsam laudantium eaque odit, libero quis non illum vitae.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="language-pug">+accordion([{button: "btn text", text: "txt"}])
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="buttons">
+              <h2 class="uikit__h2">Кнопки</h2>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.btn \ .btn--transparent</p>
+                <button class="btn" type="button">Кнопка</button>
+                <pre><code class="language-pug">+btn({text: "Текст", href: "#"})</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.btn</p>
+                <a class="btn btn--transparent" href="#" target="_blank" rel="nofollow noopener noreferrer">Полупрозрачная</a>
+                <pre><code class="language-pug">+btn({text: "Полупрозрачная", href: "#", isExternal: true}).btn--transparent(aria-label="Просто ссылка")</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.btn \ disabled</p>
+                <button class="btn" type="button" disabled>Текст</button>
+                <pre><code class="language-pug">+btn({text: "Текст"})(disabled)
+</code></pre>
+              </div>
+            </section>
+            <section class="uikit__section" id="property">
+              <h2 class="uikit__h2">Свойство</h2>
+              <p class="uikit__text uikit__text--class">.property</p>
+              <div class="property">property</div>
+              <div class="property property--little"> property little</div>
+              <pre><code class="language-pug">.property property
+.property.property--little  property little
+</code></pre>
+            </section>
+            <section class="uikit__section" id="video">
+              <h2 class="uikit__h2">Видео</h2>
+              <p class="uikit__text uikit__text--class">.video</p>
+              <div class="video" id="video-wrapper">
+                <video class="video__video" preload="none" width="1200" height="522" poster="img/video/poster@2x.webp" id="video">
+                  <source src="img/video/ee.mp4" type="video/mp4">
+                </video>
+                <div class="video__description" id="video-description">
+                  <div class="property">VR Service</div>
+                  <div class="video__description-text">How to get started</div>
+                </div>
+                <div class="video__btn-wrapper">
+                  <button class="video__play-btn" type="button" id="play-video"><span class="visually-hidden">push to play video</span><img src="img/video/play-btn.svg" width="100" height="100" alt="just decorate." aria-hidden="true"></button>
+                </div>
+              </div>
+              <pre><code class="language-pug">+video({
+  src: "img/video/ee.mp4",
+  poster: "img/video/poster@2x.webp",
+  tag: "VR Service",
+  description: "How to get started",
+})
+</code></pre>
+            </section>
+            <section class="uikit__section" id="article-preview">
+              <h2 class="uikit__h2">Превью статьи</h2>
+              <p class="uikit__text uikit__text--class">.article-preview</p>
+              <div class="article-preview">
+                <div class="article-preview__pic">
+                  <picture>
+                    <source type="image/webp" srcset="img/content/previews/14.webp, img/content/previews/14@2x.webp 2x"><img src="img/content/previews/14.jpg" srcset="img/content/previews/14@2x.jpg 2x" width="102" height="66" alt="preview.">
+                  </picture>
+                </div><a class="article-preview__text" href="#">
+                  <div class="property property--little">VR Education</div>
+                  <div class="article-preview__title">The Future of&nbsp;Education: How VR&nbsp;is&nbsp;Revolutionizing the Classroom</div></a>
+              </div>
+              <pre><code class="language-pug">+article-preview({
+  path: "content/previews",
+  name: "14",
+  format: "jpg",
+  width: "102",
+  height: "66",
+  alt: "preview.",
+  property: "VR Education",
+  title: "The Future of&nbsp;Education: How VR&nbsp;is&nbsp;Revolutionizing the Classroom",
+  link: "#",
+})
+</code></pre>
+            </section>
+            <section class="uikit__section" id="aside">
+              <h2 class="uikit__h2">Сетка бокового меню</h2>
+              <p class="uikit__text">Задана сетка и стили для элементов списка (паддинги и бордер)</p>
+              <p class="uikit__text uikit__text--class">.aside</p>
+              <pre><code class="language-pug">.aside
+</code></pre>
+            </section>
+            <section class="uikit__section" id="info-card">
+              <h2 class="uikit__h2">Инфокарточка</h2>
+              <p class="uikit__text uikit__text--class">.info-card</p>
+              <div class="info-card" tabindex="0">
+                <div class="info-card__icon"><img src="img/svg/service/card-software.svg" width="48" height="48" alt="just decorate." aria-hidden="true" loading="lazy"></div>
+                <p class="info-card__title">VR Development</p>
+                <p class="info-card__text">From concept to&nbsp;creation, our team of&nbsp;VR developers will bring your vision to&nbsp;life.</p>
+                <div class="info-card__btn-wrapper">
+                  <a class="btn btn--transparent" href="#" target="_blank" rel="nofollow noopener noreferrer">learn more</a>
+                </div>
+              </div>
+              <pre><code class="language-pug">+info-card({
+  icon: "card-software",
+  title: "VR Development",
+  text: "From concept to&nbsp;creation, our team of&nbsp;VR developers will bring your vision to&nbsp;life."
+})
+</code></pre>
+            </section>
+            <section class="uikit__section" id="card-price">
+              <h2 class="uikit__h2">Карточка цены</h2>
+              <p class="uikit__text uikit__text--class">.card-price</p>
+              <div class="card-price">
+                <div class="card-price__inner">
+                  <div class="card-price__top-text">Start from</div>
+                  <div class="card-price__price">$99</div>
+                  <a class="btn" href="#">get started</a>
+                  <div class="card-price__botton-text">30 Days Moneyback Guarantee</div>
+                </div>
+              </div>
+              <pre><code class="language-pug">+card-price()
+</code></pre>
+            </section>
+            <section class="uikit__section" id="simple-intro">
+              <h2 class="uikit__h2">Простое интро</h2>
+              <p class="uikit__text">Где breadcrumbs это массив объектов вида: { href: "index.html", title: "Home", }, { href: "about-us.html", title: "About us", current: true, }</p>
+              <p class="uikit__text uikit__text--class">.simple-intro</p>
+              <section class="simple-intro">
+                <div class="simple-intro__light"></div>
+                <div class="container">
+                  <div class="simple-intro__grid">
+                    <h1 class="title title--h1">About Us</h1>
+                    <ul class="breadcrumbs">
+                      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a>
+                      </li>
+                      <li class="breadcrumbs__item"><span class="breadcrumbs__link breadcrumbs__link--span">About us</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <pre><code class="language-pug">+simple-intro(breadcrumbs, "About Us")
+</code></pre>
+            </section>
+            <section class="uikit__section" id="forms">
+              <h2 class="uikit__h2">Элементы форм</h2>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.custom-input \ type="text"</p>
+                <div class="custom-input">
+                  <label><span class="custom-input__label">Введите ваше имя</span>
+                    <input type="text" name="user-name-1">
+                  </label>
+                </div>
+                <pre><code class="language-pug">+custom-input({
+  inputLabel: "Введите ваше имя",
+  inputName: "user-name-1",
+})</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.custom-input \ type="tel"</p>
+                <div class="custom-input">
+                  <label><span class="custom-input__label">Введите номер телефона</span>
+                    <input type="tel" name="user-phone">
+                  </label>
+                </div>
+                <pre><code class="language-pug">+custom-input({
+  inputType: "tel",
+  inputLabel: "Введите номер телефона",
+  inputName: "user-phone",
+})</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">.custom-input \ type="email"</p>
+                <div class="custom-input">
+                  <div class="custom-input__grid" data-scroll>
+                    <label class="custom-input__label">Введите вашу почту</label>
+                    <div class="custom-input__input-wrapper" id="input-email">
+                      <svg class="custom-input__icon" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#letter"></use>
+                      </svg>
+                      <input type="email" name="user-mail" autocomplete="off" required>
+                      <button type="submit"><span class="visually-hidden">send your email</span>
+                        <svg width="16" height="16" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#plane"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <pre><code class="language-pug">+custom-input({
+  inputType: "email",
+  inputLabel: "Введите вашу почту",
+  inputName: "user-mail",
+})</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">+custom-textarea \ default</p>
+                <div class="custom-textarea">
+                  <label><span class="custom-textarea__label">Расскажите о себе</span>
+                    <textarea name="user-info"></textarea>
+                  </label>
+                </div>
+                <pre><code class="language-pug">+custom-textarea({
+  inputLabel: "Расскажите о себе",
+  inputName: "user-info"
+})</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text uikit__text--class">+custom-toggle \ default</p>
+                <div class="custom-toggle custom-toggle--checkbox">
+                  <label>
+                    <input type="checkbox" value="user-agreement-1" name="user-agreement"><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Чекбокс</span>
+                  </label>
+                </div>
+                <pre><code class="language-pug">+custom-toggle({
+  inputLabel: "Чекбокс",
+  inputName: "user-agreement",
+  inputValue: "user-agreement-1",
+  inputChecked: false
+}).custom-toggle--checkbox
+
+</code></pre>
+              </div>
+              <div class="uikit__component">
+                <p class="uikit__text">Базовый селект c placeholder</p>
+                <p class="uikit__text uikit__text--class">+custom-select \ default</p>
+                <div class="custom-select" data-select data-validate-type="select" data-name="some-name" data-id="id-example-1"><span class="custom-select__placeholder">Выберите одну из опций</span>
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                  <ul class="custom-select__list" role="listbox">
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">Тема 1</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                  </ul>
+                </div>
+                <pre><code class="language-pug">+custom-select({
+  placeholder: "Выберите одну из опций",
+  error: "Выберите тему обращения",
+  optionsList: [{text: "Тема 1", value: "id-1"}, {text: "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5", value: "id-5"}, {text: "Тема 6", value: "id-6"}]
+}).custom-select(data-select, data-validate-type="select", data-name="some-name", data-id="id-example-1")
+
+</code></pre>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <script>/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+pug */
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(e){var n=/(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i,t=0,r={},a={manual:e.Prism&&e.Prism.manual,disableWorkerMessageHandler:e.Prism&&e.Prism.disableWorkerMessageHandler,util:{encode:function e(n){return n instanceof i?new i(n.type,e(n.content),n.alias):Array.isArray(n)?n.map(e):n.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).slice(8,-1)},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function e(n,t){var r,i;switch(t=t||{},a.util.type(n)){case"Object":if(i=a.util.objId(n),t[i])return t[i];for(var l in r={},t[i]=r,n)n.hasOwnProperty(l)&&(r[l]=e(n[l],t));return r;case"Array":return i=a.util.objId(n),t[i]?t[i]:(r=[],t[i]=r,n.forEach((function(n,a){r[a]=e(n,t)})),r);default:return n}},getLanguage:function(e){for(;e;){var t=n.exec(e.className);if(t)return t[1].toLowerCase();e=e.parentElement}return"none"},setLanguage:function(e,t){e.className=e.className.replace(RegExp(n,"gi"),""),e.classList.add("language-"+t)},currentScript:function(){if("undefined"==typeof document)return null;if("currentScript"in document)return document.currentScript;try{throw new Error}catch(r){var e=(/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(r.stack)||[])[1];if(e){var n=document.getElementsByTagName("script");for(var t in n)if(n[t].src==e)return n[t]}return null}},isActive:function(e,n,t){for(var r="no-"+n;e;){var a=e.classList;if(a.contains(n))return!0;if(a.contains(r))return!1;e=e.parentElement}return!!t}},languages:{plain:r,plaintext:r,text:r,txt:r,extend:function(e,n){var t=a.util.clone(a.languages[e]);for(var r in n)t[r]=n[r];return t},insertBefore:function(e,n,t,r){var i=(r=r||a.languages)[e],l={};for(var o in i)if(i.hasOwnProperty(o)){if(o==n)for(var s in t)t.hasOwnProperty(s)&&(l[s]=t[s]);t.hasOwnProperty(o)||(l[o]=i[o])}var u=r[e];return r[e]=l,a.languages.DFS(a.languages,(function(n,t){t===u&&n!=e&&(this[n]=l)})),l},DFS:function e(n,t,r,i){i=i||{};var l=a.util.objId;for(var o in n)if(n.hasOwnProperty(o)){t.call(n,o,n[o],r||o);var s=n[o],u=a.util.type(s);"Object"!==u||i[l(s)]?"Array"!==u||i[l(s)]||(i[l(s)]=!0,e(s,t,o,i)):(i[l(s)]=!0,e(s,t,null,i))}}},plugins:{},highlightAll:function(e,n){a.highlightAllUnder(document,e,n)},highlightAllUnder:function(e,n,t){var r={callback:t,container:e,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};a.hooks.run("before-highlightall",r),r.elements=Array.prototype.slice.apply(r.container.querySelectorAll(r.selector)),a.hooks.run("before-all-elements-highlight",r);for(var i,l=0;i=r.elements[l++];)a.highlightElement(i,!0===n,r.callback)},highlightElement:function(n,t,r){var i=a.util.getLanguage(n),l=a.languages[i];a.util.setLanguage(n,i);var o=n.parentElement;o&&"pre"===o.nodeName.toLowerCase()&&a.util.setLanguage(o,i);var s={element:n,language:i,grammar:l,code:n.textContent};function u(e){s.highlightedCode=e,a.hooks.run("before-insert",s),s.element.innerHTML=s.highlightedCode,a.hooks.run("after-highlight",s),a.hooks.run("complete",s),r&&r.call(s.element)}if(a.hooks.run("before-sanity-check",s),(o=s.element.parentElement)&&"pre"===o.nodeName.toLowerCase()&&!o.hasAttribute("tabindex")&&o.setAttribute("tabindex","0"),!s.code)return a.hooks.run("complete",s),void(r&&r.call(s.element));if(a.hooks.run("before-highlight",s),s.grammar)if(t&&e.Worker){var c=new Worker(a.filename);c.onmessage=function(e){u(e.data)},c.postMessage(JSON.stringify({language:s.language,code:s.code,immediateClose:!0}))}else u(a.highlight(s.code,s.grammar,s.language));else u(a.util.encode(s.code))},highlight:function(e,n,t){var r={code:e,grammar:n,language:t};if(a.hooks.run("before-tokenize",r),!r.grammar)throw new Error('The language "'+r.language+'" has no grammar.');return r.tokens=a.tokenize(r.code,r.grammar),a.hooks.run("after-tokenize",r),i.stringify(a.util.encode(r.tokens),r.language)},tokenize:function(e,n){var t=n.rest;if(t){for(var r in t)n[r]=t[r];delete n.rest}var a=new s;return u(a,a.head,e),o(e,a,n,a.head,0),function(e){for(var n=[],t=e.head.next;t!==e.tail;)n.push(t.value),t=t.next;return n}(a)},hooks:{all:{},add:function(e,n){var t=a.hooks.all;t[e]=t[e]||[],t[e].push(n)},run:function(e,n){var t=a.hooks.all[e];if(t&&t.length)for(var r,i=0;r=t[i++];)r(n)}},Token:i};function i(e,n,t,r){this.type=e,this.content=n,this.alias=t,this.length=0|(r||"").length}function l(e,n,t,r){e.lastIndex=n;var a=e.exec(t);if(a&&r&&a[1]){var i=a[1].length;a.index+=i,a[0]=a[0].slice(i)}return a}function o(e,n,t,r,s,g){for(var f in t)if(t.hasOwnProperty(f)&&t[f]){var h=t[f];h=Array.isArray(h)?h:[h];for(var d=0;d<h.length;++d){if(g&&g.cause==f+","+d)return;var v=h[d],p=v.inside,m=!!v.lookbehind,y=!!v.greedy,k=v.alias;if(y&&!v.pattern.global){var x=v.pattern.toString().match(/[imsuy]*$/)[0];v.pattern=RegExp(v.pattern.source,x+"g")}for(var b=v.pattern||v,w=r.next,A=s;w!==n.tail&&!(g&&A>=g.reach);A+=w.value.length,w=w.next){var E=w.value;if(n.length>e.length)return;if(!(E instanceof i)){var P,L=1;if(y){if(!(P=l(b,A,e,m))||P.index>=e.length)break;var S=P.index,O=P.index+P[0].length,j=A;for(j+=w.value.length;S>=j;)j+=(w=w.next).value.length;if(A=j-=w.value.length,w.value instanceof i)continue;for(var C=w;C!==n.tail&&(j<O||"string"==typeof C.value);C=C.next)L++,j+=C.value.length;L--,E=e.slice(A,j),P.index-=A}else if(!(P=l(b,0,E,m)))continue;S=P.index;var N=P[0],_=E.slice(0,S),M=E.slice(S+N.length),W=A+E.length;g&&W>g.reach&&(g.reach=W);var z=w.prev;if(_&&(z=u(n,z,_),A+=_.length),c(n,z,L),w=u(n,z,new i(f,p?a.tokenize(N,p):N,k,N)),M&&u(n,w,M),L>1){var I={cause:f+","+d,reach:W};o(e,n,t,w.prev,A,I),g&&I.reach>g.reach&&(g.reach=I.reach)}}}}}}function s(){var e={value:null,prev:null,next:null},n={value:null,prev:e,next:null};e.next=n,this.head=e,this.tail=n,this.length=0}function u(e,n,t){var r=n.next,a={value:t,prev:n,next:r};return n.next=a,r.prev=a,e.length++,a}function c(e,n,t){for(var r=n.next,a=0;a<t&&r!==e.tail;a++)r=r.next;n.next=r,r.prev=n,e.length-=a}if(e.Prism=a,i.stringify=function e(n,t){if("string"==typeof n)return n;if(Array.isArray(n)){var r="";return n.forEach((function(n){r+=e(n,t)})),r}var i={type:n.type,content:e(n.content,t),tag:"span",classes:["token",n.type],attributes:{},language:t},l=n.alias;l&&(Array.isArray(l)?Array.prototype.push.apply(i.classes,l):i.classes.push(l)),a.hooks.run("wrap",i);var o="";for(var s in i.attributes)o+=" "+s+'="'+(i.attributes[s]||"").replace(/"/g,"&quot;")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'"'+o+">"+i.content+"</"+i.tag+">"},!e.document)return e.addEventListener?(a.disableWorkerMessageHandler||e.addEventListener("message",(function(n){var t=JSON.parse(n.data),r=t.language,i=t.code,l=t.immediateClose;e.postMessage(a.highlight(i,a.languages[r],r)),l&&e.close()}),!1),a):a;var g=a.util.currentScript();function f(){a.manual||a.highlightAll()}if(g&&(a.filename=g.src,g.hasAttribute("data-manual")&&(a.manual=!0)),!a.manual){var h=document.readyState;"loading"===h||"interactive"===h&&g&&g.defer?document.addEventListener("DOMContentLoaded",f):window.requestAnimationFrame?window.requestAnimationFrame(f):window.setTimeout(f,16)}return a}(_self);"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+Prism.languages.markup={comment:{pattern:/<!--(?:(?!<!--)[\s\S])*?-->/,greedy:!0},prolog:{pattern:/<\?[\s\S]+?\?>/,greedy:!0},doctype:{pattern:/<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,greedy:!0,inside:{"internal-subset":{pattern:/(^[^\[]*\[)[\s\S]+(?=\]>$)/,lookbehind:!0,greedy:!0,inside:null},string:{pattern:/"[^"]*"|'[^']*'/,greedy:!0},punctuation:/^<!|>$|[[\]]/,"doctype-tag":/^DOCTYPE/i,name:/[^\s<>'"]+/}},cdata:{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,greedy:!0},tag:{pattern:/<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,greedy:!0,inside:{tag:{pattern:/^<\/?[^\s>\/]+/,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"special-attr":[],"attr-value":{pattern:/=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,inside:{punctuation:[{pattern:/^=/,alias:"attr-equals"},{pattern:/^(\s*)["']|["']$/,lookbehind:!0}]}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:[{pattern:/&[\da-z]{1,8};/i,alias:"named-entity"},/&#x?[\da-f]{1,8};/i]},Prism.languages.markup.tag.inside["attr-value"].inside.entity=Prism.languages.markup.entity,Prism.languages.markup.doctype.inside["internal-subset"].inside=Prism.languages.markup,Prism.hooks.add("wrap",(function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))})),Object.defineProperty(Prism.languages.markup.tag,"addInlined",{value:function(a,e){var s={};s["language-"+e]={pattern:/(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,lookbehind:!0,inside:Prism.languages[e]},s.cdata=/^<!\[CDATA\[|\]\]>$/i;var t={"included-cdata":{pattern:/<!\[CDATA\[[\s\S]*?\]\]>/i,inside:s}};t["language-"+e]={pattern:/[\s\S]+/,inside:Prism.languages[e]};var n={};n[a]={pattern:RegExp("(<__[^>]*>)(?:<!\\[CDATA\\[(?:[^\\]]|\\](?!\\]>))*\\]\\]>|(?!<!\\[CDATA\\[)[^])*?(?=</__>)".replace(/__/g,(function(){return a})),"i"),lookbehind:!0,greedy:!0,inside:t},Prism.languages.insertBefore("markup","cdata",n)}}),Object.defineProperty(Prism.languages.markup.tag,"addAttribute",{value:function(a,e){Prism.languages.markup.tag.inside["special-attr"].push({pattern:RegExp("(^|[\"'\\s])(?:"+a+")\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\">=]+(?=[\\s>]))","i"),lookbehind:!0,inside:{"attr-name":/^[^\s=]+/,"attr-value":{pattern:/=[\s\S]+/,inside:{value:{pattern:/(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,lookbehind:!0,alias:[e,"language-"+e],inside:Prism.languages[e]},punctuation:[{pattern:/^=/,alias:"attr-equals"},/"|'/]}}}})}}),Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup,Prism.languages.xml=Prism.languages.extend("markup",{}),Prism.languages.ssml=Prism.languages.xml,Prism.languages.atom=Prism.languages.xml,Prism.languages.rss=Prism.languages.xml;
+!function(s){var e=/(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;s.languages.css={comment:/\/\*[\s\S]*?\*\//,atrule:{pattern:RegExp("@[\\w-](?:[^;{\\s\"']|\\s+(?!\\s)|"+e.source+")*?(?:;|(?=\\s*\\{))"),inside:{rule:/^@[\w-]+/,"selector-function-argument":{pattern:/(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,lookbehind:!0,alias:"selector"},keyword:{pattern:/(^|[^\w-])(?:and|not|only|or)(?![\w-])/,lookbehind:!0}}},url:{pattern:RegExp("\\burl\\((?:"+e.source+"|(?:[^\\\\\r\n()\"']|\\\\[^])*)\\)","i"),greedy:!0,inside:{function:/^url/i,punctuation:/^\(|\)$/,string:{pattern:RegExp("^"+e.source+"$"),alias:"url"}}},selector:{pattern:RegExp("(^|[{}\\s])[^{}\\s](?:[^{};\"'\\s]|\\s+(?![\\s{])|"+e.source+")*(?=\\s*\\{)"),lookbehind:!0},string:{pattern:e,greedy:!0},property:{pattern:/(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,lookbehind:!0},important:/!important\b/i,function:{pattern:/(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i,lookbehind:!0},punctuation:/[(){};:,]/},s.languages.css.atrule.inside.rest=s.languages.css;var t=s.languages.markup;t&&(t.tag.addInlined("style","css"),t.tag.addAttribute("style","css"))}(Prism);
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,lookbehind:!0,greedy:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0,greedy:!0}],string:{pattern:/(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i,lookbehind:!0,inside:{punctuation:/[.\\]/}},keyword:/\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,boolean:/\b(?:false|true)\b/,function:/\b\w+(?=\()/,number:/\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,operator:/[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,punctuation:/[{}[\];(),.:]/};
+Prism.languages.javascript=Prism.languages.extend("clike",{"class-name":[Prism.languages.clike["class-name"],{pattern:/(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/,lookbehind:!0}],keyword:[{pattern:/((?:^|\})\s*)catch\b/,lookbehind:!0},{pattern:/(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,lookbehind:!0}],function:/#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,number:{pattern:RegExp("(^|[^\\w$])(?:NaN|Infinity|0[bB][01]+(?:_[01]+)*n?|0[oO][0-7]+(?:_[0-7]+)*n?|0[xX][\\dA-Fa-f]+(?:_[\\dA-Fa-f]+)*n?|\\d+(?:_\\d+)*n|(?:\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\.\\d+(?:_\\d+)*)(?:[Ee][+-]?\\d+(?:_\\d+)*)?)(?![\\w$])"),lookbehind:!0},operator:/--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/}),Prism.languages.javascript["class-name"][0].pattern=/(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/,Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:RegExp("((?:^|[^$\\w\\xA0-\\uFFFF.\"'\\])\\s]|\\b(?:return|yield))\\s*)/(?:(?:\\[(?:[^\\]\\\\\r\n]|\\\\.)*\\]|\\\\.|[^/\\\\\\[\r\n])+/[dgimyus]{0,7}|(?:\\[(?:[^[\\]\\\\\r\n]|\\\\.|\\[(?:[^[\\]\\\\\r\n]|\\\\.|\\[(?:[^[\\]\\\\\r\n]|\\\\.)*\\])*\\])*\\]|\\\\.|[^/\\\\\\[\r\n])+/[dgimyus]{0,7}v[dgimyus]{0,7})(?=(?:\\s|/\\*(?:[^*]|\\*(?!/))*\\*/)*(?:$|[\r\n,.;:})\\]]|//))"),lookbehind:!0,greedy:!0,inside:{"regex-source":{pattern:/^(\/)[\s\S]+(?=\/[a-z]*$)/,lookbehind:!0,alias:"language-regex",inside:Prism.languages.regex},"regex-delimiter":/^\/|\/$/,"regex-flags":/^[a-z]+$/}},"function-variable":{pattern:/#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,alias:"function"},parameter:[{pattern:/(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,lookbehind:!0,inside:Prism.languages.javascript},{pattern:/(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,lookbehind:!0,inside:Prism.languages.javascript},{pattern:/(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,lookbehind:!0,inside:Prism.languages.javascript},{pattern:/((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,lookbehind:!0,inside:Prism.languages.javascript}],constant:/\b[A-Z](?:[A-Z_]|\dx?)*\b/}),Prism.languages.insertBefore("javascript","string",{hashbang:{pattern:/^#!.*/,greedy:!0,alias:"comment"},"template-string":{pattern:/`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,greedy:!0,inside:{"template-punctuation":{pattern:/^`|`$/,alias:"string"},interpolation:{pattern:/((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,lookbehind:!0,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}},"string-property":{pattern:/((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m,lookbehind:!0,greedy:!0,alias:"property"}}),Prism.languages.insertBefore("javascript","operator",{"literal-property":{pattern:/((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m,lookbehind:!0,alias:"property"}}),Prism.languages.markup&&(Prism.languages.markup.tag.addInlined("script","javascript"),Prism.languages.markup.tag.addAttribute("on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)","javascript")),Prism.languages.js=Prism.languages.javascript;
+!function(e){e.languages.pug={comment:{pattern:/(^([\t ]*))\/\/.*(?:(?:\r?\n|\r)\2[\t ].+)*/m,lookbehind:!0},"multiline-script":{pattern:/(^([\t ]*)script\b.*\.[\t ]*)(?:(?:\r?\n|\r(?!\n))(?:\2[\t ].+|\s*?(?=\r?\n|\r)))+/m,lookbehind:!0,inside:e.languages.javascript},filter:{pattern:/(^([\t ]*)):.+(?:(?:\r?\n|\r(?!\n))(?:\2[\t ].+|\s*?(?=\r?\n|\r)))+/m,lookbehind:!0,inside:{"filter-name":{pattern:/^:[\w-]+/,alias:"variable"},text:/\S[\s\S]*/}},"multiline-plain-text":{pattern:/(^([\t ]*)[\w\-#.]+\.[\t ]*)(?:(?:\r?\n|\r(?!\n))(?:\2[\t ].+|\s*?(?=\r?\n|\r)))+/m,lookbehind:!0},markup:{pattern:/(^[\t ]*)<.+/m,lookbehind:!0,inside:e.languages.markup},doctype:{pattern:/((?:^|\n)[\t ]*)doctype(?: .+)?/,lookbehind:!0},"flow-control":{pattern:/(^[\t ]*)(?:case|default|each|else|if|unless|when|while)\b(?: .+)?/m,lookbehind:!0,inside:{each:{pattern:/^each .+? in\b/,inside:{keyword:/\b(?:each|in)\b/,punctuation:/,/}},branch:{pattern:/^(?:case|default|else|if|unless|when|while)\b/,alias:"keyword"},rest:e.languages.javascript}},keyword:{pattern:/(^[\t ]*)(?:append|block|extends|include|prepend)\b.+/m,lookbehind:!0},mixin:[{pattern:/(^[\t ]*)mixin .+/m,lookbehind:!0,inside:{keyword:/^mixin/,function:/\w+(?=\s*\(|\s*$)/,punctuation:/[(),.]/}},{pattern:/(^[\t ]*)\+.+/m,lookbehind:!0,inside:{name:{pattern:/^\+\w+/,alias:"function"},rest:e.languages.javascript}}],script:{pattern:/(^[\t ]*script(?:(?:&[^(]+)?\([^)]+\))*[\t ]).+/m,lookbehind:!0,inside:e.languages.javascript},"plain-text":{pattern:/(^[\t ]*(?!-)[\w\-#.]*[\w\-](?:(?:&[^(]+)?\([^)]+\))*\/?[\t ]).+/m,lookbehind:!0},tag:{pattern:/(^[\t ]*)(?!-)[\w\-#.]*[\w\-](?:(?:&[^(]+)?\([^)]+\))*\/?:?/m,lookbehind:!0,inside:{attributes:[{pattern:/&[^(]+\([^)]+\)/,inside:e.languages.javascript},{pattern:/\([^)]+\)/,inside:{"attr-value":{pattern:/(=\s*(?!\s))(?:\{[^}]*\}|[^,)\r\n]+)/,lookbehind:!0,inside:e.languages.javascript},"attr-name":/[\w-]+(?=\s*!?=|\s*[,)])/,punctuation:/[!=(),]+/}}],punctuation:/:/,"attr-id":/#[\w\-]+/,"attr-class":/\.[\w\-]+/}},code:[{pattern:/(^[\t ]*(?:-|!?=)).+/m,lookbehind:!0,inside:e.languages.javascript}],punctuation:/[.\-!=|]+/};for(var t=[{filter:"atpl",language:"twig"},{filter:"coffee",language:"coffeescript"},"ejs","handlebars","less","livescript","markdown",{filter:"sass",language:"scss"},"stylus"],n={},a=0,i=t.length;a<i;a++){var r=t[a];r="string"==typeof r?{filter:r,language:r}:r,e.languages[r.language]&&(n["filter-"+r.filter]={pattern:RegExp("(^([\t ]*)):<filter_name>(?:(?:\r?\n|\r(?!\n))(?:\\2[\t ].+|\\s*?(?=\r?\n|\r)))+".replace("<filter_name>",(function(){return r.filter})),"m"),lookbehind:!0,inside:{"filter-name":{pattern:/^:[\w-]+/,alias:"variable"},text:{pattern:/\S[\s\S]*/,alias:[r.language,"language-"+r.language],inside:e.languages[r.language]}}})}e.languages.insertBefore("pug","filter",n)}(Prism);
+
+      </script>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
