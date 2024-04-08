@@ -6,7 +6,7 @@ import {copy, copyImages, copySvg} from './gulp/copyAssets.mjs';
 import compileScripts from './gulp/compileScripts.mjs';
 import {optimizeSvg, sprite, spriteGradient, createWebp, createAvif, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
 import pug from './gulp/compilePug.mjs';
-import criticalCss from './gulp/generateCritical.mjs';
+import ghPages from 'gulp-gh-pages';
 
 const server = browserSync.create();
 const streamStyles = () => compileStyles().pipe(server.stream());
@@ -43,8 +43,11 @@ const build = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(com
 const dev = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileMinStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg), syncServer);
 const start = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileStyles, compileScripts, pug), syncServer);
 const nomin = gulp.series(clean, copy, sprite, spriteGradient, gulp.parallel(compileStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg));
-
-
 const optimize = gulp.series(gulp.parallel(optimizePng, optimizeJpg, optimizeSvg));
+
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+      .pipe(ghPages());
+});
 
 export {createWebp as webp, createAvif as avif, build, start, dev, nomin, optimize};

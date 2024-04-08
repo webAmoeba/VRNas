@@ -17,7 +17,8 @@
     "imagemin": "gulp imagemin",
     "webp": "gulp webp",
     "avif": "gulp avif",
-    "optimize": "gulp optimize"
+    "optimize": "gulp optimize",
+    "deploy": "gulp deploy"
   },
   "editorconfig-cli": [
     "*.json",
@@ -45,6 +46,7 @@
     "gulp-avif": "1.1.1",
     "gulp-cached": "1.1.1",
     "gulp-csso": "4.0.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-group-css-media-queries": "1.2.2",
     "gulp-imagemin": "7.1.0",
     "gulp-plumber": "1.2.1",
