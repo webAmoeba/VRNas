@@ -2,22 +2,22 @@ mixin our-pricing()
   -
     const titles = {
       colorful: "our pricing",
-      title: "Affordable VR&nbsp;Services for&nbsp;Everyone",
+      title: "Affordable VR Services for Everyone",
     }
 
   -
     const features = [
       {
         title: "Customizable Packages",
-        text: "We&nbsp;understand that each project is&nbsp;unique, so&nbsp;we&nbsp;offer customizable packages to&nbsp;ensure that you get the services you need at&nbsp;a&nbsp;price that works for you. Our team will work with you to&nbsp;create a&nbsp;package that meets your specific goals and budget.",
+        text: "We understand that each project is unique, so we offer customizable packages to ensure that you get the services you need at a price that works for you. Our team will work with you to create a package that meets your specific goals and budget.",
       },
       {
         title: "Flexible Payment Options",
-        text: "We&nbsp;offer flexible payment options to&nbsp;make it&nbsp;easy for you to&nbsp;get started with our services. We&nbsp;accept various payment methods, including credit cards, bank transfers, and PayPal, and we&nbsp;can also work with you to&nbsp;create a&nbsp;payment plan that suits your needs.",
+        text: "We offer flexible payment options to make it easy for you to get started with our services. We accept various payment methods, including credit cards, bank transfers, and PayPal, and we can also work with you to create a payment plan that suits your needs.",
       },
       {
         title: "Satisfaction Guarantee",
-        text: "We&nbsp;stand behind our services and are committed to&nbsp;ensuring that you are completely satisfied with the final product. If&nbsp;for any reason you are not happy with our services, we&nbsp;will work with you to&nbsp;make it&nbsp;right or&nbsp;provide a&nbsp;full refund.",
+        text: "We stand behind our services and are committed to ensuring that you are completely satisfied with the final product. If for any reason you are not happy with our services, we will work with you to make it right or provide a full refund.",
       },
     ]
   section.our-pricing#our-pricing&attributes(attributes)
@@ -25,7 +25,7 @@ mixin our-pricing()
       .our-pricing__grid
         .text-content
           +titles-set(titles)
-          p At&nbsp;VRNas, we&nbsp;believe that everyone should have access to&nbsp;the benefits of&nbsp;VR. That&rsquo;s why we&nbsp;offer a&nbsp;range of&nbsp;pricing options to&nbsp;meet the needs of&nbsp;any budget.
+          p At VRNas, we believe that everyone should have access to the benefits of VR. That&rsquo;s why we offer a range of pricing options to meet the needs of any budget.
         .our-pricing__wrapper
           ul.our-pricing__list
             each item in features
