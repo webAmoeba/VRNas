@@ -2190,7 +2190,7 @@ button,
   width: 98.4375%;
   max-width: 100%;
   padding-bottom: 59.9647266314%;
-  background: url("../img/svg/lights/light-intro.svg") no-repeat;
+  background: url("../img/svg/lights/light.svg") no-repeat;
   background-position-x: 20px;
   background-size: 100% 100%;
   -webkit-transform: translateZ(0);
@@ -2426,7 +2426,7 @@ button,
   right: 0;
   z-index: -1;
   width: 31.5277777778%;
-  background: url("../img/svg/lights/light-our-service.svg") no-repeat;
+  background: url("../img/svg/lights/light.svg") no-repeat;
   background-position: 50px 0;
   background-size: 100% 100%;
   -webkit-transform: translateZ(0);
@@ -2514,7 +2514,7 @@ button,
   left: 0;
   z-index: -1;
   width: 31.5277777778%;
-  background: url("../img/svg/lights/light-our-service.svg") no-repeat;
+  background: url("../img/svg/lights/light.svg") no-repeat;
   background-position: -50px 0;
   background-size: 100% 100%;
   -webkit-transform: translateZ(0);
@@ -2978,7 +2978,7 @@ button,
   top: 22%;
   left: 24%;
   width: 58.5227272727%;
-  background: url("../img/svg/lights/light-partners.svg") no-repeat;
+  background: url("../img/svg/lights/light.svg") no-repeat;
   background-position-y: 70%;
   background-size: 100% auto;
   -webkit-transform: translateZ(0);
@@ -3235,7 +3235,7 @@ button,
   bottom: 0;
   left: 0;
   z-index: -1;
-  background: url("../img/svg/lights/light-simple-intro.svg") no-repeat center;
+  background: url("../img/svg/lights/light.svg") no-repeat center;
   background-size: 100% 100%;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -3414,7 +3414,7 @@ button,
   width: 110%;
   translate: 0 -50%;
   aspect-ratio: 610/366;
-  background: url("../img/svg/lights/light-section.svg") no-repeat;
+  background: url("../img/svg/lights/light.svg") no-repeat;
   background-position: center;
   background-size: 100% 100%;
   -webkit-transform: translateZ(0);
@@ -5290,7 +5290,7 @@ button,
     bottom: 0;
     left: 0;
     z-index: -1;
-    background: url("../img/svg/lights/light-article.svg") no-repeat center;
+    background: url("../img/svg/lights/light.svg") no-repeat center;
     background-size: 100% 100%;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
