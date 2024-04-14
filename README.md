@@ -1,4 +1,4 @@
-# [https://webamoeba.github.io/VRNas/index.html](github.io/VRNas) 🌎
+# [github.io/VRNas](https://webamoeba.github.io/VRNas/index.html) 🌎
 
 ## [Гайд по работе со сборкой](/GUIDE.md) 📕
 
