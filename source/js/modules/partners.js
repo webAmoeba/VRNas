@@ -36,28 +36,7 @@ function animatePartners() {
 
 // Функция распределения иконок по полукругу
 function arrangePartners() {
-  if (howMany === 7) {
-    elements[0].style = `transform: rotate(${minDegree}deg);`;
-    icons[0].style = `transform: rotate(${minDegree * -1}deg);`;
-
-    elements[1].style = `transform: rotate(${29}deg);`;
-    icons[1].style = `transform: rotate(${-29}deg);`;
-
-    elements[2].style = `transform: rotate(${58}deg);`;
-    icons[2].style = `transform: rotate(${-58}deg);`;
-
-    elements[3].style = `transform: rotate(${90}deg);`;
-    icons[3].style = `transform: rotate(${-90}deg);`;
-
-    elements[4].style = `transform: rotate(${122}deg);`;
-    icons[4].style = `transform: rotate(${-122}deg);`;
-
-    elements[5].style = `transform: rotate(${151}deg);`;
-    icons[5].style = `transform: rotate(${-151}deg);`;
-
-    icons[lastIndex].style = `transform: rotate(${maxDegree * -1}deg);`;
-    elements[lastIndex].style = `transform: rotate(${maxDegree}deg);`;
-  } else if (howMany > 1) {
+  if (howMany > 1) {
     elements[0].style = `transform: rotate(${minDegree}deg);`;
     icons[lastIndex].style = `transform: rotate(${maxDegree * -1}deg);`;
     icons[0].style = `transform: rotate(${minDegree * -1}deg);`;
