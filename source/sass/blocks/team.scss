@@ -45,9 +45,10 @@
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: center;
+    grid-template-columns: repeat(auto-fit, 292px);
+
     margin: 0;
     padding: 0;
 
@@ -62,8 +63,6 @@
 
   &__slide {
     position: relative;
-
-    width: 292px;
 
     background-color: rgba(37, 37, 50, 0.6);
     border-width: 1px;

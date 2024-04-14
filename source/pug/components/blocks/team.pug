@@ -49,7 +49,8 @@ mixin team()
     ]
 
 
-  .team(id="team-block")&attributes(attributes)
+  section.team(id="team-block")&attributes(attributes)
+    h2.visually-hidden our team
     .container
       .team__grid
         +titles-set(titles)
