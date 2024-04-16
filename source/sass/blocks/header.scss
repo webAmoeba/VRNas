@@ -4,7 +4,7 @@ $tablet-height: 106px;
   position: relative;
   z-index: 2;
 
-  padding: 30px 0 32px;
+  padding: 30px 0 30px;
 
   color: $color-default-white;
 
@@ -166,7 +166,7 @@ $tablet-height: 106px;
       justify-content: start;
       grid-template-columns: 1fr 1fr;
 
-      & > .header__item {
+      .header__item--contact-us {
         justify-self: start;
       }
     }
@@ -260,6 +260,11 @@ $tablet-height: 106px;
       display: none;
     }
 
+    .container,
+    .header__grid {
+      height: 100%;
+    }
+
     .header__nav {
       overflow-y: auto;
 
@@ -268,21 +273,17 @@ $tablet-height: 106px;
       opacity: 1;
 
       @include vp-1023 {
-        & > .header__item {
+        .header__item--contact-us {
           align-self: end;
         }
       }
 
       @include vp-767 {
-        & > .header__item {
+        .header__item--contact-us {
           align-self: stretch;
+          margin-top: auto;
         }
       }
-    }
-
-    .container,
-    .header__grid {
-      height: unset;
     }
 
     .header__toggle {
