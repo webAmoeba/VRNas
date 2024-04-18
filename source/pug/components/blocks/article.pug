@@ -56,10 +56,10 @@ mixin article()
     ]
 
 
-  article.article
+  article.article&attributes(attributes)
     .article__light
     .container
-      .article__grid(data-scroll)
+      .article__grid
         .text-content
           .article__titles
             .property VR Architecture
@@ -124,5 +124,5 @@ mixin article()
                   span.visually-hidden instagram
                   img(class="article__social-icon", src="img/svg/social/instagram.svg", width="23", height="23", alt="just decorate.", aria-hidden="true", loading="lazy")
 
-        .article__aside-wrapper(data-aside)
+        .article__aside-wrapper
           +aside(previews, hashtags)
