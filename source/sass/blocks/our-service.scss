@@ -1,6 +1,7 @@
 .our-service {
   position: relative;
   z-index: 0;
+  scroll-margin-top: 220px;
 
   &::before {
     content: "";

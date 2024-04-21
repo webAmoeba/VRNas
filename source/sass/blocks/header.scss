@@ -164,6 +164,7 @@ $tablet-height: 106px;
     @include vp-1023 {
       display: grid;
       justify-content: start;
+      align-content: start;
       grid-template-columns: 1fr 1fr;
 
       .header__item--contact-us {
